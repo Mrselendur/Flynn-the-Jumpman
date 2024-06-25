@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6qatv1cnqfy4"]
+[gd_scene load_steps=21 format=3 uid="uid://b6qatv1cnqfy4"]
 
 [ext_resource type="Script" path="res://Obstacles/rock_head.gd" id="1_5s770"]
 [ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="1_eq1mm"]
@@ -83,64 +83,116 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fbv"]
-size = Vector2(31.2, 30)
+size = Vector2(12, 12.06)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsexh"]
+size = Vector2(12.32, 96.96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymrq"]
-size = Vector2(12, 0.730001)
+size = Vector2(12, 0.499996)
 
-[node name="RockHead" type="RigidBody2D"]
+[sub_resource type="Animation" id="Animation_o6yqd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1i8mu"]
+resource_name = "climb up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [138.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [133.0, -5.0]
+}
+
+[sub_resource type="Animation" id="Animation_ex5fh"]
+resource_name = "fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 138.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-5.0, 133.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gx0l1"]
+_data = {
+"RESET": SubResource("Animation_o6yqd"),
+"climb up": SubResource("Animation_1i8mu"),
+"fall": SubResource("Animation_ex5fh")
+}
+
+[node name="Rock Head" type="RigidBody2D"]
 texture_filter = 1
+scale = Vector2(2.5, 2.5)
 collision_layer = 4
 collision_mask = 2
-mass = 5.0
-gravity_scale = 2.5
 freeze = true
 script = ExtResource("1_5s770")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_efnq6")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.19209e-06, -2.84217e-14)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_v6fbv")
 
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(-5.96046e-08, 137.2)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_vsexh")
+
 [node name="Hitbox" type="Area2D" parent="." groups=["Death"]]
 position = Vector2(0, 7.62939e-06)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(3.72529e-09, 15.0875)
+position = Vector2(3.72529e-09, 14.8)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_5ymrq")
 
-[node name="FindGround" type="RayCast2D" parent="."]
-position = Vector2(0, 37)
-target_position = Vector2(0, 3)
-collision_mask = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gx0l1")
+}
+autoplay = "RESET"
 
-[node name="FindPlayer" type="Node2D" parent="."]
-light_mask = 0
-
-[node name="RayCast2D" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(0, 41)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D2" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(40, 39)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D3" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(-40, 38)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D4" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(18, 39)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D5" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(-19, 39)
-target_position = Vector2(0, 643)
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_area_2d_body_entered"]

@@ -298,7 +298,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmsh"]
-size = Vector2(42, 58)
+size = Vector2(42, 56)
 
 [sub_resource type="Animation" id="Animation_7dtwc"]
 length = 0.001
@@ -345,7 +345,9 @@ script = ExtResource("1_oodwx")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wd3ol")
+animation = &"jumping"
 autoplay = "default"
+frame_progress = 0.932539
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)

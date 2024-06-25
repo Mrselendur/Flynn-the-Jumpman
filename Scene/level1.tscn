@@ -674,7 +674,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Rock Head" parent="." instance=ExtResource("17_e6rga")]
-position = Vector2(124, 154)
+position = Vector2(124, 139)
 
 [node name="Pit" parent="." instance=ExtResource("7_xij5d")]
 position = Vector2(1435, 864)
