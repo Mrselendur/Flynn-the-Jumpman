@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var animation_player = $AnimationPlayer
 @onready var player_detect = $PlayerDetect/CollisionShape2D
 @onready var sprite = $AnimatedSprite2D
-@onready var hitbox = $Hitbox/Area2D/CollisionShape2D
+@onready var hitbox = $Hitbox/CollisionShape2D
 
 const BLINK_TIME = 1000
 var counter = BLINK_TIME

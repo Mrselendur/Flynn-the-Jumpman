@@ -1,18 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq7tkdb7xhjs0"]
-
-[ext_resource type="Script" path="res://Obstacles/Death.gd" id="1_cy6cb"]
+[gd_scene load_steps=2 format=3 uid="uid://bq7tkdb7xhjs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onlkw"]
 size = Vector2(3933, 35.5)
 
 [node name="Pit" type="Node2D"]
 position = Vector2(7, 5)
-script = ExtResource("1_cy6cb")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Death"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["Death"]]
 position = Vector2(2.84217e-14, 3.05176e-05)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_onlkw")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

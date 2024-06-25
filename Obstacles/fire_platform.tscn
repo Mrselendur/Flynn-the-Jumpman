@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://buguefg6rqgju"]
+[gd_scene load_steps=16 format=3 uid="uid://buguefg6rqgju"]
 
 [ext_resource type="Script" path="res://Obstacles/FireActivate.gd" id="1_jsnbh"]
 [ext_resource type="Texture2D" uid="uid://baws8gsuu670w" path="res://Free/Traps/Fire/Off.png" id="2_04knf"]
 [ext_resource type="Texture2D" uid="uid://p4npe0lmd3dc" path="res://Free/Traps/Fire/Hit (16x32).png" id="3_u1ukr"]
 [ext_resource type="Texture2D" uid="uid://cxy5bwbws6ctg" path="res://Free/Traps/Fire/On (16x32).png" id="4_3tajs"]
-[ext_resource type="Script" path="res://Obstacles/Death.gd" id="5_3ekt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5avh"]
 size = Vector2(16, 14)
@@ -107,15 +106,11 @@ autoplay = "off"
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4hwkp")
 
-[node name="Fire" type="Node2D" parent="."]
-script = ExtResource("5_3ekt6")
+[node name="Fire" type="Area2D" parent="." groups=["Death"]]
 
-[node name="Area2D" type="Area2D" parent="Fire" groups=["Death"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_fss7e")
 disabled = true
 
 [connection signal="body_entered" from="Activate" to="." method="_on_activate_body_entered"]
-[connection signal="body_entered" from="Fire/Area2D" to="Fire" method="_on_area_2d_body_entered"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dianvi413b271"]
+[gd_scene load_steps=21 format=3 uid="uid://dianvi413b271"]
 
 [ext_resource type="Script" path="res://Scene/game_manager.gd" id="1_1bqp7"]
-[ext_resource type="Texture2D" uid="uid://cn2fv528vj8ck" path="res://Free/Traps/Saw/Off.png" id="1_duqtf"]
 [ext_resource type="Script" path="res://Scene/UI.gd" id="2_tvlxo"]
 [ext_resource type="Texture2D" uid="uid://b0juaruvsxcin" path="res://Free/Background/Green.png" id="2_wbqxv"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_xcitj"]
@@ -18,9 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://buguefg6rqgju" path="res://Obstacles/fire_platform.tscn" id="15_lqye2"]
 [ext_resource type="PackedScene" uid="uid://b6qatv1cnqfy4" path="res://Obstacles/rock_head.tscn" id="17_e6rga"]
 [ext_resource type="PackedScene" uid="uid://cu2ye7s6k81lk" path="res://Obstacles/falling_platform.tscn" id="17_tgq77"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f5bpb"]
-radius = 19.48
+[ext_resource type="PackedScene" uid="uid://d0p1rwqpsjkrt" path="res://Obstacles/swinging_saw.tscn" id="18_6co45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoryv"]
 texture = ExtResource("3_n4iu2")
@@ -607,22 +604,6 @@ sources/0 = SubResource("TileSetAtlasSource_eoryv")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D" type="StaticBody2D" parent="."]
-position = Vector2(319, 505)
-scale = Vector2(2.5, 2.5)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-z_index = 1
-shape = SubResource("CircleShape2D_f5bpb")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(-1.19209e-05, 0)
-texture = ExtResource("1_duqtf")
-
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_1bqp7")
@@ -752,7 +733,7 @@ position = Vector2(427, 465)
 scale = Vector2(4, 4)
 
 [node name="Saw" parent="." instance=ExtResource("13_f32my")]
-position = Vector2(-379, 250)
+position = Vector2(-41, 401)
 scale = Vector2(2, 2)
 
 [node name="Swinging Spike Ball" parent="." instance=ExtResource("14_8r2ro")]
@@ -782,3 +763,7 @@ scale = Vector2(2, 2)
 [node name="Falling Platform" parent="." instance=ExtResource("17_tgq77")]
 position = Vector2(427, 235)
 scale = Vector2(2.5, 2.5)
+
+[node name="Swinging Saw" parent="." instance=ExtResource("18_6co45")]
+position = Vector2(-157, 280)
+scale = Vector2(2, 2)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://b02j5oe4nab3f"]
+[gd_scene load_steps=12 format=3 uid="uid://b02j5oe4nab3f"]
 
-[ext_resource type="Script" path="res://Obstacles/Death.gd" id="1_ktyu2"]
 [ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="2_uequm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1007"]
@@ -73,7 +72,6 @@ radius = 20.0
 [node name="Saw" type="Node2D"]
 texture_filter = 1
 position = Vector2(0, 1)
-script = ExtResource("1_ktyu2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -82,11 +80,9 @@ sprite_frames = SubResource("SpriteFrames_pdi7l")
 autoplay = "default"
 frame_progress = 0.492322
 
-[node name="Area2D" type="Area2D" parent="." groups=["Death"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["Death"]]
 texture_filter = 1
 position = Vector2(1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_dyf0c")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

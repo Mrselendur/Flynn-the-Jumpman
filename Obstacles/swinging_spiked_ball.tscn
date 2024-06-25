@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://wvu7cd2dkybc"]
+[gd_scene load_steps=7 format=3 uid="uid://wvu7cd2dkybc"]
 
-[ext_resource type="Script" path="res://Obstacles/Death.gd" id="1_yqhlw"]
 [ext_resource type="Texture2D" uid="uid://cuatsm1blu5pq" path="res://Free/Traps/Spiked Ball/Chain.png" id="2_0dvxi"]
 [ext_resource type="Texture2D" uid="uid://po4u8kt8y2so" path="res://Free/Traps/Spiked Ball/Spiked Ball.png" id="3_tah7m"]
 
@@ -45,7 +44,6 @@ _data = {
 
 [node name="Swinging Saw" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_yqhlw")
 
 [node name="Chain" type="Node2D" parent="."]
 
@@ -108,11 +106,11 @@ texture_filter = 1
 position = Vector2(0, 47)
 texture = ExtResource("3_tah7m")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Death"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["Death"]]
 texture_filter = 1
 position = Vector2(0, 47)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0.26103, 0.296214)
 shape = SubResource("CircleShape2D_163ia")
 
@@ -121,5 +119,3 @@ libraries = {
 "": SubResource("AnimationLibrary_k4urw")
 }
 autoplay = "Swing"
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
