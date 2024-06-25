@@ -1,0 +1,225 @@
+[gd_scene load_steps=22 format=3 uid="uid://b6qatv1cnqfy4"]
+
+[ext_resource type="Script" path="res://Obstacles/rock_head.gd" id="1_5s770"]
+[ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="1_eq1mm"]
+[ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit (42x42).png" id="2_ch7fi"]
+[ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle.png" id="3_itkmb"]
+[ext_resource type="Script" path="res://Obstacles/Death.gd" id="5_8he4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jcs4"]
+atlas = ExtResource("1_eq1mm")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug0ue"]
+atlas = ExtResource("1_eq1mm")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wa06"]
+atlas = ExtResource("1_eq1mm")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lafl"]
+atlas = ExtResource("1_eq1mm")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axxy8"]
+atlas = ExtResource("2_ch7fi")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtcy"]
+atlas = ExtResource("2_ch7fi")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utsb7"]
+atlas = ExtResource("2_ch7fi")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvgk"]
+atlas = ExtResource("2_ch7fi")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efnq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jcs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug0ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wa06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lafl")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_axxy8")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_gxtcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utsb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udvgk")
+}],
+"loop": false,
+"name": &"hit ground",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_itkmb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fbv"]
+size = Vector2(32, 19.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsexh"]
+size = Vector2(41, 139.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymrq"]
+size = Vector2(31.2, 10)
+
+[sub_resource type="Animation" id="Animation_o6yqd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1i8mu"]
+resource_name = "climb up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [138.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [138.0, 7.62939e-06]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [133.0, -5.0]
+}
+
+[sub_resource type="Animation" id="Animation_ex5fh"]
+resource_name = "fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 138.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.62939e-06, 138.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-5.0, 133.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gx0l1"]
+_data = {
+"RESET": SubResource("Animation_o6yqd"),
+"climb up": SubResource("Animation_1i8mu"),
+"fall": SubResource("Animation_ex5fh")
+}
+
+[node name="Rock Head" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5s770")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 138)
+sprite_frames = SubResource("SpriteFrames_efnq6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-08, 133)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_v6fbv")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(0, 84)
+shape = SubResource("RectangleShape2D_vsexh")
+
+[node name="Hitbox" type="Node2D" parent="."]
+position = Vector2(0, 138)
+script = ExtResource("5_8he4l")
+
+[node name="Area2D" type="Area2D" parent="Hitbox" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D"]
+position = Vector2(-5.00679e-07, 10)
+shape = SubResource("RectangleShape2D_5ymrq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gx0l1")
+}
+autoplay = "RESET"
+
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Hitbox/Area2D" to="Hitbox" method="_on_area_2d_body_entered"]

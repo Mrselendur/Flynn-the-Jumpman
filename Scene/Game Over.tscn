@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuk2riuhb5l6n"]
+
+[ext_resource type="Script" path="res://Scene/Game Over.gd" id="1_b2cca"]
+[ext_resource type="Texture2D" uid="uid://bcpujn1irpfh4" path="res://Free/Background/Brown.png" id="2_4v0of"]
+[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="3_m1pur"]
+[ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_htdor"]
+[ext_resource type="Texture2D" uid="uid://cd37412jlrrsu" path="res://Free/Menu/Buttons/Menu_hover.png" id="5_0ckvi"]
+[ext_resource type="Texture2D" uid="uid://dr4y3rymeq26c" path="res://Free/Menu/Buttons/Restart.png" id="6_j772d"]
+[ext_resource type="Texture2D" uid="uid://5k6txr13bb4i" path="res://Free/Menu/Buttons/Restart_hover.png" id="7_hw66h"]
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b2cca")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1843.0
+offset_bottom = 890.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(174, 147)
+texture = ExtResource("2_4v0of")
+stretch_mode = 1
+
+[node name="Game Over" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 372.0
+offset_top = 217.0
+offset_right = 784.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(196, 28)
+theme_override_colors/font_color = Color(0.745098, 0.188235, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m1pur")
+theme_override_font_sizes/font_size = 50
+text = "Game Over!"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 415.0
+offset_top = 421.0
+offset_right = 708.0
+offset_bottom = 526.0
+
+[node name="Menu" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.519
+anchor_right = 0.038
+anchor_bottom = 0.519
+offset_left = -11.134
+offset_top = -12.995
+offset_right = 9.866
+offset_bottom = 9.00499
+grow_vertical = 2
+scale = Vector2(5.5, 5.5)
+pivot_offset = Vector2(10.3636, 10.5455)
+texture_normal = ExtResource("4_htdor")
+texture_hover = ExtResource("5_0ckvi")
+
+[node name="Restart" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97
+anchor_top = 0.5
+anchor_right = 0.97
+anchor_bottom = 0.5
+offset_left = -12.21
+offset_top = -11.0
+offset_right = 8.78998
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(5.5, 5.5)
+pivot_offset = Vector2(10.1157, 10.6281)
+texture_normal = ExtResource("6_j772d")
+texture_hover = ExtResource("7_hw66h")
+
+[node name="Score" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 446.0
+offset_top = 328.0
+offset_right = 722.0
+offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("3_m1pur")
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+
+[connection signal="button_down" from="Control/Menu" to="." method="_on_menu_button_down"]
+[connection signal="button_up" from="Control/Menu" to="." method="_on_menu_button_up"]
+[connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]
+[connection signal="button_down" from="Control/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="Control/Restart" to="." method="_on_restart_button_up"]
+[connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]

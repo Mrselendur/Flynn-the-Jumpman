@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnu85rfbrbsx"]
+
+[ext_resource type="Texture2D" uid="uid://dpbeqw4knt58m" path="res://Free/Background/Pink.png" id="1_i0n3w"]
+[ext_resource type="Script" path="res://Scene/Level Complete.gd" id="1_vr66b"]
+[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_bsq1n"]
+[ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_p6qgo"]
+[ext_resource type="Texture2D" uid="uid://cd37412jlrrsu" path="res://Free/Menu/Buttons/Menu_hover.png" id="5_t0fte"]
+
+[node name="LevelComplete" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vr66b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1677.0
+offset_bottom = 834.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-89, -86)
+texture = ExtResource("1_i0n3w")
+stretch_mode = 1
+
+[node name="LevelCompleteText" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 234.0
+offset_right = 877.0
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(314, 27)
+theme_override_fonts/font = ExtResource("2_bsq1n")
+theme_override_font_sizes/font_size = 50
+text = "Level Complete!"
+
+[node name="Score" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 425.0
+offset_top = 315.0
+offset_right = 722.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("2_bsq1n")
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+
+[node name="Menu" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 424.0
+offset_top = 460.0
+offset_right = 445.0
+offset_bottom = 482.0
+scale = Vector2(5.5, 5.5)
+pivot_offset = Vector2(10.5455, 10.7273)
+texture_normal = ExtResource("4_p6qgo")
+texture_hover = ExtResource("5_t0fte")
+
+[connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]
+[connection signal="button_up" from="Menu" to="." method="_on_menu_button_up"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,215 @@
+[gd_scene load_steps=17 format=3 uid="uid://d0p1rwqpsjkrt"]
+
+[ext_resource type="Script" path="res://Obstacles/Death.gd" id="1_0kvhi"]
+[ext_resource type="Texture2D" uid="uid://csl67rwk267f" path="res://Free/Traps/Saw/Chain.png" id="2_0pdj7"]
+[ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="3_33lsi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1007"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db7ga"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cww03"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h36c"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p18ov"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlpd7"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e15j"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcm52"]
+atlas = ExtResource("3_33lsi")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdi7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1007")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db7ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cww03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h36c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p18ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlpd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e15j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcm52")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyf0c"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_pfq04"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rjosu"]
+resource_name = "Swing"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1.8, -0.25, 0, 0.25, 0, 1.8, -0.25, 0, 0.25, 0, -1.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.6)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4urw"]
+_data = {
+"RESET": SubResource("Animation_pfq04"),
+"Swing": SubResource("Animation_rjosu")
+}
+
+[node name="Swinging Saw" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_0kvhi")
+
+[node name="Chain" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.31134e-07, 3)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-2.62268e-07, 6)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-3.93402e-07, 9)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-5.24537e-07, 12)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-6.55671e-07, 15)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-7.86805e-07, 18)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-9.17939e-07, 21)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.04907e-06, 24)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.18021e-06, 27)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.31134e-06, 30)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.44248e-06, 33)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.57361e-06, 36)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.70474e-06, 39)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.83588e-06, 42)
+texture = ExtResource("2_0pdj7")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Chain"]
+texture_filter = 1
+position = Vector2(-1.96701e-06, 45)
+texture = ExtResource("2_0pdj7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 47)
+sprite_frames = SubResource("SpriteFrames_pdi7l")
+autoplay = "default"
+frame_progress = 0.492322
+
+[node name="Area2D" type="Area2D" parent="." groups=["Death"]]
+texture_filter = 1
+position = Vector2(0, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dyf0c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k4urw")
+}
+autoplay = "Swing"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
