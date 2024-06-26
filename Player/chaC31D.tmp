@@ -312,7 +312,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1e-05),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.892857, 1.05195)]
 }
 
 [sub_resource type="Animation" id="Animation_g7oah"]
@@ -337,6 +337,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.892857, 1.05195)
 collision_mask = 6
 script = ExtResource("1_oodwx")
 

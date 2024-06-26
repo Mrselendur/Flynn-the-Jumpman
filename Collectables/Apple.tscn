@@ -182,6 +182,7 @@ animations = [{
 radius = 9.0
 
 [node name="Apple" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_abe2w")
 pointsGiven = 100
 

@@ -1,18 +1,12 @@
-extends Node2D
+extends Area2D
 
-@export var required_points: int 
+@export var required_points: int    #points needed to progress
 
-@onready var collision_shape_2d = $Area2D/CollisionShape2D
+var is_shown: bool = false          #variable to check if goal has been shown
 
-var is_shown: bool = false
-
-func _process(_delta) -> void:
-	if((required_points <= GameManager.getLevelPoints()) && (false == is_shown)):
-		collision_shape_2d.disabled = false
-		self.visible = true
-		is_shown = true
-
-func _on_area_2d_body_entered(body):
-	if(body.is_in_group("Player")):
-		await(body.get_node("AnimatedSprite2D").animation_finished)
-		GameManager.setChange("res://Scene/Level Complete.tscn")
+#check every frame for a shown goal and if player has collected required points
+func _process(_delta):
+	if((false == is_shown) && (required_points <= GameManager.getLevelPoints())):
+		self.set_deferred("monitorable", true)          #turn on monitorable property
+		self.set_deferred("visible", true)              #turn on visible property
+		is_shown = true            #set is_shown to true to never enter the if statement agian

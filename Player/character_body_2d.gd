@@ -39,19 +39,17 @@ func _physics_process(delta) -> void:
 			await(animated_sprite.animation_finished)
 			current_state = state.ACTIVE #change state to active
 		state.ACTIVE:
-			# Get the input direction and handle the movement/deceleration.
-			# get_axis() returns a negative value from the first argument and a positive value from the second
-			var direction = Input.get_axis("left", "right")
-			if (0 != direction):
-				velocity.x = direction * SPEED
-				animated_sprite.play("running")
-				#if direction is negative set isLeft to true
-				var isLeft = direction < 0
-				animated_sprite.flip_h = isLeft
-			else:
-				#stop movement
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-				animated_sprite.play("default")
+			#Get the input direction and handle the movement/deceleration.
+			#get_axis() returns a -1 value from the first argument and a 1 value from the second 
+			var direction = Input.get_axis("left", "right")   #returns 0 if neither
+			if (0 != direction):                      #player is moving
+				velocity.x = direction * SPEED        #move towards inputed direction with speed const
+				animated_sprite.play("running")       #change animation to running 
+				var isLeft = direction < 0            #if direction is negative set isLeft to true
+				animated_sprite.flip_h = isLeft       #flip sprite so character looks where he's going
+			else:                                     #player is not moving
+				velocity.x = move_toward(velocity.x, 0, SPEED)    #decrease velocity.x to 0 by SPEED amount
+				animated_sprite.play("default")       #play idle sprite animation
 
 			# Handle jump.
 			if (true == is_on_floor()):
@@ -70,35 +68,38 @@ func _physics_process(delta) -> void:
 					position.y += 1
 
 
-			# Add the gravity.
-			else:
-				animated_sprite.play("jumping")
-				velocity.y += gravity * delta
-				coyote_counter -= delta 
+			# Add the gravity (player is not jumping and is not on ground).
+			else:       
+				animated_sprite.play("jumping")     #change sprite to jumping
+				velocity.y += gravity * delta       #adds grivity to velocity.y
+				coyote_counter -= delta             #start counting down coyote counter
 
 			if(Input.is_action_just_pressed("up")):
-				jump_buffer_counter = JUMP_BUFFER_TIME #start jump buffer
+				jump_buffer_counter = JUMP_BUFFER_TIME     #start jump buffer
 
-				if((0 < coyote_counter) && (false == jump)):
-					animation_player.play("jumping")
-					velocity.y = JUMP_VELOCITY
-					jump_buffer_counter = 0
-					jump = true
+				if((0 < coyote_counter) && (false == jump)):    #coyote timer still has time
+					animation_player.play("jumping")            #and player hasn't jumped yet
+					velocity.y = JUMP_VELOCITY                  #jump
+					jump_buffer_counter = 0                     #reset jump buffer
+					jump = true                           #preventing player from jumping infinitely
 
 			else:
-				jump_buffer_counter -= delta
+				jump_buffer_counter -= delta      #decrease jump buffer when not pressing jump button
 
+			#variable jump hight by releasing jump button early
 			if((true == Input.is_action_just_released("up"))):
 				velocity.y *= 0.5
 
 		state.EXIT:
+			animation_player.play("RESET")
 			collision_shape_2d.set_deferred("disabled", true)  #disable collision and hitbox 
 			hitbox_collision.set_deferred("disabled", true)    #to prevent unnecessary collisions
 			animated_sprite.play("disappear")
-			velocity.x = 0                                     #disable movement so character doesn' move
-			velocity.y = 0                                     #when exit animation is playing
+			velocity.x = 0                                     #disable movement so player doesn't 
+			velocity.y = 0                                     #move when exit animation is playing
 			await animated_sprite.animation_finished           #wait for end of animation 
 			GameManager.setChange(change_scene)                #before changing scene 
+			
 	move_and_slide()
 
 func _on_area_2d_area_entered(area) -> void:

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://foue13baudpc" path="res://Free/Traps/Falling Platforms/On (32x10).png" id="2_vnsvp"]
 
 [sub_resource type="Animation" id="Animation_2sbxd"]
-resource_name = "fall"
+resource_name = "shake"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ph3sj"]
 _data = {
-"fall": SubResource("Animation_2sbxd")
+"shake": SubResource("Animation_2sbxd")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48mn6"]
@@ -75,8 +75,9 @@ size = Vector2(32, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06j7d"]
 size = Vector2(32, 0.5)
 
-[node name="Falling Platform" type="Node2D"]
+[node name="FallingPlatform" type="Node2D"]
 texture_filter = 1
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_ia20g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -106,10 +107,10 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Trigger"]
 shape = SubResource("RectangleShape2D_06j7d")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="FallArea" type="Area2D" parent="."]
 position = Vector2(0, 234)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallArea"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_hsyid")
 

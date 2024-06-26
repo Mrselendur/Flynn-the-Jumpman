@@ -3,7 +3,7 @@ extends Node2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var fire = $Fire/CollisionShape2D
 
-const TIMER: int = 3                       #timer to turn off fire
+const TIMER := 3.0                       #timer to turn off fire
 
 var isSet: bool = false                    #variable to reset platform
 
@@ -16,7 +16,7 @@ func _on_activate_body_entered(body):
 			await animated_sprite.animation_finished       #wait for animation to finish
 			animated_sprite.play("on")
 			fire.disabled = false                          #enable the fire area
-			await get_tree().create_timer(TIMER).timeout   #wait TIMER seconds before
+			await get_tree().create_timer(TIMER).timeout   #wait 3 seconds before
 			animated_sprite.play("off")                    #turning of fire
 			fire.disabled = true                           #disable fire
 			isSet = false                                  #reset platform

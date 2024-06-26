@@ -87,6 +87,7 @@ height = 16.0
 
 [node name="FirePlatform" type="StaticBody2D"]
 texture_filter = 1
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_jsnbh")
@@ -97,7 +98,7 @@ shape = SubResource("RectangleShape2D_w5avh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vseor")
-animation = &"on"
+animation = &"off"
 autoplay = "off"
 
 [node name="Activate" type="Area2D" parent="."]
