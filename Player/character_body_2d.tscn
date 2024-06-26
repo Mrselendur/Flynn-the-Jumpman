@@ -347,7 +347,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wd3ol")
 animation = &"jumping"
 autoplay = "default"
-frame_progress = 0.932539
+frame_progress = 0.199422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
