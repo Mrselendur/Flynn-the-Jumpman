@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
-const COYOTE_TIME: float = 0.1         #coyote time max seconds
+const COYOTE_TIME: float = 0.2         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
 
 #state machine for character control, entering scene and exiting scene 
@@ -20,9 +20,10 @@ var current_state          #state to reiterate through the state machine
 @onready var hitbox_collision = $Hitbox/hitbox_collision
 
 #jumps
-var jump: bool = false
-var coyote_counter: float = 0.0
-var jump_buffer_counter: float = 0.0
+var jump_count: int = 0
+var coyote_counter: float
+var jump_buffer_counter: float
+
 
 var change_scene: String
 
@@ -37,60 +38,54 @@ func _physics_process(delta) -> void:
 		state.ENTER:
 			animated_sprite.play("appear")
 			await(animated_sprite.animation_finished)
-			current_state = state.ACTIVE #change state to active
+			current_state = state.ACTIVE              #change state to active
+
 		state.ACTIVE:
 			#Get the input direction and handle the movement/deceleration.
-			#get_axis() returns a -1 value from the first argument and a 1 value from the second 
+			#get_axis() returns a -1 value from the first argument and a 1 value from the second
 			var direction = Input.get_axis("left", "right")   #returns 0 if neither
 			if (0 != direction):                      #player is moving
 				velocity.x = direction * SPEED        #move towards inputed direction with speed const
-				animated_sprite.play("running")       #change animation to running 
 				var isLeft = direction < 0            #if direction is negative set isLeft to true
 				animated_sprite.flip_h = isLeft       #flip sprite so character looks where he's going
 			else:                                     #player is not moving
 				velocity.x = move_toward(velocity.x, 0, SPEED)    #decrease velocity.x to 0 by SPEED amount
-				animated_sprite.play("default")       #play idle sprite animation
-
+			#print(coyote_counter)
 			# Handle jump.
-			if (true == is_on_floor()):
-				if(0 < jump_buffer_counter): #if jump_buffer hasn't run out - jump
-					velocity.y = JUMP_VELOCITY
-					jump = true
- 
-				else:
-					coyote_counter = COYOTE_TIME #reset coyote_counter 
-					jump = false
-
+			if is_on_floor():
+				coyote_counter = COYOTE_TIME #reset coyote_counter 
+				jump_count = 0
+				if(0 < jump_buffer_counter): #if jump buffer hasn't run out - jump
+					jump()
 				jump_buffer_counter = 0 #reset jump buffer back to zero
 
 				#move down from one-way platform with small collision shapes
-				if (Input.is_action_just_pressed("down")): 
+				if (Input.is_action_just_pressed("down")):
 					position.y += 1
-
-
 			# Add the gravity (player is not jumping and is not on ground).
-			else:       
-				animated_sprite.play("jumping")     #change sprite to jumping
-				velocity.y += gravity * delta       #adds grivity to velocity.y
-				coyote_counter -= delta             #start counting down coyote counter
+			else:  
+				velocity.y += gravity * delta      #adds grivity to velocity.y
+				#if velocity.y > 0:                 #check if player is falling before starting coyote counter
+				coyote_counter -= delta        #start counting down coyote counter
 
 			if(Input.is_action_just_pressed("up")):
 				jump_buffer_counter = JUMP_BUFFER_TIME     #start jump buffer
-
-				if((0 < coyote_counter) && (false == jump)):    #coyote timer still has time
-					animation_player.play("jumping")            #and player hasn't jumped yet
-					velocity.y = JUMP_VELOCITY                  #jump
-					jump_buffer_counter = 0                     #reset jump buffer
-					jump = true                           #preventing player from jumping infinitely
-
+				#if coyote timer has run out and hasn't jumped yet OR has jumped twice
+				#add one to counter to skip normal jump and player uses up the double jump
+				if(0 >= coyote_counter && jump_count != 1):
+					jump_count += 1           
+				#if the timer hasnt run out then the player has a normal and a double jump
+				jump()                  
 			else:
-				jump_buffer_counter -= delta      #decrease jump buffer when not pressing jump button
+				jump_buffer_counter -= delta    #decrease jump buffer when not pressing jump button
 
 			#variable jump hight by releasing jump button early
-			if((true == Input.is_action_just_released("up"))):
+			if((true == Input.is_action_just_released("up")) && jump_count == 1):
 				velocity.y *= 0.5
 
-		state.EXIT:
+			active_animations()
+
+		state.EXIT:                 #play exit animation and end game
 			animation_player.play("RESET")
 			collision_shape_2d.set_deferred("disabled", true)  #disable collision and hitbox 
 			hitbox_collision.set_deferred("disabled", true)    #to prevent unnecessary collisions
@@ -102,6 +97,16 @@ func _physics_process(delta) -> void:
 			
 	move_and_slide()
 
+#function has a parameter with default value:
+# - when it's called with 0 arguments it takes the default value as jump power
+# - when there is an argument it takes that as its value
+func jump(jump_power: float = JUMP_VELOCITY):
+	if jump_count < 2:                       #if player hasn't used up regular and double jump
+		velocity.y = jump_power              #jump
+		jump_count += 1                      #increase the jump count
+		print(jump_count)
+		jump_buffer_counter = 0              #reset jump buffer
+
 func _on_area_2d_area_entered(area) -> void:
 	#return from function if area is not finish or death
 	if(!area.is_in_group("Finish") && !area.is_in_group("Death")):
@@ -112,3 +117,25 @@ func _on_area_2d_area_entered(area) -> void:
 		change_scene = "res://Scene/Game Over.tscn"       #ready scene to change to game over
 
 	current_state = state.EXIT                            #change state to exit
+
+func active_animations():
+	if is_on_floor():
+		if velocity.x != 0:                       #if moving in any direction
+			animated_sprite.play("running")       #change animation to running 
+		else:                                     #if standing still
+			animated_sprite.play("default")       #play idle sprite animation
+	else:
+		#if jump_count < 2:
+			#animated_sprite.play("jumping")
+			#animation_player.p
+		#else:
+			#animated_sprite.play("double jump")
+		#print(jump_count)
+		match jump_count:
+			1:
+				#animated_sprite.play("jumping")
+				animation_player.play("jumping")
+			2:
+				animated_sprite.play("double jump")
+			_:
+				animated_sprite.play("jumping")

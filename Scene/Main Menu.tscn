@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b75odrqp86sxp"]
+[gd_scene load_steps=13 format=3 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scene/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
@@ -9,6 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://hqkjrgi6bjix" path="res://Free/Menu/Buttons/Levels_hover.png" id="7_mgj6i"]
 [ext_resource type="Texture2D" uid="uid://ciab3nsa68iab" path="res://Free/Menu/Buttons/Close.png" id="8_vjfjl"]
 [ext_resource type="Texture2D" uid="uid://cow4nltg2dqat" path="res://Free/Menu/Buttons/Close_hover.png" id="9_s1sb3"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scene/theme.tres" id="10_348fs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1o8t"]
+bg_color = Color(1, 0.0705882, 0.156863, 1)
+border_width_bottom = 5
+border_color = Color(0.486275, 0, 0.0470588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm2q3"]
+bg_color = Color(0.72549, 0, 0.0901961, 1)
+border_width_bottom = 5
+border_color = Color(0.333333, 0, 0.0196078, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,14 +51,9 @@ script = ExtResource("1_tgui0")
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_top = -2.0
 offset_right = 1629.0
 offset_bottom = 781.0
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(581, 336)
 texture = ExtResource("2_2d2og")
 stretch_mode = 1
@@ -51,21 +69,22 @@ theme_override_fonts/font = ExtResource("2_3iutt")
 theme_override_font_sizes/font_size = 50
 text = "Platformer Game"
 
-[node name="Control" type="Control" parent="."]
+[node name="OldControl" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 388.0
-offset_top = 358.0
-offset_right = 716.0
-offset_bottom = 488.0
+offset_left = 53.0
+offset_top = 323.0
+offset_right = 381.0
+offset_bottom = 453.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="TextureButton" parent="Control"]
+[node name="Start" type="TextureButton" parent="OldControl"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -82,7 +101,7 @@ pivot_offset = Vector2(10.1893, 10.4147)
 texture_normal = ExtResource("4_6x4os")
 texture_hover = ExtResource("5_b4cu1")
 
-[node name="LevelSelect" type="TextureButton" parent="Control"]
+[node name="LevelSelect" type="TextureButton" parent="OldControl"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -100,7 +119,7 @@ pivot_offset = Vector2(10.7273, 10.7273)
 texture_normal = ExtResource("6_vwipv")
 texture_hover = ExtResource("7_mgj6i")
 
-[node name="Quit" type="TextureButton" parent="Control"]
+[node name="Quit" type="TextureButton" parent="OldControl"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -119,12 +138,85 @@ pivot_offset = Vector2(7.53333, 7.66666)
 texture_normal = ExtResource("8_vjfjl")
 texture_hover = ExtResource("9_s1sb3")
 
-[connection signal="button_down" from="Control/Start" to="." method="_on_start_button_down"]
-[connection signal="button_up" from="Control/Start" to="." method="_on_start_button_up"]
-[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
-[connection signal="button_down" from="Control/LevelSelect" to="." method="_on_level_select_button_down"]
-[connection signal="button_up" from="Control/LevelSelect" to="." method="_on_level_select_button_up"]
-[connection signal="pressed" from="Control/LevelSelect" to="." method="_on_level_select_pressed"]
-[connection signal="button_down" from="Control/Quit" to="." method="_on_quit_button_down"]
-[connection signal="button_up" from="Control/Quit" to="." method="_on_quit_button_up"]
-[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
+[node name="NewControl" type="Control" parent="."]
+texture_filter = 1
+anchors_preset = 0
+offset_left = 383.0
+offset_top = 296.0
+offset_right = 788.0
+offset_bottom = 616.0
+pivot_offset = Vector2(202, 150)
+theme = ExtResource("10_348fs")
+
+[node name="Start" type="Button" parent="NewControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_right = 77.0
+offset_bottom = 45.0
+grow_horizontal = 2
+scale = Vector2(1.88719, 1.88719)
+pivot_offset = Vector2(80, 19)
+keep_pressed_outside = true
+text = "START"
+icon = ExtResource("4_6x4os")
+clip_text = true
+expand_icon = true
+
+[node name="LevelSelect" type="Button" parent="NewControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -22.0
+offset_right = 129.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.45996, 1.45996)
+pivot_offset = Vector2(127.758, 18.7342)
+keep_pressed_outside = true
+text = "Select Level"
+icon = ExtResource("6_vwipv")
+clip_text = true
+expand_icon = true
+
+[node name="Quit" type="Button" parent="NewControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -109.5
+offset_top = -51.0
+offset_right = 109.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.36098, 1.36098)
+pivot_offset = Vector2(109, 22)
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1o8t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vm2q3")
+keep_pressed_outside = true
+text = "Quit Game"
+icon = ExtResource("8_vjfjl")
+clip_text = true
+expand_icon = true
+
+[connection signal="button_down" from="OldControl/Start" to="." method="_on_start_button_down"]
+[connection signal="button_up" from="OldControl/Start" to="." method="_on_start_button_up"]
+[connection signal="pressed" from="OldControl/Start" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="OldControl/LevelSelect" to="." method="_on_level_select_button_down"]
+[connection signal="button_up" from="OldControl/LevelSelect" to="." method="_on_level_select_button_up"]
+[connection signal="pressed" from="OldControl/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="button_down" from="OldControl/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="OldControl/Quit" to="." method="_on_quit_button_up"]
+[connection signal="pressed" from="OldControl/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="NewControl/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="NewControl/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="NewControl/Quit" to="." method="_on_quit_pressed"]

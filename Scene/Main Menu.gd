@@ -8,7 +8,7 @@ func _on_level_select_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	GameManager.quitGame()
-
+#below here are functions for old control (ignore for now, maybe even delete later)
 func _on_start_button_down():
 	_button_pressed($Control/Start)
 

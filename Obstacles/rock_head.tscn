@@ -136,11 +136,3 @@ target_position = Vector2(0, 643)
 [node name="RayCast2D3" type="RayCast2D" parent="FindPlayer"]
 position = Vector2(-40, 38)
 target_position = Vector2(0, 643)
-
-[node name="RayCast2D4" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(18, 39)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D5" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(-19, 39)
-target_position = Vector2(0, 643)
