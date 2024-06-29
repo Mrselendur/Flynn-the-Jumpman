@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://1ekitgd6t7je"]
+[gd_scene load_steps=57 format=3 uid="uid://1ekitgd6t7je"]
 
 [ext_resource type="Texture2D" uid="uid://dmx2xh2t3ragt" path="res://Free/Main Characters/Pink Man/Jump (32x32).png" id="1_2tte5"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_oodwx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwt2ta2docrw" path="res://Free/Main Characters/Pink Man/Run (32x32).png" id="4_04xwg"]
 [ext_resource type="Texture2D" uid="uid://bkxfubsamnixv" path="res://Free/Main Characters/Desappearing (96x96).png" id="4_7py81"]
 [ext_resource type="Texture2D" uid="uid://btkhxgl7gv5e3" path="res://Free/Main Characters/Pink Man/Double Jump (32x32).png" id="5_5cl56"]
+[ext_resource type="Texture2D" uid="uid://cbdti305wiatb" path="res://Free/Other/Dust Particle.png" id="8_8nraw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlmyw"]
 atlas = ExtResource("2_vumy2")
@@ -410,5 +411,23 @@ shape = SubResource("RectangleShape2D_xxmsh")
 libraries = {
 "": SubResource("AnimationLibrary_id7p5")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(22, 32)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 32)
+emitting = false
+amount = 5
+lifetime = 0.5
+fixed_fps = 60
+texture = ExtResource("8_8nraw")
+emission_shape = 3
+emission_rect_extents = Vector2(25, 0)
+particle_flag_align_y = true
+gravity = Vector2(0, 50)
+scale_amount_min = 0.5
+scale_amount_max = 0.8
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]

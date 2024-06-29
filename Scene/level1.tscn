@@ -642,7 +642,6 @@ vertical_alignment = 1
 [node name="GameObjects" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="GameObjects"]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="GameObjects/ParallaxBackground"]
 texture_repeat = 2
@@ -658,6 +657,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2048, 2048)
 
 [node name="TextureRect" type="TextureRect" parent="GameObjects"]
+visible = false
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5

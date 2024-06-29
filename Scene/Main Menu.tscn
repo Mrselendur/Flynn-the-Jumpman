@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b75odrqp86sxp"]
+[gd_scene load_steps=14 format=3 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scene/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
@@ -33,6 +33,17 @@ corner_radius_bottom_left = 5
 shadow_size = 3
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np322"]
+bg_color = Color(0.72549, 0, 0.0901961, 1)
+border_width_bottom = 3
+border_color = Color(0.333333, 0, 0.0196078, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -46,15 +57,17 @@ offset_right = -576.0
 offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(538, 387)
 script = ExtResource("1_tgui0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_top = -2.0
-offset_right = 1629.0
-offset_bottom = 781.0
-pivot_offset = Vector2(581, 336)
+offset_left = -206.0
+offset_top = -57.0
+offset_right = 1423.0
+offset_bottom = 726.0
+pivot_offset = Vector2(764, 415)
 texture = ExtResource("2_2d2og")
 stretch_mode = 1
 
@@ -202,6 +215,7 @@ scale = Vector2(1.36098, 1.36098)
 pivot_offset = Vector2(109, 22)
 theme_override_styles/normal = SubResource("StyleBoxFlat_j1o8t")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vm2q3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_np322")
 keep_pressed_outside = true
 text = "Quit Game"
 icon = ExtResource("8_vjfjl")

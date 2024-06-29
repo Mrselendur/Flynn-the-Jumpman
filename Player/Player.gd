@@ -4,6 +4,7 @@ const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
 const COYOTE_TIME: float = 0.2         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
+const FALL_GRAVITY = 1500              #gravity for when player is falling 
 
 #state machine for character control, entering scene and exiting scene 
 enum state{
@@ -18,6 +19,7 @@ var current_state          #state to reiterate through the state machine
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var hitbox_collision = $Hitbox/hitbox_collision
+@onready var cpu_particles = $CPUParticles2D
 
 #jumps
 var jump_count: int = 0
@@ -64,7 +66,7 @@ func _physics_process(delta) -> void:
 					position.y += 1
 			# Add the gravity (player is not jumping and is not on ground).
 			else:  
-				velocity.y += gravity * delta      #adds grivity to velocity.y
+				velocity.y += get_gravity(velocity.y) * delta      #adds gravity player
 				#if velocity.y > 0:                 #check if player is falling before starting coyote counter
 				coyote_counter -= delta        #start counting down coyote counter
 
@@ -118,6 +120,13 @@ func _on_area_2d_area_entered(area) -> void:
 
 	current_state = state.EXIT                            #change state to exit
 
+#when player is jumping - returns the default gravity from the project settings
+#when player is falling - returns the fall gravity to exaggerate the fall 
+func get_gravity(velocity_y: float):
+	if velocity_y > 0:
+		return FALL_GRAVITY
+	return gravity
+
 func active_animations():
 	if is_on_floor():
 		if velocity.x != 0:                       #if moving in any direction
@@ -136,6 +145,9 @@ func active_animations():
 				#animated_sprite.play("jumping")
 				animation_player.play("jumping")
 			2:
+				cpu_particles.emitting = true
 				animated_sprite.play("double jump")
+				await get_tree().create_timer(0.5).timeout
+				cpu_particles.emitting = false
 			_:
 				animated_sprite.play("jumping")
