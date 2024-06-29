@@ -11,17 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cow4nltg2dqat" path="res://Free/Menu/Buttons/Close_hover.png" id="9_s1sb3"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scene/theme.tres" id="10_348fs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1o8t"]
-bg_color = Color(1, 0.0705882, 0.156863, 1)
-border_width_bottom = 5
-border_color = Color(0.486275, 0, 0.0470588, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm2q3"]
 bg_color = Color(0.72549, 0, 0.0901961, 1)
 border_width_bottom = 5
@@ -44,6 +33,17 @@ corner_radius_bottom_left = 5
 shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1o8t"]
+bg_color = Color(1, 0.0705882, 0.156863, 1)
+border_width_bottom = 5
+border_color = Color(0.486275, 0, 0.0470588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -60,16 +60,19 @@ grow_vertical = 2
 pivot_offset = Vector2(538, 387)
 script = ExtResource("1_tgui0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
 texture_filter = 1
-layout_mode = 1
-offset_left = -206.0
-offset_top = -57.0
-offset_right = 1423.0
-offset_bottom = 726.0
-pivot_offset = Vector2(764, 415)
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(30, 30)
+repeat_times = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture_repeat = 2
+position = Vector2(573, 316)
 texture = ExtResource("2_2d2og")
-stretch_mode = 1
+flip_h = true
+region_rect = Rect2(0, 0, 2048, 2048)
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -213,9 +216,9 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.36098, 1.36098)
 pivot_offset = Vector2(109, 22)
-theme_override_styles/normal = SubResource("StyleBoxFlat_j1o8t")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vm2q3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_np322")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1o8t")
 keep_pressed_outside = true
 text = "Quit Game"
 icon = ExtResource("8_vjfjl")

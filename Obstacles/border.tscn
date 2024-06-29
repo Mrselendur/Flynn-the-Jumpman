@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq7tkdb7xhjs0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2xmsx"]
+
+[node name="Border" type="Area2D" groups=["Death"]]
+position = Vector2(2.84217e-14, 3.05176e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_2xmsx")
+debug_color = Color(0.99974, 0, 0.102849, 0.42)

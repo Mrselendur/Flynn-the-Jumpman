@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6qatv1cnqfy4"]
+[gd_scene load_steps=17 format=3 uid="uid://b6qatv1cnqfy4"]
 
 [ext_resource type="Script" path="res://Obstacles/rock_head.gd" id="1_5s770"]
 [ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="1_eq1mm"]
@@ -88,6 +88,9 @@ size = Vector2(31.2, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymrq"]
 size = Vector2(12, 0.730001)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bomer"]
+size = Vector2(82, 1749)
+
 [node name="RockHead" type="RigidBody2D"]
 texture_filter = 1
 collision_layer = 4
@@ -122,17 +125,11 @@ position = Vector2(0, 37)
 target_position = Vector2(0, 3)
 collision_mask = 2
 
-[node name="FindPlayer" type="Node2D" parent="."]
-light_mask = 0
+[node name="FindPlayer" type="Area2D" parent="."]
+position = Vector2(0, 39)
 
-[node name="RayCast2D" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(0, 41)
-target_position = Vector2(0, 643)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FindPlayer"]
+position = Vector2(0, 859.5)
+shape = SubResource("RectangleShape2D_bomer")
 
-[node name="RayCast2D2" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(40, 39)
-target_position = Vector2(0, 643)
-
-[node name="RayCast2D3" type="RayCast2D" parent="FindPlayer"]
-position = Vector2(-40, 38)
-target_position = Vector2(0, 643)
+[connection signal="body_entered" from="FindPlayer" to="." method="_on_find_player_2_body_entered"]

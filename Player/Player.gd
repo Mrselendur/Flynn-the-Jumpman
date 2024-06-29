@@ -66,7 +66,7 @@ func _physics_process(delta) -> void:
 					position.y += 1
 			# Add the gravity (player is not jumping and is not on ground).
 			else:  
-				velocity.y += get_gravity(velocity.y) * delta      #adds gravity player
+				velocity.y += _gravity() * delta      #adds gravity player
 				#if velocity.y > 0:                 #check if player is falling before starting coyote counter
 				coyote_counter -= delta        #start counting down coyote counter
 
@@ -122,8 +122,8 @@ func _on_area_2d_area_entered(area) -> void:
 
 #when player is jumping - returns the default gravity from the project settings
 #when player is falling - returns the fall gravity to exaggerate the fall 
-func get_gravity(velocity_y: float):
-	if velocity_y > 0:
+func _gravity():
+	if velocity.y > 0:
 		return FALL_GRAVITY
 	return gravity
 
@@ -142,12 +142,9 @@ func active_animations():
 		#print(jump_count)
 		match jump_count:
 			1:
-				#animated_sprite.play("jumping")
 				animation_player.play("jumping")
 			2:
-				cpu_particles.emitting = true
 				animated_sprite.play("double jump")
-				await get_tree().create_timer(0.5).timeout
-				cpu_particles.emitting = false
+				cpu_particles.emitting = true
 			_:
 				animated_sprite.play("jumping")
