@@ -2,7 +2,7 @@ extends Path2D
 
 @export var loop: bool = false          #path is closed or not
 @export var speed_scale:float = 1       #for open paths
-@export var speed: float = 2.0          #for closed paths
+@export var speed: float = 250         #for closed paths
 
 @onready var saw: Path2D = $"."
 @onready var path: Node2D = $Path   #path is a node where all sprites will be located
@@ -47,4 +47,4 @@ func _ready() -> void:
 				sprite_array[j].position = point_pos_current.move_toward(point_pos_next, SPRITE_DISTANCE*j)
 
 func _process(delta: float) -> void:
-	saw_path.progress += speed
+	saw_path.progress += speed * delta

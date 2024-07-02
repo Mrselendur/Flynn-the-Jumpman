@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dianvi413b271"]
+[gd_scene load_steps=24 format=3 uid="uid://dianvi413b271"]
 
 [ext_resource type="Script" path="res://Scene/game_manager.gd" id="1_1bqp7"]
 [ext_resource type="Script" path="res://Scene/UI.gd" id="2_tvlxo"]
@@ -313,6 +313,12 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_owppn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -154, 2, 0, 0, 0, 0, -140, -91.5, 0, 0, 0, 0, 136.5, -108.5, 0, 0, 0, 0, 152, -9, 0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
 [node name="Node2D" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -472,4 +478,6 @@ curve = SubResource("Curve2D_aipng")
 position = Vector2(352, 449)
 
 [node name="Saw" parent="GameObjects" instance=ExtResource("19_rrg2b")]
-position = Vector2(599, 325)
+position = Vector2(840, 235)
+curve = SubResource("Curve2D_owppn")
+loop = true
