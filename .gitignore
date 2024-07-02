@@ -13,3 +13,7 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+falling_platform.txt
+animatable_body_2d.gd
+test.tscn
+test.tscn

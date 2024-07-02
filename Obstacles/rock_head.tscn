@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6qatv1cnqfy4"]
+[gd_scene load_steps=17 format=3 uid="uid://b40qedt86hvbl"]
 
 [ext_resource type="Script" path="res://Obstacles/rock_head.gd" id="1_5s770"]
 [ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="1_eq1mm"]

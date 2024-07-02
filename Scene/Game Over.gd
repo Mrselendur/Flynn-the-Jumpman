@@ -29,5 +29,3 @@ func _button_pressed(button: TextureButton) -> void:
 
 func _button_released(button: TextureButton) -> void:
 	button.scale += Vector2(0.5, 0.5)
-
-

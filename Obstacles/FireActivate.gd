@@ -20,4 +20,3 @@ func _on_activate_body_entered(body):
 			animated_sprite.play("off")                    #turning of fire
 			fire.disabled = true                           #disable fire
 			isSet = false                                  #reset platform
-

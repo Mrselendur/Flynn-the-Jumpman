@@ -1,0 +1,315 @@
+[gd_scene load_steps=22 format=3 uid="uid://dm2njwnc0fiqh"]
+
+[ext_resource type="Script" path="res://Obstacles/new rock head.gd" id="1_8w6r8"]
+[ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle.png" id="2_3een7"]
+[ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="2_g3cso"]
+[ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit (42x42).png" id="3_5qy3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rknkr"]
+atlas = ExtResource("2_g3cso")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iqv4"]
+atlas = ExtResource("2_g3cso")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p60nr"]
+atlas = ExtResource("2_g3cso")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd5w2"]
+atlas = ExtResource("2_g3cso")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsf4m"]
+atlas = ExtResource("3_5qy3q")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u1ay"]
+atlas = ExtResource("3_5qy3q")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebqpr"]
+atlas = ExtResource("3_5qy3q")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqnws"]
+atlas = ExtResource("3_5qy3q")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ufn"]
+atlas = ExtResource("2_3een7")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sbyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rknkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iqv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p60nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd5w2")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_hsf4m")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_7u1ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebqpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqnws")
+}],
+"loop": false,
+"name": &"hit ground",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0ufn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwl31"]
+size = Vector2(76, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gl0a"]
+size = Vector2(76, 8)
+
+[sub_resource type="Animation" id="Animation_g5bsi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RockHeadPath:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AreaDetectPosition/PlayerDetect:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wa6cx"]
+resource_name = "climb"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RockHeadPath:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody2D/AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_y2odb"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RockHeadPath:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"climb", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody2D/AnimatedSprite2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"hit ground", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8lgny"]
+_data = {
+"RESET": SubResource("Animation_g5bsi"),
+"climb": SubResource("Animation_wa6cx"),
+"fall": SubResource("Animation_y2odb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yyv2"]
+size = Vector2(24, 86)
+
+[node name="RockHead" type="Path2D"]
+texture_filter = 1
+script = ExtResource("1_8w6r8")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_8sbyb")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_fwl31")
+
+[node name="Death" type="Area2D" parent="AnimatableBody2D" groups=["Death"]]
+position = Vector2(0, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Death"]
+shape = SubResource("RectangleShape2D_7gl0a")
+
+[node name="RockHeadPath" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="RockHeadPath"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8lgny")
+}
+
+[node name="AreaDetectPosition" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="PlayerDetect" type="Area2D" parent="AreaDetectPosition"]
+monitorable = false
+
+[node name="DetectionShape" type="CollisionShape2D" parent="AreaDetectPosition/PlayerDetect"]
+shape = SubResource("RectangleShape2D_5yyv2")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(40, 1)
+
+[connection signal="body_entered" from="AreaDetectPosition/PlayerDetect" to="." method="_on_player_detect_body_entered"]
