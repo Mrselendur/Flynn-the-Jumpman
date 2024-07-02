@@ -18,14 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://cu2ye7s6k81lk" path="res://Obstacles/falling_platform.tscn" id="17_tgq77"]
 [ext_resource type="PackedScene" uid="uid://d0p1rwqpsjkrt" path="res://Obstacles/swinging_saw.tscn" id="18_6co45"]
 [ext_resource type="PackedScene" uid="uid://bfxn2ysiatqdb" path="res://Goal/start.tscn" id="19_cc5r7"]
+[ext_resource type="PackedScene" uid="uid://dm2njwnc0fiqh" path="res://Obstacles/new rock head.tscn" id="19_j21tk"]
 [ext_resource type="PackedScene" uid="uid://3hgtg724g88f" path="res://Enemies/Mushroom.tscn" id="20_wgefq"]
-[ext_resource type="PackedScene" uid="uid://dm2njwnc0fiqh" path="res://Obstacles/new rock head.tscn" id="22_7nrak"]
-
-[sub_resource type="Curve2D" id="Curve2D_e0k1w"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 321, 0)
-}
-point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoryv"]
 texture = ExtResource("3_n4iu2")
@@ -314,6 +308,12 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_eoryv")
 
+[sub_resource type="Curve2D" id="Curve2D_aipng"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -600, 0)
+}
+point_count = 2
+
 [node name="Node2D" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -358,10 +358,6 @@ texture = ExtResource("2_wbqxv")
 region_rect = Rect2(0, 0, 4096, 2048)
 
 [node name="GameObjects" type="Node" parent="."]
-
-[node name="RockHead" parent="GameObjects" instance=ExtResource("22_7nrak")]
-position = Vector2(119, 350)
-curve = SubResource("Curve2D_e0k1w")
 
 [node name="TileMap" type="TileMap" parent="GameObjects"]
 texture_filter = 1
@@ -476,6 +472,10 @@ scale = Vector2(2, 2)
 
 [node name="Start" parent="GameObjects" instance=ExtResource("19_cc5r7")]
 position = Vector2(-255, -187)
+
+[node name="RockHead" parent="GameObjects" instance=ExtResource("19_j21tk")]
+position = Vector2(666, 354)
+curve = SubResource("Curve2D_aipng")
 
 [node name="Mushroom" parent="GameObjects" instance=ExtResource("20_wgefq")]
 position = Vector2(352, 449)

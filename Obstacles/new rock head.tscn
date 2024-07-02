@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dm2njwnc0fiqh"]
+[gd_scene load_steps=37 format=3 uid="uid://dm2njwnc0fiqh"]
 
 [ext_resource type="Script" path="res://Obstacles/new rock head.gd" id="1_8w6r8"]
 [ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle.png" id="2_3een7"]
 [ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="2_g3cso"]
 [ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit (42x42).png" id="3_5qy3q"]
+[ext_resource type="Texture2D" uid="uid://rttreyla2jfk" path="res://Free/Traps/Rock Head/Left Hit (42x42).png" id="4_y3sdy"]
+[ext_resource type="Texture2D" uid="uid://dp262s72bcyxp" path="res://Free/Traps/Rock Head/Right Hit (42x42).png" id="5_pe2jc"]
+[ext_resource type="Texture2D" uid="uid://didjr4nhap610" path="res://Free/Traps/Rock Head/Top Hit (42x42).png" id="6_idr5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rknkr"]
 atlas = ExtResource("2_g3cso")
@@ -35,6 +38,54 @@ region = Rect2(84, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqnws"]
 atlas = ExtResource("3_5qy3q")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lydj4"]
+atlas = ExtResource("4_y3sdy")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an40g"]
+atlas = ExtResource("4_y3sdy")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrod"]
+atlas = ExtResource("4_y3sdy")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n543"]
+atlas = ExtResource("4_y3sdy")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4trml"]
+atlas = ExtResource("5_pe2jc")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in4g1"]
+atlas = ExtResource("5_pe2jc")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6vl1"]
+atlas = ExtResource("5_pe2jc")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3agss"]
+atlas = ExtResource("5_pe2jc")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj805"]
+atlas = ExtResource("6_idr5a")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13d41"]
+atlas = ExtResource("6_idr5a")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iig0"]
+atlas = ExtResource("6_idr5a")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2kxb"]
+atlas = ExtResource("6_idr5a")
 region = Rect2(126, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0ufn"]
@@ -74,7 +125,58 @@ animations = [{
 "texture": SubResource("AtlasTexture_uqnws")
 }],
 "loop": false,
-"name": &"hit ground",
+"name": &"hit bottom",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_lydj4")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_an40g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exrod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n543")
+}],
+"loop": false,
+"name": &"hit left",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4trml")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_in4g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6vl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3agss")
+}],
+"loop": false,
+"name": &"hit right",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_aj805")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_13d41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iig0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2kxb")
+}],
+"loop": false,
+"name": &"hit top",
 "speed": 20.0
 }, {
 "frames": [{
@@ -225,31 +327,31 @@ tracks/1/keys = {
 "method": &"play"
 }]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatableBody2D/AnimatedSprite2D")
+tracks/2/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"hit ground", 1.0, false],
-"method": &"play"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_animation"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lgny"]
@@ -264,6 +366,7 @@ size = Vector2(24, 86)
 
 [node name="RockHead" type="Path2D"]
 texture_filter = 1
+position = Vector2(281, 194)
 script = ExtResource("1_8w6r8")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
@@ -272,11 +375,10 @@ collision_layer = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8sbyb")
-animation = &"idle"
+animation = &"hit right"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_fwl31")
 
 [node name="Death" type="Area2D" parent="AnimatableBody2D" groups=["Death"]]
@@ -306,10 +408,5 @@ monitorable = false
 
 [node name="DetectionShape" type="CollisionShape2D" parent="AreaDetectPosition/PlayerDetect"]
 shape = SubResource("RectangleShape2D_5yyv2")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(40, 1)
 
 [connection signal="body_entered" from="AreaDetectPosition/PlayerDetect" to="." method="_on_player_detect_body_entered"]
