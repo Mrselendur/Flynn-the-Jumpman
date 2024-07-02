@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://dm2njwnc0fiqh"]
 
-[ext_resource type="Script" path="res://Obstacles/new rock head.gd" id="1_8w6r8"]
+[ext_resource type="Script" path="res://Obstacles/rock head.gd" id="1_8w6r8"]
 [ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle.png" id="2_3een7"]
 [ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="2_g3cso"]
 [ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit (42x42).png" id="3_5qy3q"]
@@ -244,6 +244,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatableBody2D/Death:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_wa6cx"]
 resource_name = "climb"
@@ -293,6 +305,18 @@ tracks/3/path = NodePath("AreaDetectPosition/PlayerDetect:monitoring")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatableBody2D/Death:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(3),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -353,6 +377,18 @@ tracks/3/keys = {
 "method": &"_play_animation"
 }]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatableBody2D/Death:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lgny"]
 _data = {
@@ -375,7 +411,7 @@ collision_layer = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8sbyb")
-animation = &"hit right"
+animation = &"hit top"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
@@ -383,6 +419,7 @@ shape = SubResource("RectangleShape2D_fwl31")
 
 [node name="Death" type="Area2D" parent="AnimatableBody2D" groups=["Death"]]
 position = Vector2(0, 36)
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Death"]
 shape = SubResource("RectangleShape2D_7gl0a")
