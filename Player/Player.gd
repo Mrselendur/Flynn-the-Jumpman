@@ -126,7 +126,7 @@ func _on_area_2d_area_entered(area) -> void:
 		AudioHandler.playFX(fx,-20)
 		fx =preload("res://Free/Audio/death.wav")
 		change_scene = "res://Scene/Game Over.tscn"       #ready scene to change to game over
-	AudioHandler.playFX(fx, -10)
+	AudioHandler.playFX(fx, -5)
 	current_state = state.EXIT                            #change state to exit
 
 #when player is jumping - returns the default gravity from the project settings

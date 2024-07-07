@@ -3,6 +3,9 @@ extends Node
 @onready var score = $Score
 
 func _ready() -> void:
+	var arr = AudioHandler.get_children()
+	for i in arr:
+		i.queue_free()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	score.text = "Score: " + str(GameManager.getAllPoints())
 	GameManager.resetAllPoints()

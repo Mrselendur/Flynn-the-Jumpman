@@ -7,6 +7,7 @@ extends Node2D
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("Player")):
+		$GPUParticles2D.emitting = true
 		collision_shape.set_deferred("disabled", true)    #disable collision                       
 		animated_sprite.play("Collected")                 #change animation
 		GameManager.addPoints(pointsGiven)                   #add points to the score

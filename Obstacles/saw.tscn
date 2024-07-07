@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://d0p1rwqpsjkrt"]
 
 [ext_resource type="Script" path="res://Obstacles/saw.gd" id="1_axcvn"]
+[ext_resource type="AudioStream" uid="uid://binkw0iljpspi" path="res://Free/Audio/saw.wav" id="3_1d5ky"]
 [ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="3_33lsi"]
-[ext_resource type="AudioStream" uid="uid://ddf2hitomwfrp" path="res://Free/Audio/test.wav" id="3_u64s6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1007"]
 atlas = ExtResource("3_33lsi")
@@ -118,6 +118,14 @@ script = ExtResource("1_axcvn")
 [node name="SawPath" type="PathFollow2D" parent="."]
 rotates = false
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SawPath"]
+stream = ExtResource("3_1d5ky")
+pitch_scale = 1.5
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.86607
+bus = &"SFX"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SawPath"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pdi7l")
@@ -135,8 +143,3 @@ libraries = {
 "": SubResource("AnimationLibrary_k4urw")
 }
 autoplay = "RESET"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_u64s6")
-autoplay = true
-bus = &"SFX"

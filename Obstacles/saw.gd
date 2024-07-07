@@ -34,7 +34,7 @@ func _ready() -> void:
 			#get the distance between the points
 			var distance = point_pos_current.distance_to(point_pos_next)
 			#get how many sprites it's going to use (1 for every 10 px)
-			var sprite_count:int = floori(distance/SPRITE_DISTANCE)
+			var sprite_count:int = distance/SPRITE_DISTANCE
 			#loop through all sprites
 			for j in sprite_count:
 				#fill the array with a sprite

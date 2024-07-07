@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var fire = $Fire/CollisionShape2D
+@onready var fx = preload("res://Free/Audio/fire.wav")
 
 const TIMER := 3.0                       #timer to turn off fire
 
@@ -15,6 +16,7 @@ func _on_activate_body_entered(body):
 			animated_sprite.play("hit")
 			await animated_sprite.animation_finished       #wait for animation to finish
 			animated_sprite.play("on")
+			AudioHandler.playFX_2D(fx)
 			fire.disabled = false                          #enable the fire area
 			await get_tree().create_timer(TIMER).timeout   #wait 3 seconds before
 			animated_sprite.play("off")                    #turning of fire
