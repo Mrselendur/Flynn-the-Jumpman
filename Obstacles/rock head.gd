@@ -21,66 +21,63 @@ var animation: String    #string to handle the different names of the different 
 
 func _ready() -> void:
 	var shape: RectangleShape2D = RectangleShape2D.new()      #creating a new shape
+	#check if theres a curve
+	if (!rock_head.curve):
+		return
 	var point_pos = rock_head.curve.get_point_position(1)   #getting the last point of the path (only using straight lines)
+	var norm_pos = point_pos.normalized()    #get normalised vector
 	var size_vector: Vector2        #size of the detection collision
-	var pos_vector: Vector2         #position of the detection area
 	
-	#path is either left or right
-	if point_pos.x != 0:
-		#set x to absolute of point.x to work with negatives
-		#set y to WIDTH 
-		size_vector = Vector2(abs(point_pos.x), WIDTH)  
-		#detection area's center is the the center of the path line
-		pos_vector = Vector2((point_pos.x * 0.5),0)    
-		#rotating body and death area by 90 degrees when facing left or right   
-		body_collision.rotation_degrees = 90      
-		death_area.rotation_degrees = 90
-		#path is left
-		if point_pos.x > 0:
+	#position of the detection area
+	#detection area's center is the the center of the path line
+	#either x or y should always be 0
+	var detection_pos :=  Vector2((point_pos.x * 0.5),(point_pos.y * 0.5))
+	
+	match norm_pos:
+		Vector2.RIGHT:
+			#set x to absolute of point.x to work with negatives
+			#set y to WIDTH 
+			size_vector = Vector2(abs(point_pos.x), WIDTH)
 			#get animation    
 			animation = "hit right"
 			#offset detection area and death area to the right    
-			pos_vector.x += OFFSET_DETECTION
+			detection_pos.x += OFFSET_DETECTION
 			death_area.position = Vector2(OFFSET_DEATH, 0)    
 			#offset collision of body slightly to the left to fit the sprite
-			body_collision.position = Vector2(-OFFSET_COLLISION, 0)  
-
-		#path is right
-		else:     
+			body_collision.position = Vector2(-OFFSET_COLLISION, 0)
+			#rotating body and death area by 90 degrees when facing left or right
+			body_collision.rotation_degrees = 90
+			death_area.rotation_degrees = 90
+  
+		Vector2.LEFT:
+			size_vector = Vector2(abs(point_pos.x), WIDTH)
 			animation = "hit left" 
 			#offset detection and death area to the left
-			pos_vector.x -= OFFSET_DETECTION      
+			detection_pos.x -= OFFSET_DETECTION      
 			death_area.position = Vector2(-OFFSET_DEATH, 0)
 			#offset collision of body slightly to the right to fit the sprite
 			body_collision.position = Vector2(OFFSET_COLLISION, 0)  
+			body_collision.rotation_degrees = 90
+			death_area.rotation_degrees = 90
 
-	#path is either up or down
-	else:
-		#set x to  WIDTH
-		#set y to absolute of point.y to work with negatives 
-		size_vector = Vector2(WIDTH,abs(point_pos.y))
-		#detection area's center is the the center of the path line
-		pos_vector = Vector2(0, (point_pos.y * 0.5))
-		#path is down
-		if point_pos.y > 0:       
+		Vector2.DOWN:
+			size_vector = Vector2(WIDTH,abs(point_pos.y))
 			animation = "hit bottom"
 			#offset detection and death area to the bottom      
-			pos_vector.y += OFFSET_DETECTION
+			detection_pos.y += OFFSET_DETECTION
 			death_area.position = Vector2(0, OFFSET_DEATH)
 			#offset collision of body slightly to the top to fit the sprite
 			body_collision.position = Vector2(0, -OFFSET_COLLISION)
-			
-		#path is up
-		else:         
+		Vector2.UP:
+			size_vector = Vector2(WIDTH,abs(point_pos.y))
 			animation = "hit top"
 			#offset detection and death area to the top    
-			pos_vector.y -= OFFSET_DETECTION
+			detection_pos.y -= OFFSET_DETECTION
 			death_area.position = Vector2(0, -OFFSET_DEATH)
 			#offset collision of body slightly to the bottom to fit the sprite
 			body_collision.position = Vector2(0, OFFSET_COLLISION)
 
-
-	player_detect.position = pos_vector    #set position for the player detect
+	player_detect.position = detection_pos    #set position for the player detect
 	shape.set_size(size_vector)            #set the shape for the new size
 	detection_collision.shape = shape      #set the shape of the collision to the new shape
 
