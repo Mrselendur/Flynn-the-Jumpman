@@ -3,10 +3,12 @@ extends Node
 @onready var score = $Score
 
 func _ready() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	score.text = "Score: " + str(GameManager.getAllPoints())
 	GameManager.resetAllPoints()
 
 func _on_restart_pressed() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
 	GameManager.setChange("res://Scene/level1.tscn")
 
 func _on_menu_pressed() -> void:

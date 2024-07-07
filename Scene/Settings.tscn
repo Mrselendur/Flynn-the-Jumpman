@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8j33xf3ih72e"]
+
+[ext_resource type="Texture2D" uid="uid://e4lxqksn42xa" path="res://Free/Background/Blue.png" id="1_aa60h"]
+[ext_resource type="Script" path="res://Scene/settings.gd" id="1_gdj0r"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scene/theme.tres" id="3_3t3jb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2h7l"]
+bg_color = Color(0.72549, 0, 0.0901961, 1)
+border_width_bottom = 5
+border_color = Color(0.333333, 0, 0.0196078, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ah7k"]
+bg_color = Color(0.72549, 0, 0.0901961, 1)
+border_width_bottom = 3
+border_color = Color(0.333333, 0, 0.0196078, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_332n5"]
+bg_color = Color(1, 0.0705882, 0.156863, 1)
+border_width_bottom = 5
+border_color = Color(0.486275, 0, 0.0470588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3t3jb")
+script = ExtResource("1_gdj0r")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(126, 53)
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(30, 30)
+repeat_times = 19
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_aa60h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="volume" type="HScrollBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "mute"
+
+[node name="ResolutionOptions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+item_count = 5
+popup/item_0/text = "2560 x 1440"
+popup/item_1/text = "1920 x 1080"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 1024"
+popup/item_2/id = 3
+popup/item_3/text = "1152 x 648"
+popup/item_3/id = 3
+popup/item_4/text = "Custom Resolution"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+
+[node name="Fullscreen" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_f2h7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ah7k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_332n5")
+text = "Back
+"
+
+[node name="AcceptChanges" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Accept Changes"
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/AcceptChanges" to="." method="_on_accept_changes_pressed"]

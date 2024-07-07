@@ -10,19 +10,22 @@ config_version=5
 
 [application]
 
-config/name="tutorial"
+config/name="Platformer"
 run/main_scene="res://Scene/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Scene/game_manager.gd"
+GameManager="*res://Autoload/game_manager.gd"
+ConfigFileHandler="*res://Autoload/ConfigFileHandler.gd"
+AudioHandler="*res://Autoload/audio_handler.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://cursor.png"
 
 [filesystem]
 
@@ -31,6 +34,21 @@ import/blender/enabled=false
 [global_group]
 
 Player=""
+
+[importer_defaults]
+
+wav={
+"compress/mode": 0,
+"edit/loop_begin": 0,
+"edit/loop_end": -1,
+"edit/loop_mode": 2,
+"edit/normalize": false,
+"edit/trim": false,
+"force/8_bit": false,
+"force/max_rate": false,
+"force/max_rate_hz": 44100,
+"force/mono": false
+}
 
 [input]
 

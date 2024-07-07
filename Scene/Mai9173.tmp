@@ -196,20 +196,21 @@ shadow_offset = Vector2(2, 2)
 [node name="MainMenu" type="Control"]
 texture_filter = 1
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 544.0
+offset_top = 378.0
+offset_right = 544.0
+offset_bottom = 378.0
+pivot_offset = Vector2(-2, 4)
 script = ExtResource("1_tgui0")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 texture_filter = 1
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-53, 43)
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
-repeat_times = 19
+repeat_times = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture_repeat = 2
@@ -309,20 +310,6 @@ icon = ExtResource("8_vjfjl")
 clip_text = true
 expand_icon = true
 
-[node name="Button" type="Button" parent="NewControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37
-anchor_top = 0.12
-anchor_right = 0.37
-anchor_bottom = 0.12
-offset_left = -458.85
-offset_top = -69.4
-offset_right = -158.85
-offset_bottom = 7.6
-pivot_offset = Vector2(147, 39)
-
 [connection signal="pressed" from="NewControl/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="NewControl/LevelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="NewControl/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="NewControl/Button" to="." method="_on_button_pressed"]

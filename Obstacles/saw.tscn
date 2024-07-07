@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0p1rwqpsjkrt"]
+[gd_scene load_steps=17 format=3 uid="uid://d0p1rwqpsjkrt"]
 
 [ext_resource type="Script" path="res://Obstacles/saw.gd" id="1_axcvn"]
 [ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="3_33lsi"]
+[ext_resource type="AudioStream" uid="uid://ddf2hitomwfrp" path="res://Free/Audio/test.wav" id="3_u64s6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1007"]
 atlas = ExtResource("3_33lsi")
@@ -134,3 +135,8 @@ libraries = {
 "": SubResource("AnimationLibrary_k4urw")
 }
 autoplay = "RESET"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u64s6")
+autoplay = true
+bus = &"SFX"

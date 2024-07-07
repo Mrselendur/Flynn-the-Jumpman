@@ -25,6 +25,7 @@ grow_vertical = 2
 pivot_offset = Vector2(-89, -86)
 texture = ExtResource("1_i0n3w")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelCompleteText" type="Label" parent="."]
 texture_filter = 1

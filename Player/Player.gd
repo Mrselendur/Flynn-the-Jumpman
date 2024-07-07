@@ -20,7 +20,8 @@ var current_state          #state to reiterate through the state machine
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var hitbox_collision = $Hitbox/hitbox_collision
 @onready var cpu_particles = $CPUParticles2D
-
+#@onready var jump_fx: AudioStream = preload("res://Free/Audio/jump.wav")
+@onready var fx: AudioStream
 #jumps
 var jump_count: int = 0
 var coyote_counter: float
@@ -77,7 +78,8 @@ func _physics_process(delta) -> void:
 				if(0 >= coyote_counter && jump_count != 1):
 					jump_count += 1           
 				#if the timer hasnt run out then the player has a normal and a double jump
-				jump()                  
+				jump()
+								 
 			else:
 				jump_buffer_counter -= delta    #decrease jump buffer when not pressing jump button
 
@@ -94,7 +96,8 @@ func _physics_process(delta) -> void:
 			animated_sprite.play("disappear")
 			velocity.x = 0                                     #disable movement so player doesn't 
 			velocity.y = 0                                     #move when exit animation is playing
-			await animated_sprite.animation_finished           #wait for end of animation 
+			await animated_sprite.animation_finished           #wait for end of animation
+			AudioHandler.stop()
 			GameManager.setChange(change_scene)                #before changing scene 
 			
 	move_and_slide()
@@ -104,6 +107,8 @@ func _physics_process(delta) -> void:
 # - when there is an argument it takes that as its value
 func jump(jump_power: float = JUMP_VELOCITY):
 	if jump_count < 2:                       #if player hasn't used up regular and double jump
+		fx = preload("res://Free/Audio/jump.wav")
+		AudioHandler.playFX(fx, -20)
 		velocity.y = jump_power              #jump
 		jump_count += 1                      #increase the jump count
 		print(jump_count)
@@ -114,10 +119,14 @@ func _on_area_2d_area_entered(area) -> void:
 	if(!area.is_in_group("Finish") && !area.is_in_group("Death")):
 		return
 	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
+		fx = preload("res://Free/Audio/win.wav")
 		change_scene = "res://Scene/Level Complete.tscn"  #ready scene to change to level complete
-	else:                                                 #area is in group "Death"
+	else:             #area is in group "Death"
+		fx = preload("res://Free/Audio/089684_retro-you-lose-sfx-85557.wav")
+		AudioHandler.playFX(fx,-20)
+		fx =preload("res://Free/Audio/death.wav")
 		change_scene = "res://Scene/Game Over.tscn"       #ready scene to change to game over
-
+	AudioHandler.playFX(fx, -10)
 	current_state = state.EXIT                            #change state to exit
 
 #when player is jumping - returns the default gravity from the project settings
@@ -134,12 +143,6 @@ func active_animations():
 		else:                                     #if standing still
 			animated_sprite.play("default")       #play idle sprite animation
 	else:
-		#if jump_count < 2:
-			#animated_sprite.play("jumping")
-			#animation_player.p
-		#else:
-			#animated_sprite.play("double jump")
-		#print(jump_count)
 		match jump_count:
 			1:
 				animation_player.play("jumping")
