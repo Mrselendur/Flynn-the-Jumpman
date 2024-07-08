@@ -80,7 +80,8 @@ animations = [{
 size = Vector2(23, 12)
 
 [node name="Trampoline" type="Area2D"]
-scale = Vector2(2, 2)
+position = Vector2(0, -4)
+scale = Vector2(0.9, 0.9)
 collision_layer = 4
 monitorable = false
 script = ExtResource("1_b2312")

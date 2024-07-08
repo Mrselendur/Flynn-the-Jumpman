@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://p4npe0lmd3dc" path="res://Free/Traps/Fire/Hit (16x32).png" id="3_u1ukr"]
 [ext_resource type="Texture2D" uid="uid://cxy5bwbws6ctg" path="res://Free/Traps/Fire/On (16x32).png" id="4_3tajs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5avh"]
-size = Vector2(16, 14)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3c7gn"]
 atlas = ExtResource("3_u1ukr")
 region = Rect2(0, 0, 16, 32)
@@ -78,6 +75,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5avh"]
+size = Vector2(16, 14)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwkp"]
 size = Vector2(16, 2)
 
@@ -87,19 +87,20 @@ height = 16.0
 
 [node name="FirePlatform" type="StaticBody2D"]
 texture_filter = 1
-scale = Vector2(2, 2)
+position = Vector2(0, -10)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_jsnbh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
-shape = SubResource("RectangleShape2D_w5avh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vseor")
 animation = &"off"
 autoplay = "off"
+frame_progress = 0.696102
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_w5avh")
 
 [node name="Activate" type="Area2D" parent="."]
 

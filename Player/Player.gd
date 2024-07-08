@@ -4,7 +4,7 @@ const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
 const COYOTE_TIME: float = 0.2         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
-const FALL_GRAVITY = 1500              #gravity for when player is falling 
+const FALL_GRAVITY = 2000              #gravity for when player is falling 
 
 #state machine for character control, entering scene and exiting scene 
 enum state{
@@ -19,14 +19,15 @@ var current_state          #state to reiterate through the state machine
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var hitbox_collision = $Hitbox/hitbox_collision
-@onready var cpu_particles = $CPUParticles2D
-#@onready var jump_fx: AudioStream = preload("res://Free/Audio/jump.wav")
+
 @onready var fx: AudioStream
+
 #jumps
 var jump_count: int = 0
 var coyote_counter: float
 var jump_buffer_counter: float
 
+var emmiting = false       #for particles when double jumping
 
 var change_scene: String
 
@@ -34,9 +35,11 @@ var change_scene: String
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	#print(find_child("Anim*"))
 	current_state = state.ENTER #start in enter state
 
 func _physics_process(delta) -> void:
+	#print(gpu_particles_2d.emitting)
 	match current_state:
 		state.ENTER:
 			animated_sprite.play("appear")
@@ -79,7 +82,7 @@ func _physics_process(delta) -> void:
 					jump_count += 1           
 				#if the timer hasnt run out then the player has a normal and a double jump
 				jump()
-								 
+
 			else:
 				jump_buffer_counter -= delta    #decrease jump buffer when not pressing jump button
 
@@ -97,7 +100,6 @@ func _physics_process(delta) -> void:
 			velocity.x = 0                                     #disable movement so player doesn't 
 			velocity.y = 0                                     #move when exit animation is playing
 			await animated_sprite.animation_finished           #wait for end of animation
-			AudioHandler.stop()
 			GameManager.setChange(change_scene)                #before changing scene 
 			
 	move_and_slide()
@@ -106,13 +108,15 @@ func _physics_process(delta) -> void:
 # - when it's called with 0 arguments it takes the default value as jump power
 # - when there is an argument it takes that as its value
 func jump(jump_power: float = JUMP_VELOCITY):
-	if jump_count < 2:                       #if player hasn't used up regular and double jump
-		fx = preload("res://Free/Audio/jump.wav")
-		AudioHandler.playFX(fx, -20)
-		velocity.y = jump_power              #jump
-		jump_count += 1                      #increase the jump count
-		print(jump_count)
-		jump_buffer_counter = 0              #reset jump buffer
+	if jump_count >= 2:
+		return                       
+
+	#if player hasn't used up regular and double jump
+	fx = preload("res://Free/Audio/jump.wav")
+	AudioHandler.playFX(fx, -20)
+	velocity.y = jump_power              #jump
+	jump_count += 1                      #increase the jump count
+	jump_buffer_counter = 0              #reset jump buffer	
 
 func _on_area_2d_area_entered(area) -> void:
 	#return from function if area is not finish or death
@@ -124,7 +128,7 @@ func _on_area_2d_area_entered(area) -> void:
 	else:             #area is in group "Death"
 		fx = preload("res://Free/Audio/089684_retro-you-lose-sfx-85557.wav")
 		AudioHandler.playFX(fx,-20)
-		fx =preload("res://Free/Audio/death.wav")
+		fx = preload("res://Free/Audio/death.wav")
 		change_scene = "res://Scene/Game Over.tscn"       #ready scene to change to game over
 	AudioHandler.playFX(fx, -5)
 	current_state = state.EXIT                            #change state to exit
@@ -138,6 +142,7 @@ func _gravity():
 
 func active_animations():
 	if is_on_floor():
+		emmiting = false           #allows for another particle emission
 		if velocity.x != 0:                       #if moving in any direction
 			animated_sprite.play("running")       #change animation to running 
 		else:                                     #if standing still
@@ -148,6 +153,14 @@ func active_animations():
 				animation_player.play("jumping")
 			2:
 				animated_sprite.play("double jump")
-				cpu_particles.emitting = true
+				make_particles()
 			_:
 				animated_sprite.play("jumping")
+
+#instantiates a particle scene and adds it as a child to Player
+func make_particles() -> void:
+		if emmiting:       #check if already emmiting
+			return
+		emmiting = true    #makes sure particles dont emmit again before landing
+		var inst = preload("res://Player/Jump_Particles.tscn").instantiate()
+		add_child(inst)

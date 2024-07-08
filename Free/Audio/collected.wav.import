@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://btmmj4hkdj7ap"
-path="res://.godot/imported/90s-game-ui-3-185096.wav-b8c877ab07ef4764d3e28205ff50c71f.sample"
+path="res://.godot/imported/collected.wav-9bbc6c99ce27f19933e2a57101dd8a63.sample"
 
 [deps]
 
-source_file="res://Free/Audio/90s-game-ui-3-185096.wav"
-dest_files=["res://.godot/imported/90s-game-ui-3-185096.wav-b8c877ab07ef4764d3e28205ff50c71f.sample"]
+source_file="res://Free/Audio/collected.wav"
+dest_files=["res://.godot/imported/collected.wav-9bbc6c99ce27f19933e2a57101dd8a63.sample"]
 
 [params]
 

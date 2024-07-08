@@ -10,7 +10,7 @@ func _on_body_entered(body):
 		body.jump_count = 0                        #reset jump counter 
 		body.jump(force)                           #apply force to make the player jump high
 		body.active_animations()
-		AudioHandler.playFX_2D(fx)
+		AudioHandler.playFX_2D(fx, self.position,-10)
 		animated_sprite.play("Launch")             #change to launch animation
 		await animated_sprite.animation_finished   #wait for end of animation
 		animated_sprite.play("idle")               #change back to idle animation

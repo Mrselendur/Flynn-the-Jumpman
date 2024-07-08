@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://d384tnifmklo1"]
+
+[ext_resource type="Script" path="res://Collectables/Collectable.gd" id="1_e2jwl"]
+[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="3_k7po2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6qry"]
+radius = 9.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_li2nn"]
+emission_shape_offset = Vector3(0, -15, 0)
+gravity = Vector3(0, -98, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w052v"]
+viewport_path = NodePath("PointsText")
+
+[node name="Collectable" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_e2jwl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_c6qry")
+
+[node name="PointsText" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(64, 24)
+
+[node name="Label" type="Label" parent="PointsText"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -8.5
+offset_right = 15.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_k7po2")
+theme_override_font_sizes/font_size = 24
+text = "50
+"
+
+[node name="PointsParticles" type="GPUParticles2D" parent="."]
+z_index = 2
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_li2nn")
+texture = SubResource("ViewportTexture_w052v")
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

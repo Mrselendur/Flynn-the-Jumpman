@@ -8,14 +8,14 @@ size = Vector2(46, 44)
 
 [node name="Goal" type="Area2D" groups=["Finish"]]
 visible = false
-position = Vector2(0, -10)
+texture_filter = 1
 monitoring = false
 monitorable = false
 script = ExtResource("1_44fyu")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5a6xx")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_hejis")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5a6xx")

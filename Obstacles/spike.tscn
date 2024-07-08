@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://de1sspf4hu6h8" path="res://Free/Traps/Spikes/Idle.png" id="2_3dila"]
 
 [node name="Spike" type="Node2D"]
-scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
