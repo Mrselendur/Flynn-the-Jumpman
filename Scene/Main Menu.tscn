@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b75odrqp86sxp"]
+[gd_scene load_steps=17 format=4 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scene/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wf37crjfxxfj" path="res://Collectables/Apple.tscn" id="4_q8gd2"]
 [ext_resource type="Texture2D" uid="uid://m4pv8hkd0eks" path="res://Free/Menu/Buttons/Levels.png" id="6_vwipv"]
 [ext_resource type="Texture2D" uid="uid://ciab3nsa68iab" path="res://Free/Menu/Buttons/Close.png" id="8_vjfjl"]
+[ext_resource type="Texture2D" uid="uid://b1yugdd17qwum" path="res://Free/Menu/Buttons/Settings.png" id="9_p6xfj"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scene/theme.tres" id="10_348fs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26kjy"]
@@ -238,24 +239,25 @@ theme_override_fonts/font = ExtResource("2_3iutt")
 theme_override_font_sizes/font_size = 50
 text = "Platformer Game"
 
-[node name="NewControl" type="Control" parent="."]
+[node name="Control" type="Control" parent="."]
 texture_filter = 1
 anchors_preset = 0
-offset_left = -198.0
-offset_top = -146.0
-offset_right = 207.0
-offset_bottom = 174.0
+offset_left = -199.0
+offset_top = -162.0
+offset_right = 206.0
+offset_bottom = 248.0
 pivot_offset = Vector2(202, 150)
 theme = ExtResource("10_348fs")
 
-[node name="Start" type="Button" parent="NewControl"]
+[node name="Start" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -77.0
-offset_right = 77.0
-offset_bottom = 45.0
+offset_left = -76.5
+offset_top = 22.0
+offset_right = 77.5
+offset_bottom = 55.0
 grow_horizontal = 2
 scale = Vector2(1.88719, 1.88719)
 pivot_offset = Vector2(80, 19)
@@ -265,17 +267,17 @@ icon = ExtResource("4_6x4os")
 clip_text = true
 expand_icon = true
 
-[node name="LevelSelect" type="Button" parent="NewControl"]
+[node name="LevelSelect" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -22.0
-offset_right = 129.0
-offset_bottom = 22.0
+offset_left = -131.5
+offset_top = -67.0
+offset_right = 126.5
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.45996, 1.45996)
@@ -286,7 +288,28 @@ icon = ExtResource("6_vwipv")
 clip_text = true
 expand_icon = true
 
-[node name="Quit" type="Button" parent="NewControl"]
+[node name="Settings" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.5
+offset_top = -158.0
+offset_right = 107.5
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(114, 25)
+keep_pressed_outside = true
+text = "Settings"
+icon = ExtResource("9_p6xfj")
+clip_text = true
+expand_icon = true
+
+[node name="Quit" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -309,20 +332,7 @@ icon = ExtResource("8_vjfjl")
 clip_text = true
 expand_icon = true
 
-[node name="Button" type="Button" parent="NewControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37
-anchor_top = 0.12
-anchor_right = 0.37
-anchor_bottom = 0.12
-offset_left = -458.85
-offset_top = -69.4
-offset_right = -158.85
-offset_bottom = 7.6
-pivot_offset = Vector2(147, 39)
-
-[connection signal="pressed" from="NewControl/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="NewControl/LevelSelect" to="." method="_on_level_select_pressed"]
-[connection signal="pressed" from="NewControl/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="NewControl/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

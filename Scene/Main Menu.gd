@@ -3,6 +3,11 @@ extends Node
 
 
 func _ready() -> void:
+	var audio_setting = ConfigFileHandler.load_audio_settings()
+	AudioServer.set_bus_mute(0, audio_setting.get("Mute"))
+	AudioServer.set_bus_volume_db(0, audio_setting.get("Master"))
+	AudioServer.set_bus_volume_db(1, audio_setting.get("Music"))
+	AudioServer.set_bus_volume_db(2, audio_setting.get("SFX"))
 	var video_settings = ConfigFileHandler.load_video_settings()
 	var resolution_settings = ConfigFileHandler.load_resolution()
 	var res := Vector2i(resolution_settings.get("WindowWidth"),resolution_settings.get("WindowHeight"))
@@ -22,9 +27,8 @@ func _on_start_pressed() -> void:
 func _on_level_select_pressed() -> void:
 	GameManager.setChange("res://Scene/Level Select.tscn")
 
+func _on_settings_pressed() -> void:
+	GameManager.setChange("res://Scene/Settings.tscn")
+
 func _on_quit_pressed() -> void:
 	GameManager.quitGame()
-
-
-func _on_button_pressed() -> void:
-	GameManager.setChange("res://Scene/Settings.tscn")

@@ -1,5 +1,12 @@
 extends Control
 
+#audio control
+@onready var mute: CheckBox = $MarginContainer/VBoxContainer/Mute
+@onready var master_volume: HScrollBar = $MarginContainer/VBoxContainer/MasterVolume
+@onready var music_volume: HScrollBar = $MarginContainer/VBoxContainer/MusicVolume
+@onready var sfx_volume: HScrollBar = $MarginContainer/VBoxContainer/SFXVolume
+
+#video control
 @onready var resolution_options: OptionButton = $MarginContainer/VBoxContainer/ResolutionOptions
 @onready var fullscreen_button: CheckBox = $MarginContainer/VBoxContainer/Fullscreen
 @onready var accept_changes: Button = $MarginContainer/VBoxContainer/HBoxContainer/AcceptChanges
@@ -17,18 +24,35 @@ var res_array: Array[Vector2i] = [
 ]
 
 func _ready() -> void:
+	#set up music settings
+	var audio_settings = ConfigFileHandler.load_audio_settings()
+	master_volume.value = audio_settings.get("Master")
+	music_volume.value = audio_settings.get("Music")
+	sfx_volume.value = audio_settings.get("SFX")
+	mute.button_pressed = audio_settings.get("Mute")
 
+	#set up video settings
 	var video_settings = ConfigFileHandler.load_video_settings()
 	fullscreen_button.button_pressed = video_settings.get("Fullscreen")
-	
 	resolution = Vector2i(resolution_settings.get("WindowWidth"),resolution_settings.get("WindowHeight"))
-	if fullscreen_button.button_pressed:
-		window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
-		resolution = DisplayServer.screen_get_size()
-	else:
-		window_mode = DisplayServer.WINDOW_MODE_WINDOWED
 	draw()
 	accept_changes.disabled = true
+
+func _on_mute_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(0, toggled_on)
+	enable_accept()
+
+func _on_master_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, value)
+	enable_accept()
+
+func _on_music_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(1, value)
+	enable_accept()
+
+func _on_sfx_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(2, value)
+	enable_accept()
 
 #emmited every time fullscreen button is pressed
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
@@ -43,7 +67,6 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	enable_accept()
 
 func _on_resolution_options_item_selected(index: int) -> void:
-	#print("hello")
 	match index:
 		0:  
 			resolution = Vector2i(2560, 1440)
@@ -72,9 +95,12 @@ func enable_accept() -> void:
 
 func draw() -> void:
 	if fullscreen_button.button_pressed:
+		window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 		resolution_options.disabled = true
 		resolution = DisplayServer.screen_get_size()
+
 	else:
+		window_mode = DisplayServer.WINDOW_MODE_WINDOWED
 		resolution_options.disabled = false
 	find_resolution_text()
 
@@ -82,14 +108,17 @@ func _on_accept_changes_pressed() -> void:
 	resolution_options.set_item_disabled(4, true)
 	draw()
 	accept_changes.disabled = true
-	#apply settings 
+	#apply settings video and resolution settings
 	DisplayServer.window_set_mode(window_mode)
 	DisplayServer.window_set_size(resolution)
-	print(resolution)
 	#save settings to settings.ini
 	ConfigFileHandler.save_resolution("WindowWidth", resolution.x)
 	ConfigFileHandler.save_resolution("WindowHeight", resolution.y)
 	ConfigFileHandler.save_video_settings("Fullscreen", fullscreen_button.button_pressed)
+	ConfigFileHandler.save_audio_settings("Mute", mute.button_pressed)
+	ConfigFileHandler.save_audio_settings("Master", master_volume.value)
+	ConfigFileHandler.save_audio_settings("Music", music_volume.value)
+	ConfigFileHandler.save_audio_settings("SFX", sfx_volume.value)
 	
 
 func _on_back_pressed() -> void:

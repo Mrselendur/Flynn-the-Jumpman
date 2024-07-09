@@ -6,6 +6,11 @@ const FILEPATH = "user://settings.ini"
 
 func _ready() -> void:
 	if !FileAccess.file_exists(FILEPATH):
+		config.set_value("Audio", "Mute", false)
+		config.set_value("Audio", "Master", 6)
+		config.set_value("Audio", "Music", 6)
+		config.set_value("Audio", "SFX", 6)
+		
 		config.set_value("Resolution", "WindowWidth", 1280)
 		config.set_value("Resolution", "WindowHeight", 1024)
 		
@@ -14,6 +19,17 @@ func _ready() -> void:
 		config.save(FILEPATH)
 	else:
 		config.load(FILEPATH)
+
+func save_audio_settings(key: String, value) -> void:
+	config.set_value("Audio", key, value)
+	config.save(FILEPATH)
+
+func load_audio_settings() -> Dictionary:
+	var audio = {}
+	for key in config.get_section_keys("Audio"):
+		audio[key] = config.get_value("Audio", key)
+	return audio	
+
 
 func save_video_settings(key: String, value) -> void:
 	config.set_value("Video Settings", key, value)
