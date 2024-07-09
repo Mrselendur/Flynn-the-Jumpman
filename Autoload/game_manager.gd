@@ -2,24 +2,18 @@ extends Node
 
 var _level_points: int = 0        #points in a single level
 var _all_points: int = 0          #points accross all levels in a signle session
-var _change: bool = false         #variable to tell when the scene will change
 var _targetScene: String          #path to the target scene
-
-func _process(_delta) -> void:
-	if(true == _change):
-		_changeScene()
 
 #quit the game
 func quitGame()->void:
 	get_tree().quit()
 
 #set up the change of a scene
-func setChange(target: String) -> void:
-	_change = true
+func setChange(target: String, transition_speed: float = 1) -> void:
 	_targetScene = target
+	SceneTransition.play_transition(transition_speed)
 
 func _changeScene() -> void:
-	_change = false
 	resetLevelPoints()
 	get_tree().change_scene_to_file(_targetScene)
 

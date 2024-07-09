@@ -10,7 +10,8 @@ const FALL_GRAVITY = 2000              #gravity for when player is falling
 enum state{
 	ENTER,
 	ACTIVE,
-	EXIT}
+	EXIT,
+	DISABLED}
 
 var current_state          #state to reiterate through the state machine
 
@@ -35,15 +36,14 @@ var change_scene: String
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	#print(find_child("Anim*"))
 	current_state = state.ENTER #start in enter state
 
 func _physics_process(delta) -> void:
-	#print(gpu_particles_2d.emitting)
 	match current_state:
 		state.ENTER:
+			#await SceneTransition.transition_finished
 			animated_sprite.play("appear")
-			await(animated_sprite.animation_finished)
+			await animated_sprite.animation_finished
 			current_state = state.ACTIVE              #change state to active
 
 		state.ACTIVE:
@@ -91,6 +91,7 @@ func _physics_process(delta) -> void:
 				velocity.y *= 0.5
 
 			active_animations()
+			move_and_slide()
 
 		state.EXIT:                 #play exit animation and end game
 			animation_player.play("RESET")
@@ -100,9 +101,9 @@ func _physics_process(delta) -> void:
 			velocity.x = 0                                     #disable movement so player doesn't 
 			velocity.y = 0                                     #move when exit animation is playing
 			await animated_sprite.animation_finished           #wait for end of animation
-			GameManager.setChange(change_scene)                #before changing scene 
-			
-	move_and_slide()
+			current_state = state.DISABLED
+			GameManager.setChange(change_scene)                #before changing scene
+ 
 
 #function has a parameter with default value:
 # - when it's called with 0 arguments it takes the default value as jump power
@@ -146,7 +147,7 @@ func active_animations():
 		if velocity.x != 0:                       #if moving in any direction
 			animated_sprite.play("running")       #change animation to running 
 		else:                                     #if standing still
-			animated_sprite.play("default")       #play idle sprite animation
+			animated_sprite.play("idle")       #play idle sprite animation
 	else:
 		match jump_count:
 			1:
