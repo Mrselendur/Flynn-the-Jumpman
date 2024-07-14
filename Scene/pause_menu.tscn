@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd568c20ymn4k"]
+
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scene/theme.tres" id="1_dwsjk"]
+[ext_resource type="Script" path="res://Scene/pause_menu.gd" id="2_fmtot"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+theme = ExtResource("1_dwsjk")
+script = ExtResource("2_fmtot")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -123.0
+offset_right = 166.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(166, 123)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Restart Level
+"
+
+[node name="BackToMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back To Main Menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]

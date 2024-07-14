@@ -3,6 +3,7 @@ extends Node
 
 
 func _ready() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	var audio_setting = ConfigFileHandler.load_audio_settings()
 	AudioServer.set_bus_mute(0, audio_setting.get("Mute"))
 	AudioServer.set_bus_volume_db(0, audio_setting.get("Master"))
