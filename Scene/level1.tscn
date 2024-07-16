@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=4 uid="uid://dianvi413b271"]
+[gd_scene load_steps=27 format=4 uid="uid://dianvi413b271"]
 
+[ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scene/Points/points.tscn" id="2_15t86"]
 [ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scene/pause_menu.tscn" id="2_qwm7v"]
-[ext_resource type="Script" path="res://Scene/UI.gd" id="2_tvlxo"]
 [ext_resource type="Texture2D" uid="uid://b0juaruvsxcin" path="res://Free/Background/Green.png" id="2_wbqxv"]
-[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_xcitj"]
 [ext_resource type="Texture2D" uid="uid://db8j8us4spjlv" path="res://Free/Terrain/Terrain (16x16).png" id="3_n4iu2"]
 [ext_resource type="PackedScene" uid="uid://1ekitgd6t7je" path="res://Player/Player.tscn" id="4_1rbgx"]
 [ext_resource type="PackedScene" uid="uid://b4l2h2ag2oqou" path="res://Goal/goal.tscn" id="7_lld3q"]
@@ -316,6 +315,7 @@ resource_name = "Traps"
 scenes/1/scene = ExtResource("11_eix8a")
 scenes/2/scene = ExtResource("15_lqye2")
 scenes/3/scene = ExtResource("14_8r2ro")
+scenes/4/scene = ExtResource("17_tgq77")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5d1ui"]
 resource_name = "Misc"
@@ -342,31 +342,10 @@ point_count = 6
 [node name="Node2D" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("2_tvlxo")
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("2_qwm7v")]
 
-[node name="Panel" type="Panel" parent="UI"]
-offset_left = 22.0
-offset_top = 16.0
-offset_right = 150.0
-offset_bottom = 75.0
-
-[node name="PointsLabel" type="Label" parent="UI/Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -23.0
-offset_right = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_xcitj")
-theme_override_font_sizes/font_size = 30
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Points" parent="UI" instance=ExtResource("2_15t86")]
 
 [node name="BackGround" type="Parallax2D" parent="."]
 texture_filter = 1
@@ -403,7 +382,7 @@ tile_set = SubResource("TileSet_p0s5m")
 
 [node name="Objects" type="TileMapLayer" parent="GameObjects/TileMap"]
 z_index = 2
-tile_map_data = PackedByteArray("AAD7/xoAAAAAAAAAAQD8/xMAAAAAAAAAAQADABQAAAAAAAAAAQAQABUAAAAAAAAAAQAJABsAAAAAAAAAAgAPABoAAAAAAAAAAgAXABgAAAAAAAAAAgAfAB0AAAAAAAAAAgAgABYAAAAAAAAAAgAoABQAAAAAAAAAAgAzABcAAAAAAAAAAgAtAB0AAAAAAAAAAgAlAB4AAAAAAAAAAgD9/x0AAQAAAAAAAQD+/x0AAQAAAAAAAQD//x0AAQAAAAAAAQD8/x0AAQAAAAAAAQD7/x0AAQAAAAAAAQAQAB4AAQAAAAAAAgARAB4AAQAAAAAAAgAPAB4AAQAAAAAAAgAOAB4AAQAAAAAAAgANAB4AAQAAAAAAAgAMAB4AAQAAAAAAAgD5/xYAAQAAAAAAAwALAB0AAgAAAAAAAQAQABsAAgAAAAAAAQAXABkAAgAAAAAAAQD9/xQAAgAAAAAAAQAEAB0AAgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD7/xoAAAAAAAAAAQD8/xMAAAAAAAAAAQADABQAAAAAAAAAAQAQABUAAAAAAAAAAQAJABsAAAAAAAAAAgAPABoAAAAAAAAAAgAXABgAAAAAAAAAAgAfAB0AAAAAAAAAAgAgABYAAAAAAAAAAgAoABQAAAAAAAAAAgAzABcAAAAAAAAAAgAtAB0AAAAAAAAAAgAlAB4AAAAAAAAAAgD9/x0AAQAAAAAAAQD+/x0AAQAAAAAAAQD//x0AAQAAAAAAAQD8/x0AAQAAAAAAAQD7/x0AAQAAAAAAAQAQAB4AAQAAAAAAAgARAB4AAQAAAAAAAgAPAB4AAQAAAAAAAgAOAB4AAQAAAAAAAgANAB4AAQAAAAAAAgAMAB4AAQAAAAAAAgD5/xYAAQAAAAAAAwALAB0AAgAAAAAAAQAQABsAAgAAAAAAAQAXABkAAgAAAAAAAQD9/xQAAgAAAAAAAQAEAB0AAgAAAAAAAgAIABcAAQAAAAAABAAEABcAAQAAAAAABAA=")
 tile_set = SubResource("TileSet_vj0mw")
 
 [node name="Player" parent="GameObjects" instance=ExtResource("4_1rbgx")]
@@ -422,9 +401,6 @@ position_smoothing_speed = 7.0
 [node name="Border" parent="GameObjects" instance=ExtResource("7_xij5d")]
 position = Vector2(1435, 864)
 scale = Vector2(30, 1)
-
-[node name="Falling Platform" parent="GameObjects" instance=ExtResource("17_tgq77")]
-position = Vector2(427, 235)
 
 [node name="RockHead" parent="GameObjects" instance=ExtResource("19_j21tk")]
 position = Vector2(173, 164)
