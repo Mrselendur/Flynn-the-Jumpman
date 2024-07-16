@@ -4,6 +4,9 @@ extends Area2D
 
 var is_shown: bool = false          #variable to check if goal has been shown
 
+func _ready() -> void:
+	self.visible = false
+
 #check every frame for a shown goal and if player has collected required points
 func _process(_delta):
 	if((false == is_shown) && (required_points <= GameManager.getLevelPoints())):

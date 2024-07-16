@@ -418,3 +418,8 @@ loop = true
 z_index = 2
 position = Vector2(1444, 547)
 required_points = 350
+
+[connection signal="body_entered" from="GameObjects/TileMap/Objects/Trampoline" to="GameObjects/TileMap/Objects/Trampoline" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/TileMap/Objects/@Area2D@80571" to="GameObjects/TileMap/Objects/@Area2D@80571" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/TileMap/Objects/@Area2D@80572" to="GameObjects/TileMap/Objects/@Area2D@80572" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/TileMap/Objects/@Area2D@80573" to="GameObjects/TileMap/Objects/@Area2D@80573" method="_on_body_entered"]

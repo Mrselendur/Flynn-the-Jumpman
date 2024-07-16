@@ -7,7 +7,6 @@
 size = Vector2(46, 44)
 
 [node name="Goal" type="Area2D" groups=["Finish"]]
-visible = false
 texture_filter = 1
 monitoring = false
 monitorable = false
