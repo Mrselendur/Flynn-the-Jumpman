@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://d0p1rwqpsjkrt"]
 
-[ext_resource type="Script" path="res://Obstacles/saw.gd" id="1_axcvn"]
+[ext_resource type="Script" path="res://Obstacles/moving_objects.gd" id="1_axcvn"]
 [ext_resource type="AudioStream" uid="uid://binkw0iljpspi" path="res://Free/Audio/saw.wav" id="3_1d5ky"]
 [ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="3_33lsi"]
 
@@ -76,7 +76,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SawPath:progress_ratio")
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +92,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SawPath:progress_ratio")
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -112,13 +112,14 @@ _data = {
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_axcvn")
+sprite_path = "res://Free/Traps/Saw/Chain.png"
 
 [node name="Path" type="Node2D" parent="."]
 
-[node name="SawPath" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SawPath"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PathFollow2D"]
 stream = ExtResource("3_1d5ky")
 pitch_scale = 1.5
 autoplay = true
@@ -126,16 +127,16 @@ max_distance = 1000.0
 attenuation = 1.86607
 bus = &"SFX"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SawPath"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pdi7l")
 autoplay = "default"
 frame_progress = 0.985941
 
-[node name="Hitbox" type="Area2D" parent="SawPath" groups=["Death"]]
+[node name="Hitbox" type="Area2D" parent="PathFollow2D" groups=["Death"]]
 texture_filter = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SawPath/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Hitbox"]
 shape = SubResource("CircleShape2D_dyf0c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
