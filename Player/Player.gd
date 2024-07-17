@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
+const MAX_JUMPS = 2
 const COYOTE_TIME: float = 0.2         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
 const FALL_GRAVITY = 2000              #gravity for when player is falling 
@@ -23,12 +24,15 @@ var current_state          #state to reiterate through the state machine
 
 @onready var fx: AudioStream
 
+
+
 #jumps
 var jump_count: int = 0
 var coyote_counter: float
 var jump_buffer_counter: float
 
-var emmiting = false       #for particles when double jumping
+#for particles when double jumping
+var emmiting = false
 
 var change_scene: String
 
@@ -56,7 +60,6 @@ func _physics_process(delta) -> void:
 				animated_sprite.flip_h = isLeft       #flip sprite so character looks where he's going
 			else:                                     #player is not moving
 				velocity.x = move_toward(velocity.x, 0, SPEED)    #decrease velocity.x to 0 by SPEED amount
-			#print(coyote_counter)
 			# Handle jump.
 			if is_on_floor():
 				coyote_counter = COYOTE_TIME #reset coyote_counter 
@@ -79,7 +82,7 @@ func _physics_process(delta) -> void:
 				#if coyote timer has run out and hasn't jumped yet OR has jumped twice
 				#add one to counter to skip normal jump and player uses up the double jump
 				if(0 >= coyote_counter && jump_count != 1):
-					jump_count += 1           
+					jump_count += 1
 				#if the timer hasnt run out then the player has a normal and a double jump
 				jump()
 
@@ -89,7 +92,7 @@ func _physics_process(delta) -> void:
 			#variable jump hight by releasing jump button early
 			if((true == Input.is_action_just_released("up")) && jump_count == 1):
 				velocity.y *= 0.5
-
+			
 			active_animations()
 			move_and_slide()
 
@@ -104,12 +107,11 @@ func _physics_process(delta) -> void:
 			current_state = state.DISABLED
 			GameManager.setChange(change_scene)                #before changing scene
  
-
 #function has a parameter with default value:
 # - when it's called with 0 arguments it takes the default value as jump power
 # - when there is an argument it takes that as its value
-func jump(jump_power: float = JUMP_VELOCITY):
-	if jump_count >= 2:
+func jump(jump_power: float = JUMP_VELOCITY) -> void:
+	if jump_count >= MAX_JUMPS:
 		return                       
 
 	#if player hasn't used up regular and double jump
@@ -136,7 +138,7 @@ func _on_area_2d_area_entered(area) -> void:
 
 #when player is jumping - returns the default gravity from the project settings
 #when player is falling - returns the fall gravity to exaggerate the fall 
-func _gravity():
+func _gravity() -> float:
 	if velocity.y > 0:
 		return FALL_GRAVITY
 	return gravity
@@ -160,8 +162,8 @@ func active_animations():
 
 #instantiates a particle scene and adds it as a child to Player
 func make_particles() -> void:
-		if emmiting:       #check if already emmiting
-			return
-		emmiting = true    #makes sure particles dont emmit again before landing
-		var inst = preload("res://Player/Jump_Particles.tscn").instantiate()
-		add_child(inst)
+	if emmiting:       #check if already emmiting
+		return
+	emmiting = true    #makes sure particles dont emmit again before landing
+	var inst = preload("res://Player/Jump_Particles.tscn").instantiate()
+	add_child(inst)
