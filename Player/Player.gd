@@ -24,8 +24,6 @@ var current_state          #state to reiterate through the state machine
 
 @onready var fx: AudioStream
 
-
-
 #jumps
 var jump_count: int = 0
 var coyote_counter: float

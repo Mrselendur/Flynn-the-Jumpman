@@ -67,13 +67,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -356.0
-offset_top = -299.0
-offset_right = -31.0
-offset_bottom = -44.0
+offset_left = -312.0
+offset_top = -273.0
+offset_right = 13.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.31179, 2.31179)
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -91,7 +91,7 @@ theme_override_fonts/font = ExtResource("4_406hw")
 text = "Master Volume"
 horizontal_alignment = 1
 
-[node name="MasterVolume" type="HScrollBar" parent="MarginContainer/VBoxContainer"]
+[node name="MasterVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = -80.0
 max_value = 6.0
@@ -103,7 +103,7 @@ theme_override_fonts/font = ExtResource("4_406hw")
 text = "Music Volume"
 horizontal_alignment = 1
 
-[node name="MusicVolume" type="HScrollBar" parent="MarginContainer/VBoxContainer"]
+[node name="MusicVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = -80.0
 max_value = 6.0
@@ -114,7 +114,7 @@ theme_override_fonts/font = ExtResource("4_406hw")
 text = "Sound Effects"
 horizontal_alignment = 1
 
-[node name="SFXVolume" type="HScrollBar" parent="MarginContainer/VBoxContainer"]
+[node name="SFXVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = -80.0
 max_value = 6.0

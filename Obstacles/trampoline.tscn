@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvpy0dfqdqgl0"]
+[gd_scene load_steps=15 format=3 uid="uid://dvpy0dfqdqgl0"]
 
 [ext_resource type="Script" path="res://Obstacles/Trampoline.gd" id="1_b2312"]
 [ext_resource type="Texture2D" uid="uid://b2u3vns527qyx" path="res://Free/Traps/Trampoline/Jump (28x28).png" id="2_b53rw"]
 [ext_resource type="Texture2D" uid="uid://b34wx0h6q0xbm" path="res://Free/Traps/Trampoline/Idle.png" id="3_x0an6"]
+[ext_resource type="AudioStream" uid="uid://cjmx2pakcl78q" path="res://Free/Audio/trampoline.wav" id="4_ndrxq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_enbee"]
 atlas = ExtResource("2_b53rw")
@@ -95,5 +96,10 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 8)
 shape = SubResource("RectangleShape2D_jm14p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ndrxq")
+max_distance = 1000.0
+attenuation = 1.27456
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

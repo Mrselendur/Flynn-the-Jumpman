@@ -1,6 +1,6 @@
 extends Node
 
-
+@onready var music_stream: AudioStream = preload("res://Free/Audio/Music/Intro Theme.mp3")
 
 func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
@@ -15,11 +15,7 @@ func _ready() -> void:
 	DisplayServer.window_set_size(res)
 	if video_settings.get("Fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	#var size = DisplayServer.screen_get_size()
-	#DisplayServer.window_set_size(size)
-	#print(DisplayServer.window_get_size())
-	#ProjectSettings.set_setting("display/window/size/window_height_override",size.y)
-	#ProjectSettings.set_setting("display/window/size/window_width_override",size.x)
+	AudioHandler.playMusic(music_stream)
 	
 func _on_start_pressed() -> void:
 	GameManager.setChange("res://Scene/level1.tscn")

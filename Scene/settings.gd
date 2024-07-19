@@ -2,9 +2,9 @@ extends Control
 
 #audio control
 @onready var mute: CheckBox = $MarginContainer/VBoxContainer/Mute
-@onready var master_volume: HScrollBar = $MarginContainer/VBoxContainer/MasterVolume
-@onready var music_volume: HScrollBar = $MarginContainer/VBoxContainer/MusicVolume
-@onready var sfx_volume: HScrollBar = $MarginContainer/VBoxContainer/SFXVolume
+@onready var master_volume: HSlider = $MarginContainer/VBoxContainer/MasterVolume
+@onready var music_volume: HSlider = $MarginContainer/VBoxContainer/MusicVolume
+@onready var sfx_volume: HSlider = $MarginContainer/VBoxContainer/SFXVolume
 
 #video control
 @onready var resolution_options: OptionButton = $MarginContainer/VBoxContainer/ResolutionOptions
