@@ -1,15 +1,17 @@
 extends Node
 
-var _level_points: int = 0        #points in a single level
-var _all_points: int = 0          #points accross all levels in a signle session
+var _levelPoints: int = 0        #points in a single level
+var _allPoints: int = 0          #points accross all levels in a signle session
 var _targetScene: String          #path to the target scene
+var currentLevel: String
 
 #quit the game
 func quitGame()->void:
 	get_tree().quit()
 
 #set up the change of a scene
-func setChange(target: String, transition_speed: float = 1) -> void:
+func setChange(target: String, current: String = "", transition_speed: float = 1) -> void:
+	currentLevel = current
 	_targetScene = target
 	SceneTransition.play_transition(transition_speed)
 
@@ -19,17 +21,17 @@ func _changeScene() -> void:
 
 #adds points to score
 func addPoints(points: int) -> void:
-	_level_points += points
-	_all_points += points
+	_levelPoints += points
+	_allPoints += points
 
 func resetLevelPoints() -> void:
-	_level_points = 0
+	_levelPoints = 0
 
 func resetAllPoints() -> void:
-	_all_points = 0
+	_allPoints = 0
 
 func getLevelPoints() -> int:
-	return _level_points
+	return _levelPoints
 
 func getAllPoints() -> int:
-	return _all_points
+	return _allPoints

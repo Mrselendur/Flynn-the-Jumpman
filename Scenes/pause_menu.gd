@@ -1,12 +1,12 @@
 extends Control
 
-@onready var pause_menu: Control = $"."
+@onready var pauseMenu: Control = $"."
 
 var tree: SceneTree
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pause_menu.visible = false
+	pauseMenu.visible = false
 	tree = get_tree()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,12 +16,12 @@ func _process(_delta: float) -> void:
 
 func pause() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
-	pause_menu.visible = true
+	pauseMenu.visible = true
 	tree.paused = true
 
 func resume() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	pause_menu.visible = false
+	pauseMenu.visible = false
 	tree.paused = false
 
 func _on_resume_pressed() -> void:

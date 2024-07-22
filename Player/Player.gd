@@ -32,7 +32,7 @@ var jump_buffer_counter: float
 #for particles when double jumping
 var emmiting = false
 
-var change_scene: String
+var changeScene: String
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -43,7 +43,6 @@ func _ready():
 func _physics_process(delta) -> void:
 	match current_state:
 		state.ENTER:
-			#await SceneTransition.transition_finished
 			animated_sprite.play("appear")
 			await animated_sprite.animation_finished
 			current_state = state.ACTIVE              #change state to active
@@ -90,7 +89,6 @@ func _physics_process(delta) -> void:
 			#variable jump hight by releasing jump button early
 			if((true == Input.is_action_just_released("up")) && jump_count == 1):
 				velocity.y *= 0.5
-			
 			active_animations()
 			move_and_slide()
 
@@ -101,9 +99,9 @@ func _physics_process(delta) -> void:
 			animated_sprite.play("disappear")
 			velocity.x = 0                                     #disable movement so player doesn't 
 			velocity.y = 0                                     #move when exit animation is playing
-			await animated_sprite.animation_finished           #wait for end of animation
-			current_state = state.DISABLED
-			GameManager.setChange(change_scene)                #before changing scene
+			await animated_sprite.animation_finished           #wait for end of animation 
+			current_state = state.DISABLED                     #before changing scene
+			GameManager.setChange(changeScene, "res://Scenes/Levels/" + get_parent().get_parent().name + ".tscn")
  
 #function has a parameter with default value:
 # - when it's called with 0 arguments it takes the default value as jump power
@@ -125,12 +123,12 @@ func _on_area_2d_area_entered(area) -> void:
 		return
 	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
 		fx = preload("res://Free/Audio/win.wav")
-		change_scene = "res://Scene/Level Complete.tscn"  #ready scene to change to level complete
+		changeScene = "res://Scenes/Level Complete.tscn"  #ready scene to change to level complete
 	else:             #area is in group "Death"
 		fx = preload("res://Free/Audio/089684_retro-you-lose-sfx-85557.wav")
 		AudioHandler.playFX(fx,-20)
 		fx = preload("res://Free/Audio/death.wav")
-		change_scene = "res://Scene/Game Over.tscn"       #ready scene to change to game over
+		changeScene = "res://Scenes/Game Over.tscn"       #ready scene to change to game over
 	AudioHandler.playFX(fx, -5)
 	current_state = state.EXIT                            #change state to exit
 

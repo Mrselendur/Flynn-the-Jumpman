@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvx753mp73bx"]
 
-[ext_resource type="Script" path="res://Scene/Points/Points.gd" id="1_l3eqt"]
+[ext_resource type="Script" path="res://Scenes/Points/Points.gd" id="1_l3eqt"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_bpbmu"]
 
 [node name="Points" type="Panel"]

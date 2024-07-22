@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wf37crjfxxfj"]
+[gd_scene load_steps=30 format=3 uid="uid://wf37crjfxxfj"]
 
 [ext_resource type="PackedScene" uid="uid://d384tnifmklo1" path="res://Collectables/Collectable.tscn" id="1_7aac2"]
 [ext_resource type="Texture2D" uid="uid://ra26gc2fg3sf" path="res://Free/Items/Fruits/Apple.png" id="2_81ea8"]
@@ -178,14 +178,17 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_48mln"]
+radius = 6.4
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_e1r2k"]
 viewport_path = NodePath("PointsText")
 
 [node name="Apple" instance=ExtResource("1_7aac2")]
+scale = Vector2(1.25, 1.25)
 pointsGiven = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
-scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_1isfy")
 animation = &"idle"
 autoplay = "idle"
@@ -193,8 +196,9 @@ autoplay = "idle"
 [node name="Area2D" parent="." index="1"]
 scale = Vector2(1.25, 1.25)
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-1.49012e-08, -2.4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -1.28)
+shape = SubResource("CircleShape2D_48mln")
 
 [node name="PointsParticles" parent="." index="3"]
 texture = SubResource("ViewportTexture_e1r2k")

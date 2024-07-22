@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4l2h2ag2oqou"]
+[gd_scene load_steps=5 format=3 uid="uid://b4l2h2ag2oqou"]
 
 [ext_resource type="Texture2D" uid="uid://j7al2sppb1xi" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="1_5a6xx"]
 [ext_resource type="Script" path="res://Goal/goal.gd" id="1_44fyu"]
+[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_ecxtx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hejis"]
 size = Vector2(46, 44)
@@ -11,6 +12,20 @@ texture_filter = 1
 monitoring = false
 monitorable = false
 script = ExtResource("1_44fyu")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -49.0
+offset_right = 114.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ecxtx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5a6xx")

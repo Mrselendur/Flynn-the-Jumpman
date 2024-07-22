@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cn5d2moklwtay"]
+[gd_scene load_steps=30 format=3 uid="uid://cn5d2moklwtay"]
 
 [ext_resource type="PackedScene" uid="uid://d384tnifmklo1" path="res://Collectables/Collectable.tscn" id="1_kimw5"]
 [ext_resource type="Texture2D" uid="uid://cn8pvaq1g8gcn" path="res://Free/Items/Fruits/Collected.png" id="2_d6sxk"]
@@ -178,6 +178,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpvsa"]
+radius = 9.0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_2ecdu"]
 viewport_path = NodePath("PointsText")
 
@@ -188,6 +191,9 @@ pointsGiven = 50
 sprite_frames = SubResource("SpriteFrames_6p3ju")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_dpvsa")
 
 [node name="PointsParticles" parent="." index="3"]
 texture = SubResource("ViewportTexture_2ecdu")
