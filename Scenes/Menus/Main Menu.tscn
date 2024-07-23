@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://b75odrqp86sxp"]
 
-[ext_resource type="Script" path="res://Scenes/Main Menu.gd" id="1_tgui0"]
+[ext_resource type="Script" path="res://Scenes/Menus/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_3iutt"]
 [ext_resource type="Texture2D" uid="uid://db8j8us4spjlv" path="res://Free/Terrain/Terrain (16x16).png" id="3_c0ofr"]

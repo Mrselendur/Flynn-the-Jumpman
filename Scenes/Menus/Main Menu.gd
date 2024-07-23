@@ -22,10 +22,10 @@ func _on_start_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
 
 func _on_level_select_pressed() -> void:
-	GameManager.setChange("res://Scenes/Level Select.tscn")
+	GameManager.setChange("res://Scenes/Menus/Level Select.tscn")
 
 func _on_settings_pressed() -> void:
-	GameManager.setChange("res://Scenes/Settings.tscn")
+	GameManager.setChange("res://Scenes/Menus/Settings.tscn")
 
 func _on_quit_pressed() -> void:
 	GameManager.quitGame()

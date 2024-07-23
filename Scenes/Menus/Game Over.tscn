@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuk2riuhb5l6n"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/Game Over.gd" id="1_b2cca"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="1_it7oe"]
+[ext_resource type="Texture2D" uid="uid://dpbeqw4knt58m" path="res://Free/Background/Pink.png" id="2_jj2ec"]
+[ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_htdor"]
+[ext_resource type="Texture2D" uid="uid://dr4y3rymeq26c" path="res://Free/Menu/Buttons/Restart.png" id="6_j772d"]
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_it7oe")
+script = ExtResource("1_b2cca")
+
+[node name="BackGround" type="Parallax2D" parent="."]
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(30, 30)
+repeat_times = 19
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(559, 328)
+texture = ExtResource("2_jj2ec")
+
+[node name="Game Over" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 375.0
+offset_top = 116.0
+offset_right = 787.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(196, 28)
+theme_override_colors/font_color = Color(0.745098, 0.188235, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Game Over!"
+
+[node name="Score" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 407.0
+offset_top = 201.0
+offset_right = 765.0
+offset_bottom = 242.0
+pivot_offset = Vector2(162, 21)
+theme_override_font_sizes/font_size = 40
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+anchors_preset = 0
+offset_left = 427.0
+offset_top = 332.0
+offset_right = 720.0
+offset_bottom = 518.0
+
+[node name="Restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 307.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 32
+text = "Restart
+"
+icon = ExtResource("6_j772d")
+expand_icon = true
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 307.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+icon = ExtResource("4_htdor")
+expand_icon = true
+
+[connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]

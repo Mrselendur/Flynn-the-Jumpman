@@ -123,12 +123,12 @@ func _on_area_2d_area_entered(area) -> void:
 		return
 	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
 		fx = preload("res://Free/Audio/win.wav")
-		changeScene = "res://Scenes/Level Complete.tscn"  #ready scene to change to level complete
+		changeScene = "res://Scenes/Menus/Level Complete.tscn"  #ready scene to change to level complete
 	else:             #area is in group "Death"
 		fx = preload("res://Free/Audio/089684_retro-you-lose-sfx-85557.wav")
 		AudioHandler.playFX(fx,-20)
 		fx = preload("res://Free/Audio/death.wav")
-		changeScene = "res://Scenes/Game Over.tscn"       #ready scene to change to game over
+		changeScene = "res://Scenes/Menus/Game Over.tscn"       #ready scene to change to game over
 	AudioHandler.playFX(fx, -5)
 	current_state = state.EXIT                            #change state to exit
 

@@ -122,4 +122,4 @@ func _on_accept_changes_pressed() -> void:
 	
 
 func _on_back_pressed() -> void:
-	GameManager.setChange("res://Scenes/Main Menu.tscn")
+	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")

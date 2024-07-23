@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8j33xf3ih72e"]
 
-[ext_resource type="Texture2D" uid="uid://e4lxqksn42xa" path="res://Free/Background/Blue.png" id="1_aa60h"]
-[ext_resource type="Script" path="res://Scenes/settings.gd" id="1_gdj0r"]
+[ext_resource type="Script" path="res://Scenes/Menus/settings.gd" id="1_gdj0r"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="3_3t3jb"]
+[ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="3_qx2ra"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="4_406hw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2h7l"]
@@ -52,13 +52,13 @@ theme = ExtResource("3_3t3jb")
 script = ExtResource("1_gdj0r")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(126, 53)
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
 repeat_times = 19
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-texture = ExtResource("1_aa60h")
+texture = ExtResource("3_qx2ra")
+flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

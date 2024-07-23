@@ -10,7 +10,7 @@ func _on_level_three_pressed() -> void:
 	GameManager.setChange("res://Scenes/Levels/Level3.tscn")
 
 func _on_back_pressed() -> void:
-	GameManager.setChange("res://Scenes/Main Menu.tscn")
+	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
 
 func _on_level_one_button_up() -> void:
 	_button_released($Control/LevelOne)
