@@ -1,16 +1,16 @@
 extends Control
 
 func _on_level_one_pressed() -> void:
-	GameManager.setChange("res://Scene/level1.tscn")
+	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
 
 func _on_level_two_pressed() -> void:
-	GameManager.setChange("res://Scene/level1.tscn")
+	GameManager.setChange("res://Scenes/Levels/Level2.tscn")
 
 func _on_level_three_pressed() -> void:
-	GameManager.setChange("res://Scene/level1.tscn")
+	GameManager.setChange("res://Scenes/Levels/Level3.tscn")
 
 func _on_back_pressed() -> void:
-	GameManager.setChange("res://Scene/Main Menu.tscn")
+	GameManager.setChange("res://Scenes/Main Menu.tscn")
 
 func _on_level_one_button_up() -> void:
 	_button_released($Control/LevelOne)

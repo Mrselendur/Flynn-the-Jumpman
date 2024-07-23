@@ -34,7 +34,7 @@ func _on_restart_pressed() -> void:
 
 func _on_back_to_menu_pressed() -> void:
 	resume()
-	GameManager.setChange("res://Scene/Main Menu.tscn")
+	GameManager.setChange("res://Scenes/Main Menu.tscn")
 
 func esc_pressed() -> void:
 	if tree.paused:

@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://bvye3gd5goo6t"]
+
+[ext_resource type="PackedScene" uid="uid://wf37crjfxxfj" path="res://Collectables/Apple.tscn" id="1_pasl3"]
+[ext_resource type="PackedScene" uid="uid://cn5d2moklwtay" path="res://Collectables/Cherry.tscn" id="2_1fau6"]
+[ext_resource type="PackedScene" uid="uid://tvljssm4sxrl" path="res://Collectables/Pineapple.tscn" id="3_tcbp3"]
+[ext_resource type="PackedScene" uid="uid://1klxoulhh3fn" path="res://Obstacles/spike.tscn" id="4_p0xqh"]
+[ext_resource type="PackedScene" uid="uid://buguefg6rqgju" path="res://Obstacles/fire_platform.tscn" id="5_x8lnm"]
+[ext_resource type="PackedScene" uid="uid://wvu7cd2dkybc" path="res://Obstacles/swinging_spiked_ball.tscn" id="6_i03nq"]
+[ext_resource type="PackedScene" uid="uid://dvpy0dfqdqgl0" path="res://Obstacles/trampoline.tscn" id="7_068lb"]
+[ext_resource type="PackedScene" uid="uid://bfxn2ysiatqdb" path="res://Goal/start.tscn" id="8_ysmho"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3cbmc"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("1_pasl3")
+scenes/2/scene = ExtResource("2_1fau6")
+scenes/3/scene = ExtResource("3_tcbp3")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqv4b"]
+resource_name = "Traps"
+scenes/1/scene = ExtResource("4_p0xqh")
+scenes/2/scene = ExtResource("5_x8lnm")
+scenes/3/scene = ExtResource("6_i03nq")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5d1ui"]
+resource_name = "Misc"
+scenes/1/scene = ExtResource("7_068lb")
+scenes/2/scene = ExtResource("8_ysmho")
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetScenesCollectionSource_3cbmc")
+sources/1 = SubResource("TileSetScenesCollectionSource_wqv4b")
+sources/2 = SubResource("TileSetScenesCollectionSource_5d1ui")
