@@ -186,7 +186,7 @@ viewport_path = NodePath("PointsText")
 
 [node name="Collectable" instance=ExtResource("1_3yc3o")]
 scale = Vector2(1.5, 1.5)
-pointsGiven = 200
+pointsGiven = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, -1)

@@ -1,12 +1,17 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://bvye3gd5goo6t"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://bvye3gd5goo6t"]
 
 [ext_resource type="PackedScene" uid="uid://wf37crjfxxfj" path="res://Collectables/Apple.tscn" id="1_pasl3"]
 [ext_resource type="PackedScene" uid="uid://cn5d2moklwtay" path="res://Collectables/Cherry.tscn" id="2_1fau6"]
 [ext_resource type="PackedScene" uid="uid://tvljssm4sxrl" path="res://Collectables/Pineapple.tscn" id="3_tcbp3"]
+[ext_resource type="PackedScene" uid="uid://bbrfdtxslhue3" path="res://Collectables/Watermelon.tscn" id="4_noh5e"]
 [ext_resource type="PackedScene" uid="uid://1klxoulhh3fn" path="res://Obstacles/spike.tscn" id="4_p0xqh"]
+[ext_resource type="PackedScene" uid="uid://cgmub2ul1laia" path="res://Collectables/Orange.tscn" id="5_owg8c"]
 [ext_resource type="PackedScene" uid="uid://buguefg6rqgju" path="res://Obstacles/fire_platform.tscn" id="5_x8lnm"]
+[ext_resource type="PackedScene" uid="uid://c60os0xlk02l1" path="res://Collectables/Strawberry.tscn" id="6_8c6u5"]
 [ext_resource type="PackedScene" uid="uid://wvu7cd2dkybc" path="res://Obstacles/swinging_spiked_ball.tscn" id="6_i03nq"]
 [ext_resource type="PackedScene" uid="uid://dvpy0dfqdqgl0" path="res://Obstacles/trampoline.tscn" id="7_068lb"]
+[ext_resource type="PackedScene" uid="uid://cgn78n3q8qahp" path="res://Collectables/Kiwi.tscn" id="7_pgk6e"]
+[ext_resource type="PackedScene" uid="uid://bjfdpdya4ljed" path="res://Collectables/Bananas.tscn" id="8_x8xqd"]
 [ext_resource type="PackedScene" uid="uid://bfxn2ysiatqdb" path="res://Goal/start.tscn" id="8_ysmho"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3cbmc"]
@@ -14,6 +19,11 @@ resource_name = "Collectables"
 scenes/1/scene = ExtResource("1_pasl3")
 scenes/2/scene = ExtResource("2_1fau6")
 scenes/3/scene = ExtResource("3_tcbp3")
+scenes/4/scene = ExtResource("4_noh5e")
+scenes/5/scene = ExtResource("5_owg8c")
+scenes/6/scene = ExtResource("6_8c6u5")
+scenes/7/scene = ExtResource("7_pgk6e")
+scenes/8/scene = ExtResource("8_x8xqd")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqv4b"]
 resource_name = "Traps"

@@ -12,6 +12,7 @@ func _ready() -> void:
 		$LevelCompleteText.visible = false
 		$Control/NextLevel.disabled = true
 	score.text = "Score: " + str(GameManager.getAllPoints())
+	$Control/NextLevel.grab_focus()
 
 func _on_next_level_pressed() -> void:
 	var nextLevel: int = previousLevel + 1
@@ -20,3 +21,10 @@ func _on_next_level_pressed() -> void:
 func _on_return_to_menu_pressed() -> void:
 	GameManager.resetAllPoints()
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+
+
+func _on_next_level_mouse_entered() -> void:
+	$Control/NextLevel.grab_focus()
+
+func _on_return_to_menu_mouse_entered() -> void:
+	$Control/ReturnToMenu.grab_focus()

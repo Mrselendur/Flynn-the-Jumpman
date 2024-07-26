@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnu85rfbrbsx"]
+[gd_scene load_steps=7 format=3 uid="uid://dnu85rfbrbsx"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Level Complete.gd" id="1_vr66b"]
-[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="1_x0jcn"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_x0jcn"]
 [ext_resource type="Texture2D" uid="uid://dqu54e2jef73i" path="res://Free/Background/Purple.png" id="3_hbvsc"]
 [ext_resource type="Texture2D" uid="uid://cow6av5et7eps" path="res://Free/Menu/Buttons/Next.png" id="4_hmjjm"]
 [ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_p6qgo"]
+[ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="5_8svkp"]
 
 [node name="LevelComplete" type="Control"]
 layout_mode = 3
@@ -97,18 +98,21 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -166.0
-offset_top = -31.0
-offset_right = 166.0
-offset_bottom = 4.0
+offset_left = -99.5963
+offset_top = -27.3905
+offset_right = 101.404
+offset_bottom = 7.60948
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(165.957, 15.5832)
+pivot_offset = Vector2(100.451, 17.4892)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Reurn to Main Menu"
+theme = ExtResource("5_8svkp")
+text = "Main Menu"
 icon = ExtResource("4_p6qgo")
 expand_icon = true
 
+[connection signal="mouse_entered" from="Control/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="Control/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="mouse_entered" from="Control/ReturnToMenu" to="." method="_on_return_to_menu_mouse_entered"]
 [connection signal="pressed" from="Control/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]

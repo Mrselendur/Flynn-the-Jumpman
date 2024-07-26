@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuk2riuhb5l6n"]
+[gd_scene load_steps=7 format=3 uid="uid://cuk2riuhb5l6n"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Game Over.gd" id="1_b2cca"]
-[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="1_it7oe"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_it7oe"]
 [ext_resource type="Texture2D" uid="uid://dpbeqw4knt58m" path="res://Free/Background/Pink.png" id="2_jj2ec"]
 [ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_htdor"]
+[ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="5_mvnj5"]
 [ext_resource type="Texture2D" uid="uid://dr4y3rymeq26c" path="res://Free/Menu/Buttons/Restart.png" id="6_j772d"]
 
 [node name="Game Over" type="Control"]
@@ -76,10 +77,13 @@ layout_mode = 0
 offset_top = 119.0
 offset_right = 307.0
 offset_bottom = 175.0
+theme = ExtResource("5_mvnj5")
 theme_override_font_sizes/font_size = 32
 text = "Main Menu"
 icon = ExtResource("4_htdor")
 expand_icon = true
 
+[connection signal="mouse_entered" from="Control/Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="Control/Menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]

@@ -10,6 +10,7 @@ extends Control
 @onready var resolution_options: OptionButton = $MarginContainer/VBoxContainer/ResolutionOptions
 @onready var fullscreen_button: CheckBox = $MarginContainer/VBoxContainer/Fullscreen
 @onready var accept_changes: Button = $MarginContainer/VBoxContainer/HBoxContainer/AcceptChanges
+@onready var back: Button = $MarginContainer/VBoxContainer/HBoxContainer/Back
 
 var resolution_settings = ConfigFileHandler.load_resolution()
 
@@ -37,6 +38,7 @@ func _ready() -> void:
 	resolution = Vector2i(resolution_settings.get("WindowWidth"),resolution_settings.get("WindowHeight"))
 	draw()
 	accept_changes.disabled = true
+	mute.grab_focus()
 
 func _on_mute_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0, toggled_on)
@@ -123,3 +125,27 @@ func _on_accept_changes_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+
+func _on_mute_mouse_entered() -> void:
+	mute.grab_focus()
+
+func _on_master_volume_mouse_entered() -> void:
+	master_volume.grab_focus()
+
+func _on_music_volume_mouse_entered() -> void:
+	music_volume.grab_focus()
+
+func _on_sfx_volume_mouse_entered() -> void:
+	sfx_volume.grab_focus()
+
+func _on_fullscreen_mouse_entered() -> void:
+	fullscreen_button.grab_focus()
+
+func _on_resolution_options_mouse_entered() -> void:
+	resolution_options.grab_focus()
+
+func _on_back_mouse_entered() -> void:
+	back.grab_focus()
+
+func _on_accept_changes_mouse_entered() -> void:
+	accept_changes.grab_focus()

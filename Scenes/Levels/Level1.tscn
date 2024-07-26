@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://Scenes/Levels/PlayLevelMusic.gd" id="1_kkaqy"]
 [ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/points.tscn" id="2_15t86"]
-[ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/pause_menu.tscn" id="2_qwm7v"]
+[ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="2_qwm7v"]
 [ext_resource type="Texture2D" uid="uid://b0juaruvsxcin" path="res://Free/Background/Green.png" id="2_wbqxv"]
-[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="3_8egm7"]
 [ext_resource type="PackedScene" uid="uid://1ekitgd6t7je" path="res://Player/Player.tscn" id="4_1rbgx"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="6_is0wo"]
 [ext_resource type="TileSet" uid="uid://4cel1kee067" path="res://Scenes/Levels/Platforms.tres" id="7_j1o2v"]
 [ext_resource type="PackedScene" uid="uid://b4l2h2ag2oqou" path="res://Goal/goal.tscn" id="7_lld3q"]
 [ext_resource type="PackedScene" uid="uid://bq7tkdb7xhjs0" path="res://Obstacles/border.tscn" id="7_xij5d"]
 [ext_resource type="TileSet" uid="uid://bvye3gd5goo6t" path="res://Scenes/Levels/Objects.tres" id="8_wyxqm"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="12_j160b"]
 [ext_resource type="PackedScene" uid="uid://dbkpk1x5mmddo" path="res://Obstacles/moving_platform.tscn" id="17_idife"]
 [ext_resource type="PackedScene" uid="uid://d0p1rwqpsjkrt" path="res://Obstacles/saw.tscn" id="19_41psk"]
 
@@ -28,7 +28,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_jbimd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 415)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 330)
 }
 point_count = 2
 
@@ -85,7 +85,7 @@ tile_set = ExtResource("7_j1o2v")
 
 [node name="Objects" type="TileMapLayer" parent="World/Tiles"]
 z_index = 2
-tile_map_data = PackedByteArray("AAApAB4AAAAAAAAAAgAUABsAAAAAAAAAAgA2AB4AAQAAAAAAAQA3AB4AAQAAAAAAAQA4AB4AAQAAAAAAAQA5AB4AAQAAAAAAAQA6AB4AAQAAAAAAAQA7AB4AAQAAAAAAAQA8AB4AAQAAAAAAAQA9AB4AAQAAAAAAAQA+AB4AAQAAAAAAAQA3ABsAAAAAAAAAAQA/AB4AAQAAAAAAAQBAAB4AAQAAAAAAAQAdAB0AAQAAAAAAAgAcAB0AAQAAAAAAAgAbAB0AAQAAAAAAAgAaAB0AAQAAAAAAAgBAABwAAQAAAAAAAgA/ABwAAQAAAAAAAgA+ABwAAQAAAAAAAgBMAA8AAAAAAAAAAQAMAPz/AgAAAAAAAQAWAB0AAQAAAAAAAgAXAB0AAQAAAAAAAgAYAB0AAQAAAAAAAgAZAB0AAQAAAAAAAgAsAAQAAAAAAAAAAgD0/xAAAAAAAAAAAwD7/xwAAgAAAAAAAgD9//z/AgAAAAAAAQAmAO7/AAAAAAAAAQAHAPb/AAAAAAAAAgA8AO3/AAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAApAB4AAAAAAAAAAgAUABsAAAAAAAAAAgA2AB4AAQAAAAAAAQA3AB4AAQAAAAAAAQA4AB4AAQAAAAAAAQA5AB4AAQAAAAAAAQA6AB4AAQAAAAAAAQA7AB4AAQAAAAAAAQA8AB4AAQAAAAAAAQA9AB4AAQAAAAAAAQA+AB4AAQAAAAAAAQA3ABsAAAAAAAAABgA/AB4AAQAAAAAAAQBAAB4AAQAAAAAAAQAdAB0AAQAAAAAAAgAcAB0AAQAAAAAAAgAbAB0AAQAAAAAAAgAaAB0AAQAAAAAAAgBAABwAAQAAAAAAAgA/ABwAAQAAAAAAAgA+ABwAAQAAAAAAAgAMAPz/AgAAAAAAAQAWAB0AAQAAAAAAAgAXAB0AAQAAAAAAAgAYAB0AAQAAAAAAAgAZAB0AAQAAAAAAAgAsAAQAAAAAAAAAAgD7/xwAAgAAAAAAAgD9//z/AgAAAAAAAQAmAO7/AAAAAAAAAQAHAPb/AAAAAAAAAgA8AO3/AAAAAAAAAgD0/xAAAAAAAAAABAA=")
 tile_set = ExtResource("8_wyxqm")
 
 [node name="Border" parent="World" instance=ExtResource("7_xij5d")]
@@ -111,7 +111,7 @@ curve = SubResource("Curve2D_8b1fe")
 open_speed = 0.5
 
 [node name="MovingPlatform3" parent="World/MovingPlatforms" instance=ExtResource("17_idife")]
-position = Vector2(-124, -143.333)
+position = Vector2(-124, -60)
 scale = Vector2(1, 1)
 curve = SubResource("Curve2D_jbimd")
 open_speed = 0.25
@@ -133,7 +133,7 @@ offset_left = -305.0
 offset_top = 1188.0
 offset_right = -78.0
 offset_bottom = 1276.0
-theme = ExtResource("3_8egm7")
+theme = ExtResource("12_j160b")
 text = "Get 300 points"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -143,7 +143,7 @@ offset_left = 2407.0
 offset_top = 32.0
 offset_right = 2668.0
 offset_bottom = 120.0
-theme = ExtResource("3_8egm7")
+theme = ExtResource("12_j160b")
 text = "You can double jump!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -153,6 +153,7 @@ z_index = 2
 position = Vector2(-201, 1327)
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
+position = Vector2(0, -100)
 process_callback = 0
 limit_left = -912
 limit_top = -2810
@@ -165,4 +166,4 @@ position_smoothing_speed = 7.0
 position = Vector2(4120, -2810)
 
 [connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@58756" to="World/Tiles/Objects/@Area2D@58756" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@112473" to="World/Tiles/Objects/@Area2D@112473" method="_on_body_entered"]

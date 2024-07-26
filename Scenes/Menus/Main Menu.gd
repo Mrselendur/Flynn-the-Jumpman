@@ -16,7 +16,8 @@ func _ready() -> void:
 	if videoSettings.get("Fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	AudioHandler.playMusic(musicStream)
-	
+	$Control/Start.grab_focus()
+
 func _on_start_pressed() -> void:
 	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
@@ -29,3 +30,15 @@ func _on_settings_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	GameManager.quitGame()
+
+func _on_start_mouse_entered() -> void:
+	$Control/Start.grab_focus()
+
+func _on_level_select_mouse_entered() -> void:
+	$Control/LevelSelect.grab_focus()
+
+func _on_settings_mouse_entered() -> void:
+	$Control/Settings.grab_focus()
+
+func _on_quit_mouse_entered() -> void:
+	$Control/Quit.grab_focus()

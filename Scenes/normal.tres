@@ -14,7 +14,16 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rjh5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7651n"]
+bg_color = Color(0.596078, 0.529412, 0.211765, 1)
+border_width_bottom = 5
+border_color = Color(0.282353, 0.247059, 0.0784314, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85vh6"]
 bg_color = Color(0.596078, 0.529412, 0.211765, 1)
@@ -25,7 +34,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 3
-shadow_offset = Vector2(2, 0)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapoe"]
 bg_color = Color(0.8, 0.717647, 0.333333, 1)
@@ -84,7 +93,7 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_p2qc3")
 Button/styles/disabled = SubResource("StyleBoxFlat_c1dkp")
-Button/styles/focus = SubResource("StyleBoxEmpty_0rjh5")
+Button/styles/focus = SubResource("StyleBoxFlat_7651n")
 Button/styles/hover = SubResource("StyleBoxFlat_85vh6")
 Button/styles/normal = SubResource("StyleBoxFlat_xapoe")
 Button/styles/pressed = SubResource("StyleBoxFlat_koxsa")

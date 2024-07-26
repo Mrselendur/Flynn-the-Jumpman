@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d384tnifmklo1"]
 
 [ext_resource type="Script" path="res://Collectables/Collectable.gd" id="1_e2jwl"]
-[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="3_k7po2"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="2_4vf6s"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_li2nn"]
 emission_shape_offset = Vector3(0, -15, 0)
@@ -32,7 +32,7 @@ offset_right = 15.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_k7po2")
+theme = ExtResource("2_4vf6s")
 theme_override_font_sizes/font_size = 24
 text = "50
 "

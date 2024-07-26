@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://j7al2sppb1xi" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="1_5a6xx"]
 [ext_resource type="Script" path="res://Goal/goal.gd" id="1_44fyu"]
-[ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_ecxtx"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="2_fem52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hejis"]
 size = Vector2(46, 44)
@@ -25,7 +25,7 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_ecxtx")
+theme = ExtResource("2_fem52")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5a6xx")

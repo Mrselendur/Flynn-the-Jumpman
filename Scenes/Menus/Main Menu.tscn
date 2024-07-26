@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b75odrqp86sxp"]
+[gd_scene load_steps=15 format=4 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://m4pv8hkd0eks" path="res://Free/Menu/Buttons/Levels.png" id="6_vwipv"]
 [ext_resource type="Texture2D" uid="uid://ciab3nsa68iab" path="res://Free/Menu/Buttons/Close.png" id="8_vjfjl"]
 [ext_resource type="Texture2D" uid="uid://b1yugdd17qwum" path="res://Free/Menu/Buttons/Settings.png" id="9_p6xfj"]
-[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="10_348fs"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="10_348fs"]
+[ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="10_hbpn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26kjy"]
 texture = ExtResource("3_c0ofr")
@@ -165,39 +166,6 @@ scenes/1/scene = ExtResource("4_q8gd2")
 sources/0 = SubResource("TileSetAtlasSource_26kjy")
 sources/1 = SubResource("TileSetScenesCollectionSource_nm4c3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm2q3"]
-bg_color = Color(0.72549, 0, 0.0901961, 1)
-border_width_bottom = 5
-border_color = Color(0.333333, 0, 0.0196078, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np322"]
-bg_color = Color(0.72549, 0, 0.0901961, 1)
-border_width_bottom = 3
-border_color = Color(0.333333, 0, 0.0196078, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 1
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1o8t"]
-bg_color = Color(1, 0.0705882, 0.156863, 1)
-border_width_bottom = 5
-border_color = Color(0.486275, 0, 0.0470588, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
 [node name="MainMenu" type="Control"]
 texture_filter = 1
 layout_mode = 3
@@ -323,16 +291,18 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.36098, 1.36098)
 pivot_offset = Vector2(109, 22)
-theme_override_styles/hover = SubResource("StyleBoxFlat_vm2q3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_np322")
-theme_override_styles/normal = SubResource("StyleBoxFlat_j1o8t")
+theme = ExtResource("10_hbpn7")
 keep_pressed_outside = true
 text = "Quit Game"
 icon = ExtResource("8_vjfjl")
 clip_text = true
 expand_icon = true
 
+[connection signal="mouse_entered" from="Control/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Control/LevelSelect" to="." method="_on_level_select_mouse_entered"]
 [connection signal="pressed" from="Control/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="mouse_entered" from="Control/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Control/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

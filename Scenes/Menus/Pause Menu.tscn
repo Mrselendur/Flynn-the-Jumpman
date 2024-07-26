@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd568c20ymn4k"]
+[gd_scene load_steps=4 format=3 uid="uid://dd568c20ymn4k"]
 
-[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/theme.tres" id="1_dwsjk"]
-[ext_resource type="Script" path="res://Scenes/Menus/pause_menu.gd" id="2_fmtot"]
+[ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_dwsjk"]
+[ext_resource type="Script" path="res://Scenes/Menus/Pause Menu.gd" id="2_fmtot"]
+[ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="3_x8yju"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -54,9 +55,13 @@ text = "Restart Level
 [node name="BackToMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_x8yju")
 theme_override_font_sizes/font_size = 32
-text = "Back To Main Menu"
+text = "Main Menu"
 
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://c5nj8l562fe6e"]
 
-[ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/pause_menu.tscn" id="1_hj6h7"]
+[ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="1_hj6h7"]
 [ext_resource type="Script" path="res://Scenes/Levels/PlayLevelMusic.gd" id="1_wphan"]
 [ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/points.tscn" id="2_y2p3h"]
 [ext_resource type="Texture2D" uid="uid://c8vdq5m2nrrhd" path="res://Free/Background/Gray.png" id="3_wvocc"]

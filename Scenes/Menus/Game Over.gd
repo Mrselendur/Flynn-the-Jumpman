@@ -12,6 +12,7 @@ func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	score.text = "Score: " + str(GameManager.getAllPoints())
 	GameManager.resetAllPoints()
+	$Control/Restart.grab_focus()
 
 func _on_restart_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
@@ -19,3 +20,9 @@ func _on_restart_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+
+func _on_restart_mouse_entered() -> void:
+	$Control/Restart.grab_focus()
+
+func _on_menu_mouse_entered() -> void:
+	$Control/Menu.grab_focus()
