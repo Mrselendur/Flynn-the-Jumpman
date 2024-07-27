@@ -91,7 +91,7 @@ text = "Next Level"
 icon = ExtResource("4_hmjjm")
 expand_icon = true
 
-[node name="ReturnToMenu" type="Button" parent="Control"]
+[node name="Menu" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -114,5 +114,5 @@ expand_icon = true
 
 [connection signal="mouse_entered" from="Control/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="Control/NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="mouse_entered" from="Control/ReturnToMenu" to="." method="_on_return_to_menu_mouse_entered"]
-[connection signal="pressed" from="Control/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="mouse_entered" from="Control/Menu" to="." method="_on_return_to_menu_mouse_entered"]
+[connection signal="pressed" from="Control/Menu" to="." method="_on_return_to_menu_pressed"]

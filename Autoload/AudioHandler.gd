@@ -9,7 +9,6 @@ func playMusic(music: AudioStream, volume = 0.0) -> void:
 	bus = "Music"
 	play()
 
-
 func playFX(sfx: AudioStream, volume = 0.0) -> void:
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = sfx

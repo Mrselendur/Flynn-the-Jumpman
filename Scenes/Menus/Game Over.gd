@@ -2,13 +2,13 @@ extends Node
 
 @onready var score = $Score
 
-@onready var musicStream: AudioStream = preload("res://Free/Audio/Music/gameover.wav")
+#@onready var musicStream: AudioStream = preload("res://Free/Audio/Music/gameover.wav")
 
 func _ready() -> void:
 	var arr = AudioHandler.get_children()
 	for i in arr:
 		i.queue_free()
-	AudioHandler.playMusic(musicStream)
+	#AudioHandler.playMusic(musicStream)
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	score.text = "Score: " + str(GameManager.getAllPoints())
 	GameManager.resetAllPoints()

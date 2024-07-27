@@ -19,8 +19,8 @@ func _ready() -> void:
 	$Control/Start.grab_focus()
 
 func _on_start_pressed() -> void:
-	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
+	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
 
 func _on_level_select_pressed() -> void:
 	GameManager.setChange("res://Scenes/Menus/Level Select.tscn")

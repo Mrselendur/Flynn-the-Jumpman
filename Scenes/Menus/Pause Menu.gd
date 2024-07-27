@@ -3,7 +3,7 @@ extends Control
 @onready var pauseMenu: Control = $"."
 @onready var resumeButton: Button = $PanelContainer/VBoxContainer/Resume
 @onready var restartButton: Button = $PanelContainer/VBoxContainer/Restart
-@onready var menuButton: Button = $PanelContainer/VBoxContainer/BackToMenu
+@onready var menuButton: Button = $PanelContainer/VBoxContainer/Menu
 
 var tree: SceneTree
 
