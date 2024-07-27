@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rttreyla2jfk" path="res://Free/Traps/Rock Head/Left Hit (42x42).png" id="4_y3sdy"]
 [ext_resource type="Texture2D" uid="uid://dp262s72bcyxp" path="res://Free/Traps/Rock Head/Right Hit (42x42).png" id="5_pe2jc"]
 [ext_resource type="Texture2D" uid="uid://didjr4nhap610" path="res://Free/Traps/Rock Head/Top Hit (42x42).png" id="6_idr5a"]
-[ext_resource type="AudioStream" uid="uid://vwjpmk6b4n5n" path="res://Free/Audio/explosion.wav" id="8_ob3xd"]
+[ext_resource type="AudioStream" uid="uid://vwjpmk6b4n5n" path="res://Free/Audio/Sound Effects/rockheadhit.wav" id="8_ob3xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rknkr"]
 atlas = ExtResource("2_g3cso")

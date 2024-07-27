@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://binkw0iljpspi"
-path="res://.godot/imported/saw.wav-1fd8233b867fe5b12229a7195e242562.sample"
+path="res://.godot/imported/saw.wav-626c6df7fde437b874c6a65c34b03353.sample"
 
 [deps]
 
-source_file="res://Free/Audio/saw.wav"
-dest_files=["res://.godot/imported/saw.wav-1fd8233b867fe5b12229a7195e242562.sample"]
+source_file="res://Free/Audio/Sound Effects/saw.wav"
+dest_files=["res://.godot/imported/saw.wav-626c6df7fde437b874c6a65c34b03353.sample"]
 
 [params]
 

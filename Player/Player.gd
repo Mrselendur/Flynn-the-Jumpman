@@ -111,7 +111,7 @@ func jump(jump_power: float = JUMP_VELOCITY) -> void:
 		return                       
 
 	#if player hasn't used up regular and double jump
-	fx = preload("res://Free/Audio/jump.wav")
+	fx = preload("res://Free/Audio/Sound Effects/jump.wav")
 	AudioHandler.playFX(fx, -20)
 	velocity.y = jump_power              #jump
 	jump_count += 1                      #increase the jump count
@@ -122,12 +122,10 @@ func _on_area_2d_area_entered(area) -> void:
 	if(!area.is_in_group("Finish") && !area.is_in_group("Death")):
 		return
 	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
-		fx = preload("res://Free/Audio/win.wav")
+		fx = preload("res://Free/Audio/Sound Effects/win.wav")
 		changeScene = "res://Scenes/Menus/Level Complete.tscn"  #ready scene to change to level complete
 	else:             #area is in group "Death"
-		fx = preload("res://Free/Audio/089684_retro-you-lose-sfx-85557.wav")
-		AudioHandler.playFX(fx,-20)
-		fx = preload("res://Free/Audio/death.wav")
+		fx = preload("res://Free/Audio/Sound Effects/death.wav")
 		changeScene = "res://Scenes/Menus/Game Over.tscn"       #ready scene to change to game over
 	AudioHandler.playFX(fx, -10)
 	current_state = state.EXIT                            #change state to exit

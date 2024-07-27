@@ -3,7 +3,7 @@ extends Area2D
 @export var force = -750.0
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var fx = preload("res://Free/Audio/trampoline.wav")
+@onready var fx = preload("res://Free/Audio/Sound Effects/trampoline.wav")
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 func _on_body_entered(body):
 	if(!body.is_in_group("Player")):

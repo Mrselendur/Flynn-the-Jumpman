@@ -197,5 +197,5 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@181582" to="World/Tiles/Objects/@Area2D@181582" method="_on_body_entered"]
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@181608" to="World/Tiles/Objects/@Area2D@181608" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@41473" to="World/Tiles/Objects/@Area2D@41473" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@41499" to="World/Tiles/Objects/@Area2D@41499" method="_on_body_entered"]

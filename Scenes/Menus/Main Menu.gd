@@ -1,6 +1,6 @@
 extends Node
 
-@onready var musicStream: AudioStream = preload("res://Free/Audio/Music/Intro Theme.mp3")
+@onready var musicStream: AudioStream = preload("res://Free/Audio/Music/IntroTheme.mp3")
 
 func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)

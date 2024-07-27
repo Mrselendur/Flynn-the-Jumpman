@@ -138,6 +138,17 @@ text = "Get 300 points"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HelpText" type="Label" parent="World"]
+offset_left = 2087.0
+offset_top = 1017.0
+offset_right = 2405.0
+offset_bottom = 1105.0
+theme = ExtResource("12_j160b")
+text = "Press Down or B to climb
+down form platforms"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DoubleJumpText" type="Label" parent="World"]
 offset_left = 2407.0
 offset_top = 32.0
@@ -164,3 +175,6 @@ position_smoothing_speed = 7.0
 
 [node name="Marker2D" type="Marker2D" parent="World"]
 position = Vector2(4120, -2810)
+
+[connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@46360" to="World/Tiles/Objects/@Area2D@46360" method="_on_body_entered"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3yuemnew75lt"
-path="res://.godot/imported/swinging spike ball.wav-98ae086b260613205dd0edf19786aad2.sample"
+path="res://.godot/imported/swinging spike ball.wav-3d6356c182b9a8fc7d1d20ba65e32296.sample"
 
 [deps]
 
-source_file="res://Free/Audio/swinging spike ball.wav"
-dest_files=["res://.godot/imported/swinging spike ball.wav-98ae086b260613205dd0edf19786aad2.sample"]
+source_file="res://Free/Audio/Sound Effects/swinging spike ball.wav"
+dest_files=["res://.godot/imported/swinging spike ball.wav-3d6356c182b9a8fc7d1d20ba65e32296.sample"]
 
 [params]
 

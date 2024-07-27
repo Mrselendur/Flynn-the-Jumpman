@@ -5,7 +5,7 @@ extends Node2D
 @onready var label = $PointsText/Label
 @onready var particles: GPUParticles2D = $PointsParticles
 
-@onready var fx = preload("res://Free/Audio/collected.wav")
+@onready var fx = preload("res://Free/Audio/Sound Effects/collected.wav")
 
 @export var pointsGiven: int
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Obstacles/Trampoline.gd" id="1_b2312"]
 [ext_resource type="Texture2D" uid="uid://b2u3vns527qyx" path="res://Free/Traps/Trampoline/Jump (28x28).png" id="2_b53rw"]
 [ext_resource type="Texture2D" uid="uid://b34wx0h6q0xbm" path="res://Free/Traps/Trampoline/Idle.png" id="3_x0an6"]
-[ext_resource type="AudioStream" uid="uid://cjmx2pakcl78q" path="res://Free/Audio/trampoline.wav" id="4_ndrxq"]
+[ext_resource type="AudioStream" uid="uid://cjmx2pakcl78q" path="res://Free/Audio/Sound Effects/trampoline.wav" id="4_ndrxq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_enbee"]
 atlas = ExtResource("2_b53rw")

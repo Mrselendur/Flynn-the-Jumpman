@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://wvu7cd2dkybc"]
 
 [ext_resource type="Texture2D" uid="uid://gbwhvhh5ueb5" path="res://Free/Traps/Spiked Ball/LongChain.png" id="1_6s162"]
-[ext_resource type="AudioStream" uid="uid://b3yuemnew75lt" path="res://Free/Audio/swinging spike ball.wav" id="3_4wkg4"]
+[ext_resource type="AudioStream" uid="uid://b3yuemnew75lt" path="res://Free/Audio/Sound Effects/swinging spike ball.wav" id="3_4wkg4"]
 [ext_resource type="Texture2D" uid="uid://po4u8kt8y2so" path="res://Free/Traps/Spiked Ball/Spiked Ball.png" id="3_tah7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_163ia"]
