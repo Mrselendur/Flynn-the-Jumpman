@@ -1,13 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d384tnifmklo1"]
+[gd_scene load_steps=4 format=3 uid="uid://d384tnifmklo1"]
 
 [ext_resource type="Script" path="res://Collectables/Collectable.gd" id="1_e2jwl"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="2_4vf6s"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_li2nn"]
-emission_shape_offset = Vector3(0, -15, 0)
-gravity = Vector3(0, -98, 0)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_w052v"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_exbvb"]
 viewport_path = NodePath("PointsText")
 
 [node name="Collectable" type="Node2D"]
@@ -34,15 +30,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_4vf6s")
 theme_override_font_sizes/font_size = 24
-text = "50
-"
 
-[node name="PointsParticles" type="GPUParticles2D" parent="."]
+[node name="PointsParticle" type="CPUParticles2D" parent="."]
 z_index = 2
+position = Vector2(0, -14)
 emitting = false
 amount = 1
-process_material = SubResource("ParticleProcessMaterial_li2nn")
-texture = SubResource("ViewportTexture_w052v")
+lifetime = 0.5
 one_shot = true
+texture = SubResource("ViewportTexture_exbvb")
+gravity = Vector2(0, -98)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

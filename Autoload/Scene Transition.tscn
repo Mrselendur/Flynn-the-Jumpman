@@ -1,37 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgb3tfc0kbaic"]
+[gd_scene load_steps=7 format=3 uid="uid://dgb3tfc0kbaic"]
 
 [ext_resource type="Script" path="res://Autoload/Scene Transition.gd" id="1_2qoc5"]
 [ext_resource type="Texture2D" uid="uid://bn3ii55rtyh7j" path="res://Free/Other/Transition.png" id="1_ufmbh"]
-
-[sub_resource type="Animation" id="Animation_5ojyd"]
-resource_name = "Fade"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"Fade", -1],
-"method": &"play_backwards"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_g2mkv"]
 length = 0.001
@@ -48,9 +18,56 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5ojyd"]
+resource_name = "Fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Fade_out", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3skca"]
+resource_name = "Fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7y61b"]
 _data = {
-"Fade": SubResource("Animation_5ojyd"),
+"Fade_in": SubResource("Animation_5ojyd"),
+"Fade_out": SubResource("Animation_3skca"),
 "RESET": SubResource("Animation_g2mkv")
 }
 

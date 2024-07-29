@@ -11,6 +11,8 @@ func quitGame()->void:
 
 #set up the change of a scene
 func setChange(target: String, current: String = "", transition_speed: float = 1) -> void:
+	if SceneTransition.animationPlayer.is_playing():
+		return
 	currentLevel = current
 	_targetScene = target
 	SceneTransition.play_transition(transition_speed)

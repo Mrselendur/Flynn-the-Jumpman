@@ -94,7 +94,7 @@ position = Vector2(1569, 1879)
 
 [node name="Goal" parent="World" instance=ExtResource("7_lld3q")]
 z_index = 2
-position = Vector2(3382, -693)
+position = Vector2(3375, -700)
 requiredPoints = 300
 
 [node name="MovingPlatforms" type="Node2D" parent="World"]
@@ -148,8 +148,8 @@ offset_right = 2405.0
 offset_bottom = 1105.0
 theme = ExtResource("12_j160b")
 text = "Press Down Arrow, S 
-or B on controller to
-climb down form platforms"
+or D-Pad Down to climb 
+down form platforms"
 label_settings = ExtResource("13_o31cr")
 horizontal_alignment = 1
 vertical_alignment = 1

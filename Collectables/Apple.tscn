@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_48mln"]
 radius = 6.4
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e1r2k"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xskck"]
 viewport_path = NodePath("PointsText")
 
 [node name="Apple" instance=ExtResource("1_7aac2")]
@@ -200,5 +200,5 @@ scale = Vector2(1.25, 1.25)
 position = Vector2(0, -1.28)
 shape = SubResource("CircleShape2D_48mln")
 
-[node name="PointsParticles" parent="." index="3"]
-texture = SubResource("ViewportTexture_e1r2k")
+[node name="PointsParticle" parent="." index="3"]
+texture = SubResource("ViewportTexture_xskck")

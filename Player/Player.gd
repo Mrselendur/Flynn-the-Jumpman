@@ -161,5 +161,5 @@ func make_particles() -> void:
 	if emmiting:       #check if already emmiting
 		return
 	emmiting = true    #makes sure particles dont emmit again before landing
-	var inst = preload("res://Player/Jump Particles.tscn").instantiate()
+	var inst : CPUParticles2D = preload("res://Player/Jump Particles.tscn").instantiate()
 	add_child(inst)

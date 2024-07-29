@@ -180,7 +180,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqokv"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8oi81"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_g5nor"]
 viewport_path = NodePath("PointsText")
 
 [node name="Bananas" instance=ExtResource("1_vu7yi")]
@@ -194,5 +194,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_qqokv")
 
-[node name="PointsParticles" parent="." index="3"]
-texture = SubResource("ViewportTexture_8oi81")
+[node name="PointsParticle" parent="." index="3"]
+texture = SubResource("ViewportTexture_g5nor")

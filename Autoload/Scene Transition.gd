@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func play_transition(speedScale:float) -> void:
 	animationPlayer.speed_scale = speedScale
-	animationPlayer.play("Fade")
+	animationPlayer.play("Fade_in")
 	await animationPlayer.animation_finished
 	emit_signal("transition_finished")
+	animationPlayer.play("Fade_out")

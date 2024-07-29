@@ -108,7 +108,7 @@ tile_map_data = PackedByteArray("AAD+/wEAAAAGAAgAAAD+/wIAAAAGAAkAAAD+/wMAAAAGAAk
 tile_set = ExtResource("4_tesrp")
 
 [node name="Platforms" type="TileMapLayer" parent="World/Tiles"]
-tile_map_data = PackedByteArray("AAD3////AAARAAAAAAD4////AAASAAAAAAD5////AAATAAAAAADx//z/AAARAAAAAADy//z/AAASAAAAAAD3//n/AAARAAAAAAD4//n/AAASAAAAAAD5//n/AAATAAAAAADz//z/AAATAAAAAACSANr/AAARAAAAAACTANr/AAASAAAAAACUANr/AAATAAAAAAAVAbf/AAARAAAAAAAWAbf/AAASAAAAAAAXAbf/AAASAAAAAAAaAbf/AAATAAAAAAAYAbf/AAASAAAAAAAZAbf/AAASAAAAAAAhAP7/AQAAAAAAAQALANj/AAASAAAAAAAMANj/AAATAAAAAAAJANj/AAARAAAAAAAKANj/AAASAAAAAAAFAPT/AAARAAAAAAAGAPT/AAATAAAAAAD+//L/AAARAAAAAAD///L/AAASAAAAAAAAAPL/AAATAAAAAAABAPb/AAARAAAAAAACAPb/AAATAAAAAAA=")
+tile_map_data = PackedByteArray("AAD3////AAARAAAAAAD4////AAASAAAAAAD5////AAATAAAAAADx//z/AAARAAAAAADy//z/AAASAAAAAAD3//n/AAARAAAAAAD4//n/AAASAAAAAAD5//n/AAATAAAAAADz//z/AAATAAAAAACSANr/AAARAAAAAACTANr/AAASAAAAAACUANr/AAATAAAAAAAVAbf/AAARAAAAAAAWAbf/AAASAAAAAAAXAbf/AAASAAAAAAAaAbf/AAATAAAAAAAYAbf/AAASAAAAAAAZAbf/AAASAAAAAAAhAP7/AQAAAAAAAQALANj/AAASAAAAAAAMANj/AAATAAAAAAAJANj/AAARAAAAAAAKANj/AAASAAAAAAAFAPT/AAARAAAAAAAGAPT/AAATAAAAAAD///L/AAARAAAAAAAAAPL/AAATAAAAAAABAPb/AAARAAAAAAACAPb/AAATAAAAAAA=")
 tile_set = ExtResource("5_2qt4v")
 
 [node name="Objects" type="TileMapLayer" parent="World/Tiles"]
@@ -127,7 +127,7 @@ label_settings = ExtResource("8_tjecs")
 position = Vector2(0, 1007)
 
 [node name="Goal" parent="World" instance=ExtResource("8_3mj2o")]
-position = Vector2(16444, -2473)
+position = Vector2(16444, -2478)
 requiredPoints = 1100
 
 [node name="Saws" type="Node2D" parent="World"]
@@ -186,8 +186,8 @@ position = Vector2(6069, -1032)
 scale = Vector2(2.5, 2.5)
 
 [node name="PlatformSaw1" parent="World/Saws" instance=ExtResource("10_lu8td")]
-position = Vector2(4932, -1068)
-scale = Vector2(3, 3)
+position = Vector2(4920, -1068)
+scale = Vector2(2.75, 2.75)
 
 [node name="CastleSaw" parent="World/Saws" instance=ExtResource("10_lu8td")]
 position = Vector2(7653, -2304)
@@ -290,3 +290,5 @@ limit_right = 17098
 limit_bottom = 1007
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]

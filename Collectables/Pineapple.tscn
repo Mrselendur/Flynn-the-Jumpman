@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecunq"]
 radius = 9.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7jbok"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tsdx8"]
 viewport_path = NodePath("PointsText")
 
 [node name="Collectable" instance=ExtResource("1_3yc3o")]
@@ -197,5 +197,5 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_ecunq")
 
-[node name="PointsParticles" parent="." index="3"]
-texture = SubResource("ViewportTexture_7jbok")
+[node name="PointsParticle" parent="." index="3"]
+texture = SubResource("ViewportTexture_tsdx8")

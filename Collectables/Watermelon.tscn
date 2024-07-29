@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wd23e"]
 radius = 10.0499
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_f5vv4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1d2rb"]
 viewport_path = NodePath("PointsText")
 
 [node name="Watermelon" instance=ExtResource("1_4w67q")]
@@ -196,5 +196,5 @@ autoplay = "default"
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_wd23e")
 
-[node name="PointsParticles" parent="." index="3"]
-texture = SubResource("ViewportTexture_f5vv4")
+[node name="PointsParticle" parent="." index="3"]
+texture = SubResource("ViewportTexture_1d2rb")

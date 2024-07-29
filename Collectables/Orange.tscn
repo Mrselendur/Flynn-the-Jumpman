@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_aql2h"]
 radius = 9.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kq7nk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_66g2i"]
 viewport_path = NodePath("PointsText")
 
 [node name="Orange" instance=ExtResource("1_dv080")]
@@ -195,5 +195,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_aql2h")
 
-[node name="PointsParticles" parent="." index="3"]
-texture = SubResource("ViewportTexture_kq7nk")
+[node name="PointsParticle" parent="." index="3"]
+texture = SubResource("ViewportTexture_66g2i")
