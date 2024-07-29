@@ -101,5 +101,6 @@ shape = SubResource("RectangleShape2D_jm14p")
 stream = ExtResource("4_ndrxq")
 max_distance = 1000.0
 attenuation = 1.27456
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

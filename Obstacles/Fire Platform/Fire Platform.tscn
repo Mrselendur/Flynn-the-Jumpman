@@ -123,5 +123,6 @@ disabled = true
 stream = ExtResource("5_iy1n1")
 max_distance = 1000.0
 attenuation = 1.68179
+bus = &"SFX"
 
 [connection signal="body_entered" from="Activate" to="." method="_on_activate_body_entered"]

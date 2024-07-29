@@ -92,6 +92,7 @@ shape = SubResource("CircleShape2D_163ia")
 position = Vector2(0.26103, 47.2962)
 max_distance = 750.0
 attenuation = 1.86
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
