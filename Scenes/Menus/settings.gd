@@ -53,15 +53,15 @@ func _on_mute_toggled(toggled_on: bool) -> void:
 	enable_accept()
 
 func _on_master_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0, value)
+	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 	enable_accept()
 
 func _on_music_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(1, value)
+	AudioServer.set_bus_volume_db(1, linear_to_db(value))
 	enable_accept()
 
 func _on_sfx_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(2, value)
+	AudioServer.set_bus_volume_db(2, linear_to_db(value))
 	enable_accept()
 
 #emmited every time fullscreen button is pressed
@@ -88,7 +88,6 @@ func find_resolution_text() -> void:
 		return
 	resolutionOptions.select(res)
 
-
 func enable_accept() -> void:
 	acceptButton.disabled = false
 
@@ -110,6 +109,7 @@ func draw() -> void:
 	find_resolution_text()
 
 func _on_accept_changes_pressed() -> void:
+	acceptButton.disabled = true
 	draw()
 	#apply settings video and resolution settings
 	DisplayServer.window_set_mode(windowMode)

@@ -4,14 +4,29 @@ extends Node
 
 func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
-	var audioSettings = ConfigFileHandler.load_audio_settings()
+	var audioSettings: Dictionary = ConfigFileHandler.load_audio_settings()
 	AudioServer.set_bus_mute(0, audioSettings.get("Mute"))
-	AudioServer.set_bus_volume_db(0, audioSettings.get("Master"))
-	AudioServer.set_bus_volume_db(1, audioSettings.get("Music"))
-	AudioServer.set_bus_volume_db(2, audioSettings.get("SFX"))
-	var videoSettings = ConfigFileHandler.load_video_settings()
-	var resolutionSettings = ConfigFileHandler.load_resolution()
-	var res := Vector2i(resolutionSettings.get("WindowWidth"),resolutionSettings.get("WindowHeight"))
+	
+	#load volumes
+	var masterVolume: float= linear_to_db(audioSettings.get("Master"))
+	var musicVolume: float= linear_to_db(audioSettings.get("Music"))
+	var sfxVolume: float= linear_to_db(audioSettings.get("SFX"))
+	
+	#check if the values are over the max allowed
+	AudioServer.set_bus_volume_db(0, masterVolume)
+	if masterVolume > 0:
+		AudioServer.set_bus_volume_db(0, 0)
+	AudioServer.set_bus_volume_db(1, musicVolume)
+	if musicVolume > -6:
+		AudioServer.set_bus_volume_db(1, -6)
+	AudioServer.set_bus_volume_db(2, sfxVolume)
+	if sfxVolume > 0:
+		AudioServer.set_bus_volume_db(2, 0)
+
+	#load video settings
+	var videoSettings: Dictionary = ConfigFileHandler.load_video_settings()
+	var resolutionSettings: Dictionary = ConfigFileHandler.load_resolution()
+	var res: Vector2i = Vector2i(resolutionSettings.get("WindowWidth"),resolutionSettings.get("WindowHeight"))
 	DisplayServer.window_set_size(res)
 	if videoSettings.get("Fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
