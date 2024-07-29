@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dba2k3lb0bwpn"]
 
-[ext_resource type="Texture2D" uid="uid://cbdti305wiatb" path="res://Free/Other/Dust Particle .png" id="1_ipj1u"]
+[ext_resource type="Texture2D" uid="uid://cbdti305wiatb" path="res://Free/Other/Dust Particle.png" id="1_ipj1u"]
 
 [sub_resource type="Animation" id="Animation_nssoq"]
 length = 0.001

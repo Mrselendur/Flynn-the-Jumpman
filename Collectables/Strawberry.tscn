@@ -1,8 +1,8 @@
 [gd_scene load_steps=30 format=3 uid="uid://c60os0xlk02l1"]
 
 [ext_resource type="PackedScene" uid="uid://d384tnifmklo1" path="res://Collectables/Collectable.tscn" id="1_r41d6"]
-[ext_resource type="Texture2D" uid="uid://cjqqlaqhubpuf" path="res://Free/Items/Fruits/Strawberry .png" id="2_60w7g"]
-[ext_resource type="Texture2D" uid="uid://cn8pvaq1g8gcn" path="res://Free/Items/Fruits/Collected .png" id="2_coqsg"]
+[ext_resource type="Texture2D" uid="uid://cjqqlaqhubpuf" path="res://Free/Items/Fruits/Strawberry.png" id="2_60w7g"]
+[ext_resource type="Texture2D" uid="uid://cn8pvaq1g8gcn" path="res://Free/Items/Fruits/Collected.png" id="2_coqsg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ttj73"]
 atlas = ExtResource("2_coqsg")

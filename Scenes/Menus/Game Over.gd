@@ -12,7 +12,7 @@ func _ready() -> void:
 	AudioHandler.playMusic(musicStream)
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	score.text = "Score: " + str(GameManager.getAllPoints())
-	GameManager.resetAllPoints()
+	GameManager.resetLevelPoints()
 	$Control/Restart.grab_focus()
 
 func _on_restart_pressed() -> void:

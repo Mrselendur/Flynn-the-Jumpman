@@ -1,12 +1,12 @@
 [gd_scene load_steps=38 format=3 uid="uid://dm2njwnc0fiqh"]
 
 [ext_resource type="Script" path="res://Obstacles/Rock Head/Rock Head.gd" id="1_8w6r8"]
-[ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle .png" id="2_3een7"]
-[ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink(42x42).png" id="2_g3cso"]
-[ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit(42x42).png" id="3_5qy3q"]
-[ext_resource type="Texture2D" uid="uid://rttreyla2jfk" path="res://Free/Traps/Rock Head/Left Hit(42x42).png" id="4_y3sdy"]
-[ext_resource type="Texture2D" uid="uid://dp262s72bcyxp" path="res://Free/Traps/Rock Head/Right Hit(42x42).png" id="5_pe2jc"]
-[ext_resource type="Texture2D" uid="uid://didjr4nhap610" path="res://Free/Traps/Rock Head/Top Hit(42x42).png" id="6_idr5a"]
+[ext_resource type="Texture2D" uid="uid://cv2igbr2wbnc1" path="res://Free/Traps/Rock Head/Idle.png" id="2_3een7"]
+[ext_resource type="Texture2D" uid="uid://corcfwjmrwhy3" path="res://Free/Traps/Rock Head/Blink (42x42).png" id="2_g3cso"]
+[ext_resource type="Texture2D" uid="uid://ba1m17ic5atrs" path="res://Free/Traps/Rock Head/Bottom Hit (42x42).png" id="3_5qy3q"]
+[ext_resource type="Texture2D" uid="uid://rttreyla2jfk" path="res://Free/Traps/Rock Head/Left Hit (42x42).png" id="4_y3sdy"]
+[ext_resource type="Texture2D" uid="uid://dp262s72bcyxp" path="res://Free/Traps/Rock Head/Right Hit (42x42).png" id="5_pe2jc"]
+[ext_resource type="Texture2D" uid="uid://didjr4nhap610" path="res://Free/Traps/Rock Head/Top Hit (42x42).png" id="6_idr5a"]
 [ext_resource type="AudioStream" uid="uid://vwjpmk6b4n5n" path="res://Free/Audio/Sound Effects/rockheadhit.wav" id="8_ob3xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rknkr"]

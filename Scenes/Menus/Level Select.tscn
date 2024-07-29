@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vgk34s2xdtw" path="res://Free/Menu/Levels/02 .png" id="4_fhank"]
 [ext_resource type="Texture2D" uid="uid://b6m2wa22ixrkj" path="res://Free/Menu/Levels/03 .png" id="5_73837"]
 [ext_resource type="Texture2D" uid="uid://h80r23jhyscr" path="res://Free/Menu/Levels/01 hover.png" id="5_hp3da"]
-[ext_resource type="Texture2D" uid="uid://d0oovjmof0mf4" path="res://Free/Menu/Buttons/Back .png" id="6_m32te"]
+[ext_resource type="Texture2D" uid="uid://d0oovjmof0mf4" path="res://Free/Menu/Buttons/Back.png" id="6_m32te"]
 [ext_resource type="Texture2D" uid="uid://2cemfmj80vhi" path="res://Free/Menu/Levels/02 hover.png" id="7_boimf"]
 [ext_resource type="Texture2D" uid="uid://bdqf15jaxsvxd" path="res://Free/Menu/Levels/03 hover.png" id="8_xp0x2"]
 [ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="10_5w2r7"]

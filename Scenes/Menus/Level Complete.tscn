@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Menus/Level Complete.gd" id="1_vr66b"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_x0jcn"]
 [ext_resource type="Texture2D" uid="uid://dqu54e2jef73i" path="res://Free/Background/Purple.png" id="3_hbvsc"]
-[ext_resource type="Texture2D" uid="uid://cow6av5et7eps" path="res://Free/Menu/Buttons/Next .png" id="4_hmjjm"]
-[ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu .png" id="4_p6qgo"]
+[ext_resource type="Texture2D" uid="uid://cow6av5et7eps" path="res://Free/Menu/Buttons/Next.png" id="4_hmjjm"]
+[ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_p6qgo"]
 [ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="5_8svkp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gvgv3"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://buguefg6rqgju"]
 
 [ext_resource type="Script" path="res://Obstacles/Fire Platform/Activate Fire.gd" id="1_jsnbh"]
-[ext_resource type="Texture2D" uid="uid://baws8gsuu670w" path="res://Free/Traps/Fire/Off .png" id="2_04knf"]
-[ext_resource type="Texture2D" uid="uid://p4npe0lmd3dc" path="res://Free/Traps/Fire/Hit(16x32).png" id="3_u1ukr"]
-[ext_resource type="Texture2D" uid="uid://cxy5bwbws6ctg" path="res://Free/Traps/Fire/On(16x32).png" id="4_3tajs"]
+[ext_resource type="Texture2D" uid="uid://baws8gsuu670w" path="res://Free/Traps/Fire/Off.png" id="2_04knf"]
+[ext_resource type="Texture2D" uid="uid://p4npe0lmd3dc" path="res://Free/Traps/Fire/Hit (16x32).png" id="3_u1ukr"]
+[ext_resource type="Texture2D" uid="uid://cxy5bwbws6ctg" path="res://Free/Traps/Fire/On (16x32).png" id="4_3tajs"]
 [ext_resource type="AudioStream" uid="uid://btbwydqttqrc0" path="res://Free/Audio/Sound Effects/fire.wav" id="5_iy1n1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3c7gn"]

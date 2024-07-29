@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Obstacles/Moving Objects/Saw.gd" id="1_56cjn"]
 [ext_resource type="AudioStream" uid="uid://binkw0iljpspi" path="res://Free/Audio/Sound Effects/saw.wav" id="3_1d5ky"]
-[ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On(38x38).png" id="3_33lsi"]
+[ext_resource type="Texture2D" uid="uid://bg3xbctb75gbe" path="res://Free/Traps/Saw/On (38x38).png" id="3_33lsi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1007"]
 atlas = ExtResource("3_33lsi")

@@ -1,27 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722280342
-04B_30__.TTF.TTF::FontFile::4449793129738977136::1719419743::1722278291::1::::<><>::
+::res://::1722291849
+04B_30__.TTF::FontFile::4449793129738977136::1719419743::1722291849::1::::<><>::
 cursor.png::CompressedTexture2D::8939313748944888459::1720010670::1720380023::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::8761517129908547357::1722257993::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1722271143::0::1::::<><>::
-::res://Autoload/::1722279231
+::res://Autoload/::1722291739
 Audio Handler.gd::GDScript::-1::1722038011::0::1::::<>AudioStreamPlayer<>::
 Audio Handler.tscn::PackedScene::7337309545592081525::1722206690::0::1::::<><>::res://Autoload/Audio Handler.gd
 Config File Handler.gd::GDScript::-1::1722261358::0::1::::<>Node<>::
 Game Manager.gd::GDScript::-1::1722271096::0::1::::<>Node<>::
 Scene Transition.gd::GDScript::-1::1722271096::0::1::::<>CanvasLayer<>::
-Scene Transition.tscn::PackedScene::7584193763398859354::1722279231::0::1::::<><>::res://Autoload/Scene Transition.gd<>uid://bn3ii55rtyh7j::::res://Free/Other/Transition .png
-::res://Collectables/::1722280342
-Apple.tscn::PackedScene::5441707504479520552::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://ra26gc2fg3sf::::res://Free/Items/Fruits/Apple .png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png
-Bananas.tscn::PackedScene::3028651297777117271::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://8sh062klhg44::::res://Free/Items/Fruits/Bananas .png
-Cherry.tscn::PackedScene::5747458687093552132::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://cokx4wuf3b4wl::::res://Free/Items/Fruits/Cherries .png
+Scene Transition.tscn::PackedScene::7584193763398859354::1722291739::0::1::::<><>::res://Autoload/Scene Transition.gd<>uid://bn3ii55rtyh7j::::res://Free/Other/Transition.png
+::res://Collectables/::1722291665
+Apple.tscn::PackedScene::5441707504479520552::1722291646::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://ra26gc2fg3sf::::res://Free/Items/Fruits/Apple.png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png
+Bananas.tscn::PackedScene::3028651297777117271::1722291646::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://8sh062klhg44::::res://Free/Items/Fruits/Bananas.png
+Cherry.tscn::PackedScene::5747458687093552132::1722291646::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://cokx4wuf3b4wl::::res://Free/Items/Fruits/Cherries.png
 Collectable.gd::GDScript::-1::1722270642::0::1::::<>Node2D<>::
-Collectable.tscn::PackedScene::9194469557108209618::1722278299::0::1::::<><>::res://Collectables/Collectable.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
-Kiwi.tscn::PackedScene::5222813941814332429::1722280330::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://c24cnkjleo3yb::::res://Free/Items/Fruits/Kiwi .png
-Orange.tscn::PackedScene::5219964537473857128::1722280336::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://2qtxm6rjhc88::::res://Free/Items/Fruits/Orange .png
-Pineapple.tscn::PackedScene::1377624894834941321::1722280339::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://8todog1bxnmp::::res://Free/Items/Fruits/Pineapple .png
-Strawberry.tscn::PackedScene::7001188495334141444::1722280342::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cjqqlaqhubpuf::::res://Free/Items/Fruits/Strawberry .png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png
-Watermelon.tscn::PackedScene::2492013925802686684::1722280333::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://d0i81yno5v6j6::::res://Free/Items/Fruits/Melon .png
+Collectable.tscn::PackedScene::9194469557108209618::1722291603::0::1::::<><>::res://Collectables/Collectable.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
+Kiwi.tscn::PackedScene::5222813941814332429::1722291651::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://c24cnkjleo3yb::::res://Free/Items/Fruits/Kiwi.png
+Orange.tscn::PackedScene::5219964537473857128::1722291658::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://2qtxm6rjhc88::::res://Free/Items/Fruits/Orange.png
+Pineapple.tscn::PackedScene::1377624894834941321::1722291662::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://8todog1bxnmp::::res://Free/Items/Fruits/Pineapple.png
+Strawberry.tscn::PackedScene::7001188495334141444::1722291665::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cjqqlaqhubpuf::::res://Free/Items/Fruits/Strawberry.png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png
+Watermelon.tscn::PackedScene::2492013925802686684::1722291655::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://d0i81yno5v6j6::::res://Free/Items/Fruits/Melon.png
 ::res://Free/::1722206504
 ::res://Free/Audio/::1722042484
 ::res://Free/Audio/Music/::1722041997
@@ -57,16 +57,16 @@ End (Pressed) (64x64).png::CompressedTexture2D::4913709839691659492::1719419743:
 ::res://Free/Items/Checkpoints/Start/::1719485282
 Start (Idle).png::CompressedTexture2D::2789082876250527931::1719419743::1719419743::1::::<><>::
 Start (Moving) (64x64).png::CompressedTexture2D::5896768133001435997::1719419743::1719419743::1::::<><>::
-::res://Free/Items/Fruits/::1722280342
-Apple .png::CompressedTexture2D::1194905379725713465::1719419743::1722280313::1::::<><>::
-Bananas .png::CompressedTexture2D::2353861973828042999::1719419743::1722280316::1::::<><>::
-Cherries .png::CompressedTexture2D::5777578421390583507::1719419743::1722280319::1::::<><>::
-Collected .png::CompressedTexture2D::5754369083035609233::1719419743::1722280323::1::::<><>::
-Kiwi .png::CompressedTexture2D::6727952289429566193::1719419743::1722280330::1::::<><>::
-Melon .png::CompressedTexture2D::8932549536785320021::1719419743::1722280333::1::::<><>::
-Orange .png::CompressedTexture2D::1929324197368052659::1719419743::1722280336::1::::<><>::
-Pineapple .png::CompressedTexture2D::2356311158441954915::1719419743::1722280339::1::::<><>::
-Strawberry .png::CompressedTexture2D::5438562144872369937::1719419743::1722280342::1::::<><>::
+::res://Free/Items/Fruits/::1722291666
+Apple.png::CompressedTexture2D::1194905379725713465::1719419743::1722291635::1::::<><>::
+Bananas.png::CompressedTexture2D::2353861973828042999::1719419743::1722291639::1::::<><>::
+Cherries.png::CompressedTexture2D::5777578421390583507::1719419743::1722291643::1::::<><>::
+Collected.png::CompressedTexture2D::5754369083035609233::1719419743::1722291648::1::::<><>::
+Kiwi.png::CompressedTexture2D::6727952289429566193::1719419743::1722291652::1::::<><>::
+Melon.png::CompressedTexture2D::8932549536785320021::1719419743::1722291655::1::::<><>::
+Orange.png::CompressedTexture2D::1929324197368052659::1719419743::1722291659::1::::<><>::
+Pineapple.png::CompressedTexture2D::2356311158441954915::1719419743::1722291662::1::::<><>::
+Strawberry.png::CompressedTexture2D::5438562144872369937::1719419743::1722291666::1::::<><>::
 ::res://Free/Main Character/::1722206505
 Appearing (96x96).png::CompressedTexture2D::8719764433629447085::1719419743::1722206505::1::::<><>::
 Desappearing (96x96).png::CompressedTexture2D::3136129189605116651::1719419743::1722206505::1::::<><>::
@@ -76,17 +76,17 @@ Idle (32x32).png::CompressedTexture2D::8321383459364955009::1719419743::17222065
 Jump (32x32).png::CompressedTexture2D::8050689705418102855::1719419743::1722206505::1::::<><>::
 Run (32x32).png::CompressedTexture2D::186996836338346208::1719419743::1722206505::1::::<><>::
 ::res://Free/Menu/::1722017962
-::res://Free/Menu/Buttons/::1722280045
-Back .png::CompressedTexture2D::8943772462049261519::1719419743::1722280045::1::::<><>::
-Close .png::CompressedTexture2D::5334463546365328793::1719419743::1722280042::1::::<><>::
-Levels .png::CompressedTexture2D::903083079631158382::1719419743::1722280038::1::::<><>::
-Menu .png::CompressedTexture2D::3737692566426036645::1719419743::1722280035::1::::<><>::
-Next .png::CompressedTexture2D::5802784865226611408::1719419743::1722280032::1::::<><>::
-Play .png::CompressedTexture2D::598414764645037442::1719419743::1722280029::1::::<><>::
-Restart .png::CompressedTexture2D::8413847488372809420::1719419743::1722280024::1::::<><>::
-Settings .png::CompressedTexture2D::4262100902427338764::1719419743::1722280021::1::::<><>::
-Volume .png::CompressedTexture2D::2307485221327049966::1719419743::1722280018::1::::<><>::
+::res://Free/Menu/Buttons/::1722291723
+Back.png::CompressedTexture2D::8943772462049261519::1719419743::1722291697::1::::<><>::
+Close.png::CompressedTexture2D::5334463546365328793::1719419743::1722291701::1::::<><>::
+Levels.png::CompressedTexture2D::903083079631158382::1719419743::1722291705::1::::<><>::
+Menu.png::CompressedTexture2D::3737692566426036645::1719419743::1722291707::1::::<><>::
+Next.png::CompressedTexture2D::5802784865226611408::1719419743::1722291710::1::::<><>::
+Play.png::CompressedTexture2D::598414764645037442::1719419743::1722291713::1::::<><>::
+Restart.png::CompressedTexture2D::8413847488372809420::1719419743::1722291717::1::::<><>::
+Settings.png::CompressedTexture2D::4262100902427338764::1719419743::1722291719::1::::<><>::
 Volume Mute.png::CompressedTexture2D::2273915010351703113::1722127537::1722280012::1::::<><>::
+Volume.png::CompressedTexture2D::2307485221327049966::1719419743::1722291723::1::::<><>::
 ::res://Free/Menu/Levels/::1722280084
 01 .png::CompressedTexture2D::46460208996298849::1719419743::1722280065::1::::<><>::
 01 hover.png::CompressedTexture2D::560996116469959021::1719419743::1722280070::1::::<><>::
@@ -94,101 +94,101 @@ Volume Mute.png::CompressedTexture2D::2273915010351703113::1722127537::172228001
 02 hover.png::CompressedTexture2D::1899492112841347266::1719419743::1722280077::1::::<><>::
 03 .png::CompressedTexture2D::4588726058739514873::1719419743::1722280081::1::::<><>::
 03 hover.png::CompressedTexture2D::2630368863912726565::1719419743::1722280084::1::::<><>::
-::res://Free/Other/::1722279232
-Dust Particle .png::CompressedTexture2D::4850392764166907431::1719419743::1722279229::1::::<><>::
-Transition .png::CompressedTexture2D::3357179873237948533::1719419743::1722279232::1::::<><>::
-::res://Free/Terrain/::1722279082
-Terrain(16x16).png::CompressedTexture2D::7298181824350831975::1719419743::1722279082::1::::<><>::
+::res://Free/Other/::1722291739
+Dust Particle.png::CompressedTexture2D::4850392764166907431::1719419743::1722291737::1::::<><>::
+Transition.png::CompressedTexture2D::3357179873237948533::1719419743::1722291739::1::::<><>::
+::res://Free/Terrain/::1722291746
+Terrain (16x16).png::CompressedTexture2D::7298181824350831975::1719419743::1722291746::1::::<><>::
 ::res://Free/Traps/::1722257745
-::res://Free/Traps/Falling Platforms/::1722279114
-Off .png::CompressedTexture2D::5365303513479822653::1719419743::1722279109::1::::<><>::
-On(32x10).png::CompressedTexture2D::381068398685800524::1719419743::1722279114::1::::<><>::
-::res://Free/Traps/Fire/::1722279127
-Hit(16x32).png::CompressedTexture2D::1113515966482243792::1719419743::1722279120::1::::<><>::
-Off .png::CompressedTexture2D::2432989175234345888::1719419743::1722279123::1::::<><>::
-On(16x32).png::CompressedTexture2D::6438554290818642732::1719419743::1722279127::1::::<><>::
-::res://Free/Traps/Platforms/::1722279146
-Brown Off .png::CompressedTexture2D::215230322736249584::1719419743::1722279132::1::::<><>::
-Brown On(32x8).png::CompressedTexture2D::8889853783984760393::1719419743::1722279136::1::::<><>::
-Chain .png::CompressedTexture2D::2475511759319757691::1719419743::1722279139::1::::<><>::
-Grey Off .png::CompressedTexture2D::5908666753937213399::1722201706::1722279143::1::::<><>::
-Grey On(32x8).png::CompressedTexture2D::7157114810407307244::1722201688::1722279146::1::::<><>::
-::res://Free/Traps/Rock Head/::1722279169
-Blink(42x42).png::CompressedTexture2D::5790711133078488424::1719419743::1722279152::1::::<><>::
-Bottom Hit(42x42).png::CompressedTexture2D::2440871233090003520::1719419743::1722279156::1::::<><>::
-Idle .png::CompressedTexture2D::6303041813891292698::1719419743::1722279159::1::::<><>::
-Left Hit(42x42).png::CompressedTexture2D::1233617748202200336::1719419743::1722279163::1::::<><>::
-Right Hit(42x42).png::CompressedTexture2D::8269764344302839293::1719419743::1722279166::1::::<><>::
-Top Hit(42x42).png::CompressedTexture2D::7727544288455308833::1719419743::1722279169::1::::<><>::
-::res://Free/Traps/Saw/::1722279184
-Chain .png::CompressedTexture2D::178261441403544121::1719419743::1722279176::1::::<><>::
-Off .png::CompressedTexture2D::5741377239614119754::1719419743::1722279180::1::::<><>::
-On(38x38).png::CompressedTexture2D::2866754733749871118::1719419743::1722279184::1::::<><>::
-::res://Free/Traps/Spiked Ball/::1722279200
+::res://Free/Traps/Falling Platforms/::1722291754
+Off.png::CompressedTexture2D::5365303513479822653::1719419743::1722291751::1::::<><>::
+On (32x10).png::CompressedTexture2D::381068398685800524::1719419743::1722291754::1::::<><>::
+::res://Free/Traps/Fire/::1722291765
+Hit (16x32).png::CompressedTexture2D::1113515966482243792::1719419743::1722291759::1::::<><>::
+Off.png::CompressedTexture2D::2432989175234345888::1719419743::1722291762::1::::<><>::
+On (16x32).png::CompressedTexture2D::6438554290818642732::1719419743::1722291765::1::::<><>::
+::res://Free/Traps/Platforms/::1722291786
+Brown Off.png::CompressedTexture2D::215230322736249584::1719419743::1722291770::1::::<><>::
+Brown On (32x8).png::CompressedTexture2D::8889853783984760393::1719419743::1722291773::1::::<><>::
+Chain.png::CompressedTexture2D::2475511759319757691::1719419743::1722291775::1::::<><>::
+Grey Off.png::CompressedTexture2D::5908666753937213399::1722201706::1722291779::1::::<><>::
+Grey On (32x8).png::CompressedTexture2D::7157114810407307244::1722201688::1722291786::1::::<><>::
+::res://Free/Traps/Rock Head/::1722291806
+Blink (42x42).png::CompressedTexture2D::5790711133078488424::1719419743::1722291792::1::::<><>::
+Bottom Hit (42x42).png::CompressedTexture2D::2440871233090003520::1719419743::1722291794::1::::<><>::
+Idle.png::CompressedTexture2D::6303041813891292698::1719419743::1722291798::1::::<><>::
+Left Hit (42x42).png::CompressedTexture2D::1233617748202200336::1719419743::1722291800::1::::<><>::
+Right Hit (42x42).png::CompressedTexture2D::8269764344302839293::1719419743::1722291803::1::::<><>::
+Top Hit (42x42).png::CompressedTexture2D::7727544288455308833::1719419743::1722291806::1::::<><>::
+::res://Free/Traps/Saw/::1722291816
+Chain.png::CompressedTexture2D::178261441403544121::1719419743::1722291811::1::::<><>::
+Off.png::CompressedTexture2D::5741377239614119754::1719419743::1722291814::1::::<><>::
+On (38x38).png::CompressedTexture2D::2866754733749871118::1719419743::1722291816::1::::<><>::
+::res://Free/Traps/Spiked Ball/::1722291826
 Long Chain.png::CompressedTexture2D::424546828143363312::1719573915::1722279191::1::::<><>::
-Spiked Ball .png::CompressedTexture2D::1083532201422594190::1719419743::1722279200::1::::<><>::
-::res://Free/Traps/Spikes/::1722279208
-Idle .png::CompressedTexture2D::7494817094299149435::1719419743::1722279208::1::::<><>::
-::res://Free/Traps/Trampoline/::1722279216
-Idle .png::CompressedTexture2D::4412953432854689394::1719419743::1722279213::1::::<><>::
-Jump(28x28).png::CompressedTexture2D::4324545306481086967::1719419743::1722279216::1::::<><>::
-::res://Goal/::1722278299
+Spiked Ball.png::CompressedTexture2D::1083532201422594190::1719419743::1722291826::1::::<><>::
+::res://Free/Traps/Spikes/::1722291833
+Idle.png::CompressedTexture2D::7494817094299149435::1719419743::1722291833::1::::<><>::
+::res://Free/Traps/Trampoline/::1722291841
+Idle.png::CompressedTexture2D::4412953432854689394::1719419743::1722291838::1::::<><>::
+Jump (28x28).png::CompressedTexture2D::4324545306481086967::1719419743::1722291841::1::::<><>::
+::res://Goal/::1722291603
 Goal.gd::GDScript::-1::1722134804::0::1::::<>Area2D<>::
-Goal.tscn::PackedScene::4446258582292443280::1722278299::0::1::::<><>::uid://j7al2sppb1xi::::res://Free/Items/Checkpoints/End/End (Idle).png<>res://Goal/Goal.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres
-Start.tscn::PackedScene::2785684416299165759::1722278299::0::1::::<><>::uid://cqao56r1r7kxx::::res://Free/Items/Checkpoints/Start/Start (Moving) (64x64).png
+Goal.tscn::PackedScene::4446258582292443280::1722291603::0::1::::<><>::uid://j7al2sppb1xi::::res://Free/Items/Checkpoints/End/End (Idle).png<>res://Goal/Goal.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres
+Start.tscn::PackedScene::2785684416299165759::1722291603::0::1::::<><>::uid://cqao56r1r7kxx::::res://Free/Items/Checkpoints/Start/Start (Moving) (64x64).png
 ::res://Obstacles/::1722278748
 Border.tscn::PackedScene::3576673911432954121::1721674699::0::1::::<><>::
-::res://Obstacles/Falling Platform/::1722279114
+::res://Obstacles/Falling Platform/::1722291754
 Falling Platform.gd::GDScript::-1::1722171160::0::1::::<>AnimatableBody2D<>::
-Falling Platform.tscn::PackedScene::6233822500485351536::1722279114::0::1::::<><>::res://Obstacles/Falling Platform/Falling Platform.gd<>uid://cio81ala2tx38::::res://Free/Traps/Falling Platforms/Off .png<>uid://foue13baudpc::::res://Free/Traps/Falling Platforms/On(32x10).png
-::res://Obstacles/Fire Platform/::1722279126
+Falling Platform.tscn::PackedScene::6233822500485351536::1722291754::0::1::::<><>::res://Obstacles/Falling Platform/Falling Platform.gd<>uid://cio81ala2tx38::::res://Free/Traps/Falling Platforms/Off.png<>uid://foue13baudpc::::res://Free/Traps/Falling Platforms/On (32x10).png
+::res://Obstacles/Fire Platform/::1722291764
 Activate Fire.gd::GDScript::-1::1722135416::0::1::::<>Node2D<>::
-Fire Platform.tscn::PackedScene::3803805579326485454::1722279126::0::1::::<><>::res://Obstacles/Fire Platform/Activate Fire.gd<>uid://baws8gsuu670w::::res://Free/Traps/Fire/Off .png<>uid://p4npe0lmd3dc::::res://Free/Traps/Fire/Hit(16x32).png<>uid://cxy5bwbws6ctg::::res://Free/Traps/Fire/On(16x32).png<>uid://btbwydqttqrc0::::res://Free/Audio/Sound Effects/fire.wav
-::res://Obstacles/Moving Objects/::1722279184
+Fire Platform.tscn::PackedScene::3803805579326485454::1722291764::0::1::::<><>::res://Obstacles/Fire Platform/Activate Fire.gd<>uid://baws8gsuu670w::::res://Free/Traps/Fire/Off.png<>uid://p4npe0lmd3dc::::res://Free/Traps/Fire/Hit (16x32).png<>uid://cxy5bwbws6ctg::::res://Free/Traps/Fire/On (16x32).png<>uid://btbwydqttqrc0::::res://Free/Audio/Sound Effects/fire.wav
+::res://Obstacles/Moving Objects/::1722291816
 Moving Object.gd::GDScript::-1::1722175966::0::1::::<>Path2D<>::
 Moving Platform.gd::GDScript::-1::1722206068::0::1::::<><>::
-Moving Platform.tscn::PackedScene::7251024687605658528::1722279146::0::1::::<><>::res://Obstacles/Moving Objects/Moving Platform.gd<>uid://dywkufrha3ykv::::res://Free/Traps/Platforms/Brown On(32x8).png<>uid://dci2uvwvxxlw::::res://Free/Traps/Platforms/Brown Off .png<>uid://c877vumiusr0g::::res://Free/Traps/Platforms/Grey On(32x8).png
+Moving Platform.tscn::PackedScene::7251024687605658528::1722291785::0::1::::<><>::res://Obstacles/Moving Objects/Moving Platform.gd<>uid://dywkufrha3ykv::::res://Free/Traps/Platforms/Brown On (32x8).png<>uid://dci2uvwvxxlw::::res://Free/Traps/Platforms/Brown Off.png<>uid://c877vumiusr0g::::res://Free/Traps/Platforms/Grey On (32x8).png
 Saw.gd::GDScript::-1::1722260871::0::1::::<><>::
-Saw.tscn::PackedScene::8946558989585845829::1722279184::0::1::::<><>::res://Obstacles/Moving Objects/Saw.gd<>uid://binkw0iljpspi::::res://Free/Audio/Sound Effects/saw.wav<>uid://bg3xbctb75gbe::::res://Free/Traps/Saw/On(38x38).png
-::res://Obstacles/Rock Head/::1722279169
+Saw.tscn::PackedScene::8946558989585845829::1722291816::0::1::::<><>::res://Obstacles/Moving Objects/Saw.gd<>uid://binkw0iljpspi::::res://Free/Audio/Sound Effects/saw.wav<>uid://bg3xbctb75gbe::::res://Free/Traps/Saw/On (38x38).png
+::res://Obstacles/Rock Head/::1722291805
 Rock Head.gd::GDScript::-1::1722168201::0::1::::<>Node2D<>::
-Rock Head.tscn::PackedScene::8058072942867059967::1722279169::0::1::::<><>::res://Obstacles/Rock Head/Rock Head.gd<>uid://cv2igbr2wbnc1::::res://Free/Traps/Rock Head/Idle .png<>uid://corcfwjmrwhy3::::res://Free/Traps/Rock Head/Blink(42x42).png<>uid://ba1m17ic5atrs::::res://Free/Traps/Rock Head/Bottom Hit(42x42).png<>uid://rttreyla2jfk::::res://Free/Traps/Rock Head/Left Hit(42x42).png<>uid://dp262s72bcyxp::::res://Free/Traps/Rock Head/Right Hit(42x42).png<>uid://didjr4nhap610::::res://Free/Traps/Rock Head/Top Hit(42x42).png<>uid://vwjpmk6b4n5n::::res://Free/Audio/Sound Effects/rockheadhit.wav
-::res://Obstacles/Spike/::1722279207
-Spike.tscn::PackedScene::1846263439042125487::1722279207::0::1::::<><>::uid://de1sspf4hu6h8::::res://Free/Traps/Spikes/Idle .png
-::res://Obstacles/Swinging Ball/::1722279199
-Swinging Ball.tscn::PackedScene::1588778089044553508::1722279199::0::1::::<><>::uid://gbwhvhh5ueb5::::res://Free/Traps/Spiked Ball/Long Chain.png<>uid://po4u8kt8y2so::::res://Free/Traps/Spiked Ball/Spiked Ball .png<>uid://b3yuemnew75lt::::res://Free/Audio/Sound Effects/swinging spike ball.wav
-::res://Obstacles/Trampoline/::1722279216
+Rock Head.tscn::PackedScene::8058072942867059967::1722291805::0::1::::<><>::res://Obstacles/Rock Head/Rock Head.gd<>uid://cv2igbr2wbnc1::::res://Free/Traps/Rock Head/Idle.png<>uid://corcfwjmrwhy3::::res://Free/Traps/Rock Head/Blink (42x42).png<>uid://ba1m17ic5atrs::::res://Free/Traps/Rock Head/Bottom Hit (42x42).png<>uid://rttreyla2jfk::::res://Free/Traps/Rock Head/Left Hit (42x42).png<>uid://dp262s72bcyxp::::res://Free/Traps/Rock Head/Right Hit (42x42).png<>uid://didjr4nhap610::::res://Free/Traps/Rock Head/Top Hit (42x42).png<>uid://vwjpmk6b4n5n::::res://Free/Audio/Sound Effects/rockheadhit.wav
+::res://Obstacles/Spike/::1722291833
+Spike.tscn::PackedScene::1846263439042125487::1722291833::0::1::::<><>::uid://de1sspf4hu6h8::::res://Free/Traps/Spikes/Idle.png
+::res://Obstacles/Swinging Ball/::1722291825
+Swinging Ball.tscn::PackedScene::1588778089044553508::1722291825::0::1::::<><>::uid://gbwhvhh5ueb5::::res://Free/Traps/Spiked Ball/Long Chain.png<>uid://po4u8kt8y2so::::res://Free/Traps/Spiked Ball/Spiked Ball.png<>uid://b3yuemnew75lt::::res://Free/Audio/Sound Effects/swinging spike ball.wav
+::res://Obstacles/Trampoline/::1722291841
 Trampoline.gd::GDScript::-1::1722135925::0::1::::<>Area2D<>::
-Trampoline.tscn::PackedScene::8665695452488581911::1722279216::0::1::::<><>::res://Obstacles/Trampoline/Trampoline.gd<>uid://b2u3vns527qyx::::res://Free/Traps/Trampoline/Jump(28x28).png<>uid://b34wx0h6q0xbm::::res://Free/Traps/Trampoline/Idle .png<>uid://cjmx2pakcl78q::::res://Free/Audio/Sound Effects/trampoline.wav
-::res://Player/::1722279228
-Jump Particles.tscn::PackedScene::7231109599186640731::1722279228::0::1::::<><>::uid://cbdti305wiatb::::res://Free/Other/Dust Particle .png
+Trampoline.tscn::PackedScene::8665695452488581911::1722291841::0::1::::<><>::res://Obstacles/Trampoline/Trampoline.gd<>uid://b2u3vns527qyx::::res://Free/Traps/Trampoline/Jump (28x28).png<>uid://b34wx0h6q0xbm::::res://Free/Traps/Trampoline/Idle.png<>uid://cjmx2pakcl78q::::res://Free/Audio/Sound Effects/trampoline.wav
+::res://Player/::1722291736
+Jump Particles.tscn::PackedScene::7231109599186640731::1722291736::0::1::::<><>::uid://cbdti305wiatb::::res://Free/Other/Dust Particle.png
 Player.gd::GDScript::-1::1722268818::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::1833789909274980894::1722278299::0::1::::<><>::uid://dmx2xh2t3ragt::::res://Free/Main Character/Jump (32x32).png<>res://Player/Player.gd<>uid://dqs678djhcscv::::res://Free/Main Character/Idle (32x32).png<>uid://dwh6imwssfw3v::::res://Free/Main Character/Appearing (96x96).png<>uid://cwt2ta2docrw::::res://Free/Main Character/Run (32x32).png<>uid://bkxfubsamnixv::::res://Free/Main Character/Desappearing (96x96).png<>uid://btkhxgl7gv5e3::::res://Free/Main Character/Double Jump (32x32).png<>uid://cr0tkgrbksh78::::res://Free/Main Character/Fall (32x32).png
-::res://Scenes/::1722278290
-exit.tres::Theme::4897121197908015893::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
-labelsettings.tres::LabelSettings::9115173054741840753::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
-normal.tres::Theme::8176094988173212293::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
-::res://Scenes/Levels/::1722279082
-Ground.tres::TileSet::934253680676668753::1722279082::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain(16x16).png
-Level1.tscn::PackedScene::7721600088966468366::1722278952::0::1::::<><>::res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://b0juaruvsxcin::::res://Free/Background/Greеn.png<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn
-Level2.tscn::PackedScene::2961185706452458857::1722279011::0::1::::<><>::uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://bcpujn1irpfh4::::res://Free/Background/Brown.png<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
-Level3.tscn::PackedScene::6905949597009475946::1722279015::0::1::::<><>::uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://c8vdq5m2nrrhd::::res://Free/Background/Gray.png<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn
-Objects.tres::TileSet::3910224657535781049::1722278285::0::1::::<><>::uid://cjsaelpo26pyu::::res://Collectables/Apple.tscn<>uid://cn5d2moklwtay::::res://Collectables/Cherry.tscn<>uid://tvljssm4sxrl::::res://Collectables/Pineapple.tscn<>uid://bbrfdtxslhue3::::res://Collectables/Watermelon.tscn<>uid://cgmub2ul1laia::::res://Collectables/Orange.tscn<>uid://c60os0xlk02l1::::res://Collectables/Strawberry.tscn<>uid://cgn78n3q8qahp::::res://Collectables/Kiwi.tscn<>uid://bjfdpdya4ljed::::res://Collectables/Bananas.tscn<>uid://1klxoulhh3fn::::res://Obstacles/Spike/Spike.tscn<>uid://buguefg6rqgju::::res://Obstacles/Fire Platform/Fire Platform.tscn<>uid://wvu7cd2dkybc::::res://Obstacles/Swinging Ball/Swinging Ball.tscn<>uid://dvpy0dfqdqgl0::::res://Obstacles/Trampoline/Trampoline.tscn<>uid://bfxn2ysiatqdb::::res://Goal/Start.tscn
-Platforms.tres::TileSet::59996150410539202::1722279082::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain(16x16).png<>uid://cu2ye7s6k81lk::::res://Obstacles/Falling Platform/Falling Platform.tscn
+Player.tscn::PackedScene::1833789909274980894::1722291603::0::1::::<><>::uid://dmx2xh2t3ragt::::res://Free/Main Character/Jump (32x32).png<>res://Player/Player.gd<>uid://dqs678djhcscv::::res://Free/Main Character/Idle (32x32).png<>uid://dwh6imwssfw3v::::res://Free/Main Character/Appearing (96x96).png<>uid://cwt2ta2docrw::::res://Free/Main Character/Run (32x32).png<>uid://bkxfubsamnixv::::res://Free/Main Character/Desappearing (96x96).png<>uid://btkhxgl7gv5e3::::res://Free/Main Character/Double Jump (32x32).png<>uid://cr0tkgrbksh78::::res://Free/Main Character/Fall (32x32).png
+::res://Scenes/::1722291849
+exit.tres::Theme::4897121197908015893::1722291849::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF
+labelsettings.tres::LabelSettings::9115173054741840753::1722291849::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF
+normal.tres::Theme::8176094988173212293::1722291849::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF
+::res://Scenes/Levels/::1722291746
+Ground.tres::TileSet::934253680676668753::1722291746::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain (16x16).png
+Level1.tscn::PackedScene::7721600088966468366::1722291603::0::1::::<><>::res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://b0juaruvsxcin::::res://Free/Background/Greеn.png<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn
+Level2.tscn::PackedScene::2961185706452458857::1722291603::0::1::::<><>::uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://bcpujn1irpfh4::::res://Free/Background/Brown.png<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
+Level3.tscn::PackedScene::6905949597009475946::1722291603::0::1::::<><>::uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://c8vdq5m2nrrhd::::res://Free/Background/Gray.png<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn
+Objects.tres::TileSet::3910224657535781049::1722291476::0::1::::<><>::uid://cjsaelpo26pyu::::res://Collectables/Apple.tscn<>uid://cn5d2moklwtay::::res://Collectables/Cherry.tscn<>uid://tvljssm4sxrl::::res://Collectables/Pineapple.tscn<>uid://bbrfdtxslhue3::::res://Collectables/Watermelon.tscn<>uid://cgmub2ul1laia::::res://Collectables/Orange.tscn<>uid://c60os0xlk02l1::::res://Collectables/Strawberry.tscn<>uid://cgn78n3q8qahp::::res://Collectables/Kiwi.tscn<>uid://bjfdpdya4ljed::::res://Collectables/Bananas.tscn<>uid://1klxoulhh3fn::::res://Obstacles/Spike/Spike.tscn<>uid://buguefg6rqgju::::res://Obstacles/Fire Platform/Fire Platform.tscn<>uid://wvu7cd2dkybc::::res://Obstacles/Swinging Ball/Swinging Ball.tscn<>uid://dvpy0dfqdqgl0::::res://Obstacles/Trampoline/Trampoline.tscn<>uid://bfxn2ysiatqdb::::res://Goal/Start.tscn
+Platforms.tres::TileSet::59996150410539202::1722291746::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain (16x16).png<>uid://cu2ye7s6k81lk::::res://Obstacles/Falling Platform/Falling Platform.tscn
 Play Level Music.gd::GDScript::-1::1722134770::0::1::::<>Node2D<>::
-::res://Scenes/Menus/::1722280083
+::res://Scenes/Menus/::1722291849
 Game Over.gd::GDScript::-1::1722264973::0::1::::<>Node<>::
-Game Over.tscn::PackedScene::6198932186391991991::1722280035::0::1::::<><>::res://Scenes/Menus/Game Over.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dpbeqw4knt58m::::res://Free/Background/Pink.png<>uid://btitirtcswmiv::::res://Free/Menu/Buttons/Menu .png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres<>uid://dr4y3rymeq26c::::res://Free/Menu/Buttons/Restart .png
+Game Over.tscn::PackedScene::6198932186391991991::1722291716::0::1::::<><>::res://Scenes/Menus/Game Over.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dpbeqw4knt58m::::res://Free/Background/Pink.png<>uid://btitirtcswmiv::::res://Free/Menu/Buttons/Menu.png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres<>uid://dr4y3rymeq26c::::res://Free/Menu/Buttons/Restart.png
 Level Complete.gd::GDScript::-1::1722264734::0::1::::<>Node<>::
-Level Complete.tscn::PackedScene::238678314962427895::1722280035::0::1::::<><>::res://Scenes/Menus/Level Complete.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dqu54e2jef73i::::res://Free/Background/Purple.png<>uid://cow6av5et7eps::::res://Free/Menu/Buttons/Next .png<>uid://btitirtcswmiv::::res://Free/Menu/Buttons/Menu .png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
+Level Complete.tscn::PackedScene::238678314962427895::1722291710::0::1::::<><>::res://Scenes/Menus/Level Complete.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dqu54e2jef73i::::res://Free/Background/Purple.png<>uid://cow6av5et7eps::::res://Free/Menu/Buttons/Next.png<>uid://btitirtcswmiv::::res://Free/Menu/Buttons/Menu.png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
 Level Select.gd::GDScript::-1::1722129973::0::1::::<>Control<>::
-Level Select.tscn::PackedScene::5303585185910162584::1722280083::0::1::::<><>::res://Scenes/Menus/Level Select.gd<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://wrgs67crjgj::::res://Free/Menu/Levels/01 .png<>uid://c3vgk34s2xdtw::::res://Free/Menu/Levels/02 .png<>uid://b6m2wa22ixrkj::::res://Free/Menu/Levels/03 .png<>uid://h80r23jhyscr::::res://Free/Menu/Levels/01 hover.png<>uid://d0oovjmof0mf4::::res://Free/Menu/Buttons/Back .png<>uid://2cemfmj80vhi::::res://Free/Menu/Levels/02 hover.png<>uid://bdqf15jaxsvxd::::res://Free/Menu/Levels/03 hover.png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
+Level Select.tscn::PackedScene::5303585185910162584::1722291697::0::1::::<><>::res://Scenes/Menus/Level Select.gd<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://wrgs67crjgj::::res://Free/Menu/Levels/01 .png<>uid://c3vgk34s2xdtw::::res://Free/Menu/Levels/02 .png<>uid://b6m2wa22ixrkj::::res://Free/Menu/Levels/03 .png<>uid://h80r23jhyscr::::res://Free/Menu/Levels/01 hover.png<>uid://d0oovjmof0mf4::::res://Free/Menu/Buttons/Back.png<>uid://2cemfmj80vhi::::res://Free/Menu/Levels/02 hover.png<>uid://bdqf15jaxsvxd::::res://Free/Menu/Levels/03 hover.png<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
 Main Menu.gd::GDScript::-1::1722260721::0::1::::<>Node<>::
-Main Menu.tscn::PackedScene::4695251326353069389::1722280042::0::1::::<><>::res://Scenes/Menus/Main Menu.gd<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://ir42lemlc04e::::res://Free/Menu/Buttons/Play .png<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://m4pv8hkd0eks::::res://Free/Menu/Buttons/Levels .png<>uid://ciab3nsa68iab::::res://Free/Menu/Buttons/Close .png<>uid://b1yugdd17qwum::::res://Free/Menu/Buttons/Settings .png<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres<>uid://dwh6imwssfw3v::::res://Free/Main Character/Appearing (96x96).png<>uid://dqs678djhcscv::::res://Free/Main Character/Idle (32x32).png<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn
+Main Menu.tscn::PackedScene::4695251326353069389::1722291849::0::1::::<><>::res://Scenes/Menus/Main Menu.gd<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://b4nrpb124t46w::::res://04B_30__.TTF<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://ir42lemlc04e::::res://Free/Menu/Buttons/Play.png<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://m4pv8hkd0eks::::res://Free/Menu/Buttons/Levels.png<>uid://ciab3nsa68iab::::res://Free/Menu/Buttons/Close.png<>uid://b1yugdd17qwum::::res://Free/Menu/Buttons/Settings.png<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres<>uid://dwh6imwssfw3v::::res://Free/Main Character/Appearing (96x96).png<>uid://dqs678djhcscv::::res://Free/Main Character/Idle (32x32).png<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn
 Pause Menu.gd::GDScript::-1::1722260721::0::1::::<>Control<>::
-Pause Menu.tscn::PackedScene::7433701220514680408::1722278298::0::1::::<><>::uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>res://Scenes/Menus/Pause Menu.gd<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
-Settings.gd::GDScript::-1::1722134755::0::1::::<>Control<>::
-Settings.tscn::PackedScene::7109403902298877842::1722280017::0::1::::<><>::res://Scenes/Menus/Settings.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF<>uid://7407d2l35fh3::::res://Free/Menu/Buttons/Volume .png<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
-::res://Scenes/Points/::1722278290
+Pause Menu.tscn::PackedScene::7433701220514680408::1722291602::0::1::::<><>::uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>res://Scenes/Menus/Pause Menu.gd<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
+Settings.gd::GDScript::-1::1722291600::0::1::::<>Control<>::
+Settings.tscn::PackedScene::7109403902298877842::1722291849::0::1::::<><>::res://Scenes/Menus/Settings.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://dxjt6pty0dw5r::::res://Free/Background/Yellow.png<>uid://b4nrpb124t46w::::res://04B_30__.TTF<>uid://7407d2l35fh3::::res://Free/Menu/Buttons/Volume.png<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://cb1g4uqcrxru8::::res://Scenes/exit.tres
+::res://Scenes/Points/::1722291849
 Points.gd::GDScript::-1::1721170602::0::1::::<>Panel<>::
-Points.tscn::PackedScene::255373719509526041::1722278290::0::1::::<><>::res://Scenes/Points/Points.gd<>uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
+Points.tscn::PackedScene::255373719509526041::1722291849::0::1::::<><>::res://Scenes/Points/Points.gd<>uid://b4nrpb124t46w::::res://04B_30__.TTF

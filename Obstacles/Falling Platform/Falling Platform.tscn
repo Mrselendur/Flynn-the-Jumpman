@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cu2ye7s6k81lk"]
 
 [ext_resource type="Script" path="res://Obstacles/Falling Platform/Falling Platform.gd" id="1_sjy7j"]
-[ext_resource type="Texture2D" uid="uid://cio81ala2tx38" path="res://Free/Traps/Falling Platforms/Off .png" id="2_8e74l"]
-[ext_resource type="Texture2D" uid="uid://foue13baudpc" path="res://Free/Traps/Falling Platforms/On(32x10).png" id="3_6eofj"]
+[ext_resource type="Texture2D" uid="uid://cio81ala2tx38" path="res://Free/Traps/Falling Platforms/Off.png" id="2_8e74l"]
+[ext_resource type="Texture2D" uid="uid://foue13baudpc" path="res://Free/Traps/Falling Platforms/On (32x10).png" id="3_6eofj"]
 
 [sub_resource type="Animation" id="Animation_3yvfj"]
 length = 0.001
@@ -30,6 +30,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_yoqry"]
@@ -127,6 +139,18 @@ tracks/2/keys = {
 "args": [&"on", 1.0, false],
 "method": &"play"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_2sbxd"]

@@ -1,16 +1,17 @@
-res://Scenes/Menus/Main Menu.tscn
+res://Scenes/Menus/Settings.tscn
 res://Scenes/Levels/Ground.tres
 res://Scenes/Levels/Platforms.tres
 res://Scenes/normal.tres
 res://Scenes/Levels/Objects.tres
 res://Scenes/exit.tres
 res://Scenes/labelsettings.tres
-res://Scenes/Menus/Settings.tscn
-res://Scenes/Levels/Level3.tscn
+res://Scenes/Menus/Settings.gd
+res://Scenes/Menus/Main Menu.tscn
 res://Scenes/Menus/Pause Menu.tscn
 res://Scenes/Menus/Level Complete.tscn
 res://Scenes/Menus/Game Over.tscn
 res://Scenes/Menus/Level Select.tscn
+res://Scenes/Levels/Level3.tscn
 res://Scenes/Levels/Level2.tscn
 res://Goal/Goal.tscn
 res://Scenes/Levels/Level1.tscn
@@ -31,3 +32,8 @@ res://Collectables/Bananas.tscn
 res://Collectables/Kiwi.tscn
 res://Collectables/Orange.tscn
 res://Collectables/Pineapple.tscn
+res://Scenes/Menus/Main Menu.gd
+res://Autoload/Config File Handler.gd
+res://Autoload/Game Manager.gd
+res://Scenes/Menus/Game Over.gd
+res://Obstacles/Falling Platform/Falling Platform.tscn
