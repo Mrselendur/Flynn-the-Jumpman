@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuk2riuhb5l6n"]
+[gd_scene load_steps=9 format=3 uid="uid://cuk2riuhb5l6n"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Game Over.gd" id="1_b2cca"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_it7oe"]
@@ -6,6 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_htdor"]
 [ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="5_mvnj5"]
 [ext_resource type="Texture2D" uid="uid://dr4y3rymeq26c" path="res://Free/Menu/Buttons/Restart.png" id="6_j772d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_emqnq"]
+font_size = 50
+font_color = Color(0.745098, 0.188235, 0.141176, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddy6l"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0.686275, 0.203922, 0.611765, 1)
+shadow_size = 15
+shadow_color = Color(0.0862745, 0.027451, 0.0117647, 0.690196)
+shadow_offset = Vector2(3, 3)
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -41,8 +55,10 @@ grow_vertical = 2
 pivot_offset = Vector2(196, 28)
 theme_override_colors/font_color = Color(0.745098, 0.188235, 0.141176, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.984314, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Game Over!"
+label_settings = SubResource("LabelSettings_emqnq")
 
 [node name="Score" type="Label" parent="."]
 texture_filter = 1
@@ -53,6 +69,7 @@ offset_right = 765.0
 offset_bottom = 242.0
 pivot_offset = Vector2(162, 21)
 theme_override_font_sizes/font_size = 40
+label_settings = SubResource("LabelSettings_ddy6l")
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1

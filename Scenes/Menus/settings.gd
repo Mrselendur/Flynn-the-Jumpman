@@ -1,47 +1,55 @@
 extends Control
 
 #audio control
-@onready var mute: CheckBox = $MarginContainer/VBoxContainer/Mute
-@onready var master_volume: HSlider = $MarginContainer/VBoxContainer/MasterVolume
-@onready var music_volume: HSlider = $MarginContainer/VBoxContainer/MusicVolume
-@onready var sfx_volume: HSlider = $MarginContainer/VBoxContainer/SFXVolume
+@onready var muteButton: CheckBox = $MarginContainer/VBoxContainer/Mute
+@onready var masterVolume: HSlider = $MarginContainer/VBoxContainer/MasterVolume
+@onready var musicVolume: HSlider = $MarginContainer/VBoxContainer/MusicVolume
+@onready var sfxVolume: HSlider = $MarginContainer/VBoxContainer/SFXVolume
 
 #video control
-@onready var resolution_options: OptionButton = $MarginContainer/VBoxContainer/ResolutionOptions
-@onready var fullscreen_button: CheckBox = $MarginContainer/VBoxContainer/Fullscreen
-@onready var accept_changes: Button = $MarginContainer/VBoxContainer/HBoxContainer/AcceptChanges
-@onready var back: Button = $MarginContainer/VBoxContainer/HBoxContainer/Back
+@onready var resolutionOptions: OptionButton = $MarginContainer/VBoxContainer/ResolutionOptions
+@onready var fullscreenButton: CheckBox = $MarginContainer/VBoxContainer/Fullscreen
+@onready var acceptButton: Button = $MarginContainer/VBoxContainer/HBoxContainer/AcceptChanges
+@onready var backButton: Button = $MarginContainer/VBoxContainer/HBoxContainer/Back
 
-var resolution_settings = ConfigFileHandler.load_resolution()
+var resolutionSettings = ConfigFileHandler.load_resolution()
 
 var resolution: Vector2i
-var window_mode
+var windowMode
 
-var res_array: Array[Vector2i] = [
+var resArray: Array[Vector2i] = [
+	Vector2i(3840, 2160),
 	Vector2i(2560, 1440), 
-	Vector2i(1920, 1080), 
-	Vector2i(1280, 1024), 
-	Vector2i(1152, 648)
+	Vector2i(1920, 1080),
+	Vector2i(1600, 900),
+	Vector2i(1366, 768),
+	Vector2i(1280, 720), 
+	Vector2i(1152, 648),
+	Vector2i(1024, 576)
 ]
 
 func _ready() -> void:
 	#set up music settings
 	var audio_settings = ConfigFileHandler.load_audio_settings()
-	master_volume.value = audio_settings.get("Master")
-	music_volume.value = audio_settings.get("Music")
-	sfx_volume.value = audio_settings.get("SFX")
-	mute.button_pressed = audio_settings.get("Mute")
+	masterVolume.value = audio_settings.get("Master")
+	musicVolume.value = audio_settings.get("Music")
+	sfxVolume.value = audio_settings.get("SFX")
+	muteButton.button_pressed = audio_settings.get("Mute")
 
 	#set up video settings
 	var video_settings = ConfigFileHandler.load_video_settings()
-	fullscreen_button.button_pressed = video_settings.get("Fullscreen")
-	resolution = Vector2i(resolution_settings.get("WindowWidth"),resolution_settings.get("WindowHeight"))
+	fullscreenButton.button_pressed = video_settings.get("Fullscreen")
+	resolution = Vector2i(resolutionSettings.get("WindowWidth"),resolutionSettings.get("WindowHeight"))
 	draw()
-	accept_changes.disabled = true
-	mute.grab_focus()
+	acceptButton.disabled = true
+	muteButton.grab_focus()
 
 func _on_mute_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0, toggled_on)
+	if toggled_on:
+		muteButton.icon = load("res://Free/Menu/Buttons/VolumeMute.png")
+	else:
+		muteButton.icon = load("res://Free/Menu/Buttons/Volume.png")
 	enable_accept()
 
 func _on_master_volume_value_changed(value: float) -> void:
@@ -60,92 +68,85 @@ func _on_sfx_volume_value_changed(value: float) -> void:
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	#if toggled change to fullscreen
 	if toggled_on:
-		window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
+		windowMode = DisplayServer.WINDOW_MODE_FULLSCREEN
 	#if not change to window and enable the resolution select button
 	else:
-		resolution_options.disabled = false
-		window_mode = DisplayServer.WINDOW_MODE_WINDOWED
+		resolutionOptions.disabled = false
+		windowMode = DisplayServer.WINDOW_MODE_WINDOWED
 
 	enable_accept()
 
-func _on_resolution_options_item_selected(index: int) -> void:
-	match index:
-		0:  
-			resolution = Vector2i(2560, 1440)
-		1:
-			resolution = Vector2i(1920, 1080)
-		2:
-			resolution = Vector2i(1280, 1024)
-		3: 
-			resolution = Vector2i(1152, 648)
-		4:
-			resolution_options.set_item_disabled(4, false)
-			resolution = Vector2i(resolution_settings.get("WindowWidth"),resolution_settings.get("WindowHeight"))
+func _on_resolution_options_item_selected(_index: int) -> void:
+	var arr := resolutionOptions.text.split("x ",)
+	resolution = Vector2i(arr[0].to_int(), arr[1].to_int())
 	enable_accept()
 
+#works with custom resolution
 func find_resolution_text() -> void:
-	var res = res_array.find(resolution) 
-	if res != -1:
-		resolution_options.select(res)
-	else:
-		print(res)
-		resolution_options.select(4)
-		resolution_options.emit_signal("item_selected", 4)
+	var res = resArray.find(resolution) 
+	if res == -1:
+		return
+	resolutionOptions.select(res)
+
 
 func enable_accept() -> void:
-	accept_changes.disabled = false
+	acceptButton.disabled = false
 
 func draw() -> void:
-	if fullscreen_button.button_pressed:
-		window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
-		resolution_options.disabled = true
+	if fullscreenButton.button_pressed:
+		windowMode = DisplayServer.WINDOW_MODE_FULLSCREEN
+		resolutionOptions.disabled = true
+		#disconnect signal for grabbing focus
+		if resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
+			resolutionOptions.disconnect("mouse_entered",_on_resolution_options_mouse_entered)
 		resolution = DisplayServer.screen_get_size()
 
 	else:
-		window_mode = DisplayServer.WINDOW_MODE_WINDOWED
-		resolution_options.disabled = false
+		windowMode = DisplayServer.WINDOW_MODE_WINDOWED
+		#connect signal to grab focus 
+		if !resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
+			resolutionOptions.connect("mouse_entered",_on_resolution_options_mouse_entered)
+		resolutionOptions.disabled = false
 	find_resolution_text()
 
 func _on_accept_changes_pressed() -> void:
-	resolution_options.set_item_disabled(4, true)
 	draw()
-	accept_changes.disabled = true
 	#apply settings video and resolution settings
-	DisplayServer.window_set_mode(window_mode)
+	DisplayServer.window_set_mode(windowMode)
 	DisplayServer.window_set_size(resolution)
 	#save settings to settings.ini
 	ConfigFileHandler.save_resolution("WindowWidth", resolution.x)
 	ConfigFileHandler.save_resolution("WindowHeight", resolution.y)
-	ConfigFileHandler.save_video_settings("Fullscreen", fullscreen_button.button_pressed)
-	ConfigFileHandler.save_audio_settings("Mute", mute.button_pressed)
-	ConfigFileHandler.save_audio_settings("Master", master_volume.value)
-	ConfigFileHandler.save_audio_settings("Music", music_volume.value)
-	ConfigFileHandler.save_audio_settings("SFX", sfx_volume.value)
-	
+	ConfigFileHandler.save_video_settings("Fullscreen", fullscreenButton.button_pressed)
+	ConfigFileHandler.save_audio_settings("Mute", muteButton.button_pressed)
+	ConfigFileHandler.save_audio_settings("Master", masterVolume.value)
+	ConfigFileHandler.save_audio_settings("Music", musicVolume.value)
+	ConfigFileHandler.save_audio_settings("SFX", sfxVolume.value)
 
 func _on_back_pressed() -> void:
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
 
+#functions for highlighting buttons
 func _on_mute_mouse_entered() -> void:
-	mute.grab_focus()
+	muteButton.grab_focus()
 
 func _on_master_volume_mouse_entered() -> void:
-	master_volume.grab_focus()
+	masterVolume.grab_focus()
 
 func _on_music_volume_mouse_entered() -> void:
-	music_volume.grab_focus()
+	musicVolume.grab_focus()
 
 func _on_sfx_volume_mouse_entered() -> void:
-	sfx_volume.grab_focus()
+	sfxVolume.grab_focus()
 
 func _on_fullscreen_mouse_entered() -> void:
-	fullscreen_button.grab_focus()
+	fullscreenButton.grab_focus()
 
 func _on_resolution_options_mouse_entered() -> void:
-	resolution_options.grab_focus()
+	resolutionOptions.grab_focus()
 
 func _on_back_mouse_entered() -> void:
-	back.grab_focus()
+	backButton.grab_focus()
 
 func _on_accept_changes_mouse_entered() -> void:
-	accept_changes.grab_focus()
+	acceptButton.grab_focus()

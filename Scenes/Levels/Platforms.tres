@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://4cel1kee067"]
 
 [ext_resource type="Texture2D" uid="uid://db8j8us4spjlv" path="res://Free/Terrain/Terrain (16x16).png" id="1_0xv6d"]
-[ext_resource type="PackedScene" uid="uid://cu2ye7s6k81lk" path="res://Obstacles/falling_platform.tscn" id="2_7ydiv"]
+[ext_resource type="PackedScene" uid="uid://cu2ye7s6k81lk" path="res://Obstacles/Falling Platform/Falling Platform.tscn" id="2_7ydiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w80s2"]
 texture = ExtResource("1_0xv6d")

@@ -1,13 +1,13 @@
-[gd_scene load_steps=62 format=3 uid="uid://1ekitgd6t7je"]
+[gd_scene load_steps=58 format=3 uid="uid://1ekitgd6t7je"]
 
-[ext_resource type="Texture2D" uid="uid://dmx2xh2t3ragt" path="res://Free/Main Characters/Pink Man/Jump (32x32).png" id="1_2tte5"]
+[ext_resource type="Texture2D" uid="uid://dmx2xh2t3ragt" path="res://Free/Main Character/Jump (32x32).png" id="1_2tte5"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_oodwx"]
-[ext_resource type="Texture2D" uid="uid://dqs678djhcscv" path="res://Free/Main Characters/Pink Man/Idle (32x32).png" id="2_503ol"]
-[ext_resource type="Texture2D" uid="uid://dwh6imwssfw3v" path="res://Free/Main Characters/Appearing (96x96).png" id="2_vumy2"]
-[ext_resource type="Texture2D" uid="uid://cwt2ta2docrw" path="res://Free/Main Characters/Pink Man/Run (32x32).png" id="4_04xwg"]
-[ext_resource type="Texture2D" uid="uid://bkxfubsamnixv" path="res://Free/Main Characters/Desappearing (96x96).png" id="4_7py81"]
-[ext_resource type="Texture2D" uid="uid://btkhxgl7gv5e3" path="res://Free/Main Characters/Pink Man/Double Jump (32x32).png" id="5_5cl56"]
-[ext_resource type="Texture2D" uid="uid://mmikpbk8dksf" path="res://Free/Main Characters/Pink Man/Wall Jump (32x32).png" id="7_7h3gj"]
+[ext_resource type="Texture2D" uid="uid://dqs678djhcscv" path="res://Free/Main Character/Idle (32x32).png" id="2_503ol"]
+[ext_resource type="Texture2D" uid="uid://dwh6imwssfw3v" path="res://Free/Main Character/Appearing (96x96).png" id="2_vumy2"]
+[ext_resource type="Texture2D" uid="uid://cwt2ta2docrw" path="res://Free/Main Character/Run (32x32).png" id="4_04xwg"]
+[ext_resource type="Texture2D" uid="uid://bkxfubsamnixv" path="res://Free/Main Character/Desappearing (96x96).png" id="4_7py81"]
+[ext_resource type="Texture2D" uid="uid://btkhxgl7gv5e3" path="res://Free/Main Character/Double Jump (32x32).png" id="5_5cl56"]
+[ext_resource type="Texture2D" uid="uid://cr0tkgrbksh78" path="res://Free/Main Character/Fall (32x32).png" id="5_7n16k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlmyw"]
 atlas = ExtResource("2_vumy2")
@@ -89,6 +89,10 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("5_5cl56")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f76nq"]
+atlas = ExtResource("5_7n16k")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcf3e"]
 atlas = ExtResource("2_503ol")
 region = Rect2(0, 0, 32, 32)
@@ -132,26 +136,6 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bsn77"]
 atlas = ExtResource("2_503ol")
 region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxx8e"]
-atlas = ExtResource("7_7h3gj")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bej6c"]
-atlas = ExtResource("7_7h3gj")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1kew"]
-atlas = ExtResource("7_7h3gj")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvdtf"]
-atlas = ExtResource("7_7h3gj")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffrlk"]
-atlas = ExtResource("7_7h3gj")
-region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cx6vt"]
 atlas = ExtResource("4_04xwg")
@@ -285,6 +269,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_f76nq")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kcf3e")
 }, {
 "duration": 1.0,
@@ -328,26 +320,6 @@ animations = [{
 "loop": true,
 "name": &"jumping",
 "speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxx8e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bej6c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1kew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvdtf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ffrlk")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -439,6 +411,7 @@ script = ExtResource("1_oodwx")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wd3ol")
+animation = &"idle"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

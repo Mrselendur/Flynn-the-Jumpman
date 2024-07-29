@@ -4,14 +4,14 @@ extends Node
 @onready var previousLevel = GameManager.currentLevel
 @onready var nextLevelButton: Button = $Control/NextLevel
 @onready var menuButton: Button = $Control/Menu
-var music_stream = preload("res://Free/Audio/Music/LevelComplete.mp3")
+var musicStream = preload("res://Free/Audio/Music/LevelComplete.mp3")
 
 func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	previousLevel = previousLevel.get_slice("Level", 2).trim_suffix(".tscn")
 	previousLevel = previousLevel.to_int()
 	score.text = "Score: " + str(GameManager.getAllPoints())
-	AudioHandler.playMusic(music_stream)
+	AudioHandler.playMusic(musicStream)
 	if previousLevel < 3:
 		nextLevelButton.grab_focus()
 		return 

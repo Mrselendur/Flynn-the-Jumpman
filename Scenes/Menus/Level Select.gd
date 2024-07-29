@@ -57,7 +57,6 @@ func _on_level_one_mouse_entered() -> void:
 func _on_level_two_mouse_entered() -> void:
 	levelTwo.grab_focus()
 
-
 func _on_level_three_mouse_entered() -> void:
 	levelThree.grab_focus()
 

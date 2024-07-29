@@ -34,6 +34,7 @@ func _on_resume_pressed() -> void:
 func _on_restart_pressed() -> void:
 	resume()
 	GameManager.resetLevelPoints()
+	SceneTransition.play_transition(1.5)
 	tree.reload_current_scene()
 
 func _on_back_to_menu_pressed() -> void:

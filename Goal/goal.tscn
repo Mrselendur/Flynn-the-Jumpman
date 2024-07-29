@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4l2h2ag2oqou"]
+[gd_scene load_steps=6 format=3 uid="uid://b4l2h2ag2oqou"]
 
 [ext_resource type="Texture2D" uid="uid://j7al2sppb1xi" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="1_5a6xx"]
-[ext_resource type="Script" path="res://Goal/goal.gd" id="1_44fyu"]
+[ext_resource type="Script" path="res://Goal/Goal.gd" id="1_44fyu"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="2_fem52"]
+[ext_resource type="LabelSettings" uid="uid://d24ptlfcplpor" path="res://Scenes/labelsettings.tres" id="3_tqcvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hejis"]
 size = Vector2(46, 44)
@@ -26,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_fem52")
+label_settings = ExtResource("3_tqcvc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5a6xx")

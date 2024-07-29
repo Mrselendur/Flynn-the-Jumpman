@@ -1,18 +1,19 @@
-[gd_scene load_steps=23 format=4 uid="uid://bigokcebqf0nd"]
+[gd_scene load_steps=24 format=4 uid="uid://bigokcebqf0nd"]
 
-[ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/points.tscn" id="1_jsmim"]
-[ext_resource type="Script" path="res://Scenes/Levels/PlayLevelMusic.gd" id="1_xftwf"]
+[ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/Points.tscn" id="1_jsmim"]
+[ext_resource type="Script" path="res://Scenes/Levels/Play Level Music.gd" id="1_xftwf"]
 [ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="2_ds2yu"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="4_5i8ab"]
 [ext_resource type="Texture2D" uid="uid://bcpujn1irpfh4" path="res://Free/Background/Brown.png" id="4_sf7un"]
 [ext_resource type="TileSet" uid="uid://4cel1kee067" path="res://Scenes/Levels/Platforms.tres" id="5_etls6"]
 [ext_resource type="TileSet" uid="uid://bvye3gd5goo6t" path="res://Scenes/Levels/Objects.tres" id="6_8dtvi"]
+[ext_resource type="LabelSettings" uid="uid://d24ptlfcplpor" path="res://Scenes/labelsettings.tres" id="6_255yn"]
 [ext_resource type="PackedScene" uid="uid://1ekitgd6t7je" path="res://Player/Player.tscn" id="7_7kthb"]
-[ext_resource type="PackedScene" uid="uid://bq7tkdb7xhjs0" path="res://Obstacles/border.tscn" id="8_g3k5f"]
-[ext_resource type="PackedScene" uid="uid://b4l2h2ag2oqou" path="res://Goal/goal.tscn" id="9_f5jqf"]
-[ext_resource type="PackedScene" uid="uid://d0p1rwqpsjkrt" path="res://Obstacles/saw.tscn" id="10_h1f3r"]
-[ext_resource type="PackedScene" uid="uid://dm2njwnc0fiqh" path="res://Obstacles/rock head.tscn" id="11_wshhd"]
-[ext_resource type="PackedScene" uid="uid://dbkpk1x5mmddo" path="res://Obstacles/moving_platform.tscn" id="12_y1ckq"]
+[ext_resource type="PackedScene" uid="uid://bq7tkdb7xhjs0" path="res://Obstacles/Border.tscn" id="8_g3k5f"]
+[ext_resource type="PackedScene" uid="uid://b4l2h2ag2oqou" path="res://Goal/Goal.tscn" id="9_f5jqf"]
+[ext_resource type="PackedScene" uid="uid://d0p1rwqpsjkrt" path="res://Obstacles/Moving Objects/Saw.tscn" id="10_h1f3r"]
+[ext_resource type="PackedScene" uid="uid://dm2njwnc0fiqh" path="res://Obstacles/Rock Head/Rock Head.tscn" id="11_wshhd"]
+[ext_resource type="PackedScene" uid="uid://dbkpk1x5mmddo" path="res://Obstacles/Moving Objects/Moving Platform.tscn" id="12_y1ckq"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="14_ah8hl"]
 
 [sub_resource type="Curve2D" id="Curve2D_lhcr3"]
@@ -23,9 +24,9 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_cn6bn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.5, 7.5, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 370, 100, 0, 0, 0, 0, 370, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 370, 100, 0, 0, 0, 0, 370, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_5easd"]
 _data = {
@@ -91,6 +92,7 @@ offset_right = 155.0
 offset_bottom = -129.0
 theme = ExtResource("14_ah8hl")
 text = "Get 600 points"
+label_settings = ExtResource("6_255yn")
 
 [node name="Tiles" type="Node2D" parent="World"]
 scale = Vector2(3, 3)
@@ -104,7 +106,7 @@ tile_map_data = PackedByteArray("AAD//woAAAARAAIAAAAAAAoAAAASAAIAAAABAAoAAAASAAI
 tile_set = ExtResource("5_etls6")
 
 [node name="Objects" type="TileMapLayer" parent="World/Tiles"]
-tile_map_data = PackedByteArray("AAAwAPT/AQAAAAAAAwAyAAYAAQAAAAAAAQAzAAYAAQAAAAAAAQA0AAYAAQAAAAAAAQA1AAYAAQAAAAAAAQA2AAYAAQAAAAAAAQA3AAYAAQAAAAAAAQA4AAYAAQAAAAAAAQDb/xAAAgAAAAAAAQD/////AgAAAAAAAgAxAAYAAQAAAAAAAQA5AAYAAQAAAAAAAQA6AAYAAQAAAAAAAQA7AAYAAQAAAAAAAQA8AAYAAQAAAAAAAQA9AAYAAQAAAAAAAQA+AAYAAQAAAAAAAQA/AAYAAQAAAAAAAQBAAAYAAQAAAAAAAQBDAPf/AAAAAAAABAB0AAYAAAAAAAAAAgBgAP7/AgAAAAAAAQBlAP7/AQAAAAAAAQBmAP7/AQAAAAAAAQBnAP7/AQAAAAAAAQBoAP7/AQAAAAAAAQBpAP7/AQAAAAAAAQBqAP7/AQAAAAAAAQBrAP7/AQAAAAAAAQBsAPn/AAAAAAAABgBsAP7/AQAAAAAAAQBtAP7/AQAAAAAAAQBuAP7/AQAAAAAAAQBvAP7/AQAAAAAAAQBwAP7/AQAAAAAAAQBxAPz/AQAAAAAAAgBxAP7/AQAAAAAAAQByAP7/AQAAAAAAAQBzAP7/AQAAAAAAAQB0AP7/AQAAAAAAAQB1AP7/AQAAAAAAAQB2AP7/AQAAAAAAAQB3APX/AQAAAAAAAwB3AP7/AQAAAAAAAQB4APz/AAAAAAAAAwB4AP7/AQAAAAAAAQB5AP7/AQAAAAAAAQB6AP7/AQAAAAAAAQB7AP7/AQAAAAAAAQB8AP7/AQAAAAAAAQBTAAYAAgAAAAAAAQA5AAIAAAAAAAAABgDY/wgAAAAAAAAAAQDNAOf/AAAAAAAACAD3APX/AAAAAAAABQALAAEAAAAAAAAAAgDr/wsAAAAAAAAAAgC1AAUAAAAAAAAABgDTAP7/AAAAAAAAAgBJAP3/AAAAAAAABQCaAAMAAAAAAAAAAgBlAAYAAAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAAwAPT/AQAAAAAAAwAyAAYAAQAAAAAAAQAzAAYAAQAAAAAAAQA0AAYAAQAAAAAAAQA1AAYAAQAAAAAAAQA2AAYAAQAAAAAAAQA3AAYAAQAAAAAAAQA4AAYAAQAAAAAAAQDb/xAAAgAAAAAAAQD/////AgAAAAAAAgAxAAYAAQAAAAAAAQA5AAYAAQAAAAAAAQA6AAYAAQAAAAAAAQA7AAYAAQAAAAAAAQA8AAYAAQAAAAAAAQA9AAYAAQAAAAAAAQA+AAYAAQAAAAAAAQA/AAYAAQAAAAAAAQBAAAYAAQAAAAAAAQBDAPf/AAAAAAAABAB0AAYAAAAAAAAAAQBgAP7/AgAAAAAAAQBlAP7/AQAAAAAAAQBmAP7/AQAAAAAAAQBnAP7/AQAAAAAAAQBoAP7/AQAAAAAAAQBpAP7/AQAAAAAAAQBqAP7/AQAAAAAAAQBrAP7/AQAAAAAAAQBsAPn/AAAAAAAABgBsAP7/AQAAAAAAAQBtAP7/AQAAAAAAAQBuAP7/AQAAAAAAAQBvAP7/AQAAAAAAAQBwAP7/AQAAAAAAAQBxAPz/AQAAAAAAAgBxAP7/AQAAAAAAAQByAP7/AQAAAAAAAQBzAP7/AQAAAAAAAQB0AP7/AQAAAAAAAQB1AP7/AQAAAAAAAQB2AP7/AQAAAAAAAQB3APX/AQAAAAAAAwB3AP7/AQAAAAAAAQB4APz/AAAAAAAACAB4AP7/AQAAAAAAAQB5AP7/AQAAAAAAAQB6AP7/AQAAAAAAAQB7AP7/AQAAAAAAAQB8AP7/AQAAAAAAAQBTAAYAAgAAAAAAAQA5AAIAAAAAAAAABwDY/wgAAAAAAAAABwDNAOf/AAAAAAAAAwD3APX/AAAAAAAABQALAAEAAAAAAAAAAgDr/wsAAAAAAAAAAgC1AAUAAAAAAAAABgDTAP7/AAAAAAAAAgBJAP3/AAAAAAAABQCaAAMAAAAAAAAAAgA+APj/AQAAAAAAAQA/APj/AQAAAAAAAQBAAPj/AQAAAAAAAQA=")
 tile_set = ExtResource("6_8dtvi")
 
 [node name="Border" parent="World" instance=ExtResource("8_g3k5f")]
@@ -112,21 +114,21 @@ position = Vector2(0, 1677)
 
 [node name="Goal" parent="World" instance=ExtResource("9_f5jqf")]
 position = Vector2(12708, -410)
-required_points = 600
+requiredPoints = 600
 
 [node name="Saws" type="Node2D" parent="World"]
 
 [node name="Saw" parent="World/Saws" instance=ExtResource("10_h1f3r")]
 position = Vector2(5937, 172)
 curve = SubResource("Curve2D_lhcr3")
-open_speed = 0.5
+openSpeed = 0.5
 
-[node name="Saw2" parent="World/Saws" instance=ExtResource("10_h1f3r")]
+[node name="LoopingSaw" parent="World/Saws" instance=ExtResource("10_h1f3r")]
 position = Vector2(9858, 72)
 curve = SubResource("Curve2D_cn6bn")
-loop = true
+isLooped = true
 
-[node name="Saw3" parent="World/Saws" instance=ExtResource("10_h1f3r")]
+[node name="Saw1" parent="World/Saws" instance=ExtResource("10_h1f3r")]
 position = Vector2(10676, -372)
 curve = SubResource("Curve2D_5easd")
 
@@ -135,56 +137,58 @@ curve = SubResource("Curve2D_5easd")
 [node name="MovingPlatform" parent="World/MovingPlatforms" instance=ExtResource("12_y1ckq")]
 position = Vector2(6649, 350)
 curve = SubResource("Curve2D_1sq5o")
-open_speed = 0.15
+playerWait = true
+openSpeed = 0.15
 
 [node name="Rockheads" type="Node2D" parent="World"]
 
-[node name="RockHead" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="StartRockHead" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(1703, -80)
 curve = SubResource("Curve2D_mhi87")
 
-[node name="RockHead2" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="BananaRockHead" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(5025, -122)
 curve = SubResource("Curve2D_bcb01")
 
-[node name="RockHead3" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="PineappleRockHead" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(10164, -1123)
 curve = SubResource("Curve2D_jheej")
 
-[node name="RockHead4" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(11539, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead5" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead1" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(11632, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead6" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead2" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(11730, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead7" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead3" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(11828, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead8" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead4" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(11927, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead9" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead5" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(12020, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead10" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead6" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(12118, -863)
 curve = SubResource("Curve2D_mdhe4")
 
-[node name="RockHead11" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
+[node name="EndRockhead7" parent="World/Rockheads" instance=ExtResource("11_wshhd")]
 position = Vector2(12216, -863)
 curve = SubResource("Curve2D_mdhe4")
 
 [node name="Player" parent="World" instance=ExtResource("7_7kthb")]
 position = Vector2(-9, -60)
+collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 position = Vector2(0, -100)
@@ -195,7 +199,3 @@ limit_right = 13319
 limit_bottom = 1677
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
-
-[connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@41473" to="World/Tiles/Objects/@Area2D@41473" method="_on_body_entered"]
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@41499" to="World/Tiles/Objects/@Area2D@41499" method="_on_body_entered"]

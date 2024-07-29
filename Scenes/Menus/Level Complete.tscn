@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnu85rfbrbsx"]
+[gd_scene load_steps=10 format=3 uid="uid://dnu85rfbrbsx"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Level Complete.gd" id="1_vr66b"]
 [ext_resource type="Theme" uid="uid://doqtdb66xr3lh" path="res://Scenes/normal.tres" id="1_x0jcn"]
@@ -6,6 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://cow6av5et7eps" path="res://Free/Menu/Buttons/Next.png" id="4_hmjjm"]
 [ext_resource type="Texture2D" uid="uid://btitirtcswmiv" path="res://Free/Menu/Buttons/Menu.png" id="4_p6qgo"]
 [ext_resource type="Theme" uid="uid://cb1g4uqcrxru8" path="res://Scenes/exit.tres" id="5_8svkp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gvgv3"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0.686275, 0.203922, 0.611765, 1)
+shadow_size = 15
+shadow_color = Color(0.0862745, 0.027451, 0.0117647, 0.690196)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rcqmv"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0.686275, 0.203922, 0.611765, 1)
+shadow_size = 15
+shadow_color = Color(0.0862745, 0.027451, 0.0117647, 0.690196)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhx02"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0.686275, 0.203922, 0.611765, 1)
+shadow_size = 15
+shadow_color = Color(0.0862745, 0.027451, 0.0117647, 0.690196)
+shadow_offset = Vector2(3, 3)
 
 [node name="LevelComplete" type="Control"]
 layout_mode = 3
@@ -29,7 +53,6 @@ texture_repeat = 2
 texture = ExtResource("3_hbvsc")
 
 [node name="LevelCompleteText" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -304.0
 offset_top = -250.0
@@ -38,8 +61,10 @@ offset_bottom = -199.0
 pivot_offset = Vector2(314, 27)
 theme_override_font_sizes/font_size = 50
 text = "Level Complete!"
+label_settings = SubResource("LabelSettings_gvgv3")
 
 [node name="GameCompleteText" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -304.0
 offset_top = -250.0
@@ -48,15 +73,17 @@ offset_bottom = -199.0
 pivot_offset = Vector2(314, 27)
 theme_override_font_sizes/font_size = 50
 text = "Congratulations!"
+label_settings = SubResource("LabelSettings_rcqmv")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = -128.0
-offset_top = -150.0
-offset_right = 128.0
-offset_bottom = -109.0
+offset_left = -166.0
+offset_top = -146.0
+offset_right = 155.0
+offset_bottom = -95.0
 theme_override_font_sizes/font_size = 40
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_xhx02")
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1

@@ -1,14 +1,11 @@
 extends Node2D
+@export var pointsGiven: int
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var collision_shape = $Area2D/CollisionShape2D
 @onready var label = $PointsText/Label
 @onready var particles: GPUParticles2D = $PointsParticles
-
 @onready var fx = preload("res://Free/Audio/Sound Effects/collected.wav")
-
-@export var pointsGiven: int
-
 
 func _ready() -> void:
 	label.text = str(pointsGiven)

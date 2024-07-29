@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://b75odrqp86sxp"]
+[gd_scene load_steps=16 format=4 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Main Menu.gd" id="1_tgui0"]
 [ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF" id="2_3iutt"]
 [ext_resource type="Texture2D" uid="uid://db8j8us4spjlv" path="res://Free/Terrain/Terrain (16x16).png" id="3_c0ofr"]
 [ext_resource type="Texture2D" uid="uid://ir42lemlc04e" path="res://Free/Menu/Buttons/Play.png" id="4_6x4os"]
-[ext_resource type="PackedScene" uid="uid://wf37crjfxxfj" path="res://Collectables/Apple.tscn" id="4_q8gd2"]
+[ext_resource type="PackedScene" uid="uid://cjsaelpo26pyu" path="res://Collectables/Apple.tscn" id="4_q8gd2"]
 [ext_resource type="Texture2D" uid="uid://m4pv8hkd0eks" path="res://Free/Menu/Buttons/Levels.png" id="6_vwipv"]
 [ext_resource type="Texture2D" uid="uid://ciab3nsa68iab" path="res://Free/Menu/Buttons/Close.png" id="8_vjfjl"]
 [ext_resource type="Texture2D" uid="uid://b1yugdd17qwum" path="res://Free/Menu/Buttons/Settings.png" id="9_p6xfj"]
@@ -166,6 +166,14 @@ scenes/1/scene = ExtResource("4_q8gd2")
 sources/0 = SubResource("TileSetAtlasSource_26kjy")
 sources/1 = SubResource("TileSetScenesCollectionSource_nm4c3")
 
+[sub_resource type="LabelSettings" id="LabelSettings_olmtj"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0.686275, 0.203922, 0.611765, 1)
+shadow_size = 20
+shadow_color = Color(0.0862745, 0.027451, 0.0117647, 0.690196)
+shadow_offset = Vector2(3, 3)
+
 [node name="MainMenu" type="Control"]
 texture_filter = 1
 layout_mode = 3
@@ -196,16 +204,17 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AADz/wIAAAAGAAQAAADz/wMAAAAGAAUAAADz/wQAAAAGAAUAAAD0/wIAAAAHAAQAAAD0/wMAAAAHAAUAAAD0/wQAAAAHAAUAAAD1/wIAAAAIAAQAAAD1/wMAAAAIAAUAAAD1/wQAAAAIAAUAAADz/wUAAAAGAAUAAADz/wYAAAAGAAUAAADz/wcAAAAGAAUAAADz/wgAAAAGAAUAAADz/wkAAAAGAAUAAADz/woAAAAGAAUAAADz/wsAAAAGAAYAAAD1/wUAAAAIAAUAAAD1/wYAAAAIAAUAAAD1/wcAAAAIAAUAAAD1/wgAAAAIAAUAAAD1/wkAAAAIAAUAAAD1/woAAAAIAAUAAAD1/wsAAAAIAAYAAAD0/wsAAAAHAAYAAAD0/woAAAAHAAUAAAD0/wkAAAAHAAUAAAD0/wgAAAAHAAUAAAD0/wcAAAAHAAUAAAD0/wYAAAAHAAUAAAD0/wUAAAAHAAUAAAD2/wUAAAAHAAQAAAD3/wUAAAAHAAQAAAD4/wUAAAAHAAQAAAD5/wUAAAAHAAQAAAD6/wUAAAAHAAQAAAD7/wUAAAAHAAQAAAD8/wUAAAAIAAQAAAD8/wYAAAAIAAUAAAD8/wcAAAAIAAUAAAD8/wgAAAAIAAUAAAD8/wkAAAAIAAUAAAD8/woAAAAIAAUAAAD8/wsAAAAIAAYAAAD7/wsAAAAHAAYAAAD6/wsAAAAHAAYAAAD5/wsAAAAHAAYAAAD4/wsAAAAHAAYAAAD3/wsAAAAHAAYAAAD2/wsAAAAHAAYAAAD2/wYAAAAHAAUAAAD3/wYAAAAHAAUAAAD3/wcAAAAJAAQAAAD4/wcAAAAKAAQAAAD4/wgAAAAKAAUAAAD5/wgAAAAHAAUAAAD5/wkAAAAHAAUAAAD6/wkAAAAJAAQAAAD7/wkAAAAKAAQAAAD7/woAAAAKAAUAAAD6/woAAAAJAAUAAAD5/woAAAAHAAUAAAD4/woAAAAHAAUAAAD3/woAAAAHAAUAAAD2/woAAAAHAAUAAAD2/wkAAAAHAAUAAAD2/wgAAAAHAAUAAAD2/wcAAAAHAAUAAAD3/wgAAAAJAAUAAAD4/wkAAAAHAAUAAAD3/wkAAAAHAAUAAAD6/wgAAAAHAAUAAAD6/wcAAAAHAAUAAAD6/wYAAAAHAAUAAAD5/wYAAAAHAAUAAAD4/wYAAAAHAAUAAAD5/wcAAAAHAAUAAAD7/wYAAAAHAAUAAAD7/wcAAAAHAAUAAAD7/wgAAAAHAAUAAAD+/wIAAAARAAEAAAD//wIAAAASAAEAAAAAAAIAAAATAAEAAAADAAUAAAAHAAQAAAAEAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAACAAUAAAAGAAQAAAACAAYAAAAGAAUAAAACAAcAAAAGAAUAAAACAAgAAAAGAAUAAAACAAkAAAAGAAUAAAACAAoAAAAGAAUAAAACAAsAAAAGAAYAAAAFAAsAAAAIAAYAAAAFAAoAAAAIAAUAAAAFAAkAAAAIAAUAAAAFAAgAAAAIAAUAAAAFAAcAAAAIAAUAAAAFAAYAAAAIAAUAAAAEAAYAAAAHAAUAAAADAAYAAAAHAAUAAAADAAcAAAAHAAUAAAADAAgAAAAHAAUAAAAEAAgAAAAHAAUAAAAEAAcAAAAHAAUAAAADAAkAAAAJAAQAAAADAAoAAAAJAAUAAAAEAAkAAAAKAAQAAAAEAAoAAAAKAAUAAAADAAsAAAAHAAYAAAAEAAsAAAAHAAYAAAANAAAAAAARAAEAAAAOAAAAAAASAAEAAAAPAAAAAAATAAEAAAAJAAYAAAARAAEAAAAKAAYAAAASAAEAAAALAAYAAAATAAEAAAAOAAQAAAARAAEAAAAPAAQAAAASAAEAAAAQAAQAAAATAAEAAAD6/wMAAQAAAAAAAQAOAP7/AQAAAAAAAQAPAAIAAQAAAAAAAQA=")
 tile_set = SubResource("TileSet_k33pv")
 
-[node name="Label" type="Label" parent="."]
+[node name="Name" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_left = -284.0
-offset_top = -290.0
-offset_right = 348.0
-offset_bottom = -239.0
+offset_left = -334.0
+offset_top = -268.0
+offset_right = 381.0
+offset_bottom = -217.0
 theme_override_fonts/font = ExtResource("2_3iutt")
-theme_override_font_sizes/font_size = 50
-text = "Platformer Game"
+theme_override_font_sizes/font_size = 2
+text = "Flynn the Jumpman"
+label_settings = SubResource("LabelSettings_olmtj")
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
