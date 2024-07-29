@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="1_hj6h7"]
 [ext_resource type="Script" path="res://Scenes/Levels/Play Level Music.gd" id="1_wphan"]
 [ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/Points.tscn" id="2_y2p3h"]
-[ext_resource type="Texture2D" uid="uid://c8vdq5m2nrrhd" path="res://Free/Background/Gray.png" id="3_wvocc"]
+[ext_resource type="Texture2D" uid="uid://c8vdq5m2nrrhd" path="res://Free/Background/Gra.png" id="3_wvocc"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="4_tesrp"]
 [ext_resource type="TileSet" uid="uid://4cel1kee067" path="res://Scenes/Levels/Platforms.tres" id="5_2qt4v"]
 [ext_resource type="TileSet" uid="uid://bvye3gd5goo6t" path="res://Scenes/Levels/Objects.tres" id="6_1mwgq"]
@@ -291,4 +291,4 @@ limit_bottom = 1007
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
-[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@27744" to="World/Tiles/Objects/@Area2D@27744" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@37808" to="World/Tiles/Objects/@Area2D@37808" method="_on_body_entered"]

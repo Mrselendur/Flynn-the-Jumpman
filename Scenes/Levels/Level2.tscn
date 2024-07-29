@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Play Level Music.gd" id="1_xftwf"]
 [ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="2_ds2yu"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="4_5i8ab"]
-[ext_resource type="Texture2D" uid="uid://bcpujn1irpfh4" path="res://Free/Background/Brown.png" id="4_sf7un"]
+[ext_resource type="Texture2D" uid="uid://bcpujn1irpfh4" path="res://Free/Background/Brow.png" id="4_sf7un"]
 [ext_resource type="TileSet" uid="uid://4cel1kee067" path="res://Scenes/Levels/Platforms.tres" id="5_etls6"]
 [ext_resource type="TileSet" uid="uid://bvye3gd5goo6t" path="res://Scenes/Levels/Objects.tres" id="6_8dtvi"]
 [ext_resource type="LabelSettings" uid="uid://d24ptlfcplpor" path="res://Scenes/labelsettings.tres" id="6_255yn"]

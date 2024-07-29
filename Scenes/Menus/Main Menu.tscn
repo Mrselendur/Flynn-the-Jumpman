@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=4 uid="uid://b75odrqp86sxp"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Main Menu.gd" id="1_tgui0"]
-[ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="2_2d2og"]
+[ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yello.png" id="2_2d2og"]
 [ext_resource type="FontFile" uid="uid://b4nrpb124t46w" path="res://04B_30__.TTF.TTF" id="2_3iutt"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="3_754b6"]
 [ext_resource type="Texture2D" uid="uid://ir42lemlc04e" path="res://Free/Menu/Buttons/Play.png" id="4_6x4os"]

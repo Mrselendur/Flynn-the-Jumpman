@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Play Level Music.gd" id="1_kkaqy"]
 [ext_resource type="PackedScene" uid="uid://dvx753mp73bx" path="res://Scenes/Points/Points.tscn" id="2_15t86"]
 [ext_resource type="PackedScene" uid="uid://dd568c20ymn4k" path="res://Scenes/Menus/Pause Menu.tscn" id="2_qwm7v"]
-[ext_resource type="Texture2D" uid="uid://b0juaruvsxcin" path="res://Free/Background/Gren.png" id="2_wbqxv"]
+[ext_resource type="Texture2D" uid="uid://b0juaruvsxcin" path="res://Free/Background/Greеn.png" id="2_wbqxv"]
 [ext_resource type="PackedScene" uid="uid://1ekitgd6t7je" path="res://Player/Player.tscn" id="4_1rbgx"]
 [ext_resource type="TileSet" uid="uid://nktay86xxaeb" path="res://Scenes/Levels/Ground.tres" id="6_is0wo"]
 [ext_resource type="TileSet" uid="uid://4cel1kee067" path="res://Scenes/Levels/Platforms.tres" id="7_j1o2v"]
