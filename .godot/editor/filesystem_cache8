@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722279028
+::res://::1722279082
 04B_30__.TTF.TTF::FontFile::4449793129738977136::1719419743::1722278291::1::::<><>::
 cursor.png::CompressedTexture2D::8939313748944888459::1720010670::1720380023::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::8761517129908547357::1722257993::0::1::::<><>::
@@ -41,7 +41,7 @@ saw.wav::AudioStreamWAV::2975416126948326070::1720382932::1722042454::1::::<><>:
 swinging spike ball.wav::AudioStreamWAV::4402475505261484321::1720384163::1722042454::1::::<><>::
 trampoline.wav::AudioStreamWAV::5430758988754021290::1721398104::1722042454::1::::<><>::
 win.wav::AudioStreamWAV::5608268013731309173::1722205807::1722206236::1::::<><>::
-::res://Free/Background/::1722279027
+::res://Free/Background/::1722279028
 Blue.png::CompressedTexture2D::341332146258135026::1719419743::1722279008::1::::<><>::
 Brown.png::CompressedTexture2D::2558995172635799207::1719419743::1722279012::1::::<><>::
 Gray.png::CompressedTexture2D::7132637459440277997::1719419743::1722279016::1::::<><>::
@@ -97,8 +97,8 @@ VolumeMute.png::CompressedTexture2D::2273915010351703113::1722127537::1722127551
 ::res://Free/Other/::1722257736
 Dust Particle.png::CompressedTexture2D::4850392764166907431::1719419743::1719419743::1::::<><>::
 Transition.png::CompressedTexture2D::3357179873237948533::1719419743::1719419743::1::::<><>::
-::res://Free/Terrain/::1719485282
-Terrain (16x16).png::CompressedTexture2D::7298181824350831975::1719419743::1719419743::1::::<><>::
+::res://Free/Terrain/::1722279082
+Terrain(16x16).png::CompressedTexture2D::7298181824350831975::1719419743::1722279082::1::::<><>::
 ::res://Free/Traps/::1722257745
 ::res://Free/Traps/Falling Platforms/::1719485283
 Off.png::CompressedTexture2D::5365303513479822653::1719419743::1719419743::1::::<><>::
@@ -168,13 +168,13 @@ Player.tscn::PackedScene::1833789909274980894::1722278299::0::1::::<><>::uid://d
 exit.tres::Theme::4897121197908015893::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
 labelsettings.tres::LabelSettings::9115173054741840753::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
 normal.tres::Theme::8176094988173212293::1722278290::0::1::::<><>::uid://b4nrpb124t46w::::res://04B_30__.TTF.TTF
-::res://Scenes/Levels/::1722279015
-Ground.tres::TileSet::934253680676668753::1722278285::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain (16x16).png
+::res://Scenes/Levels/::1722279082
+Ground.tres::TileSet::934253680676668753::1722279082::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain(16x16).png
 Level1.tscn::PackedScene::7721600088966468366::1722278952::0::1::::<><>::res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://b0juaruvsxcin::::res://Free/Background/Greеn.png<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn
 Level2.tscn::PackedScene::2961185706452458857::1722279011::0::1::::<><>::uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://bcpujn1irpfh4::::res://Free/Background/Brown.png<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
 Level3.tscn::PackedScene::6905949597009475946::1722279015::0::1::::<><>::uid://dd568c20ymn4k::::res://Scenes/Menus/Pause Menu.tscn<>res://Scenes/Levels/Play Level Music.gd<>uid://dvx753mp73bx::::res://Scenes/Points/Points.tscn<>uid://c8vdq5m2nrrhd::::res://Free/Background/Gray.png<>uid://nktay86xxaeb::::res://Scenes/Levels/Ground.tres<>uid://4cel1kee067::::res://Scenes/Levels/Platforms.tres<>uid://bvye3gd5goo6t::::res://Scenes/Levels/Objects.tres<>uid://bq7tkdb7xhjs0::::res://Obstacles/Border.tscn<>uid://b4l2h2ag2oqou::::res://Goal/Goal.tscn<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres<>uid://1ekitgd6t7je::::res://Player/Player.tscn<>uid://d0p1rwqpsjkrt::::res://Obstacles/Moving Objects/Saw.tscn<>uid://dm2njwnc0fiqh::::res://Obstacles/Rock Head/Rock Head.tscn<>uid://dbkpk1x5mmddo::::res://Obstacles/Moving Objects/Moving Platform.tscn
 Objects.tres::TileSet::3910224657535781049::1722278285::0::1::::<><>::uid://cjsaelpo26pyu::::res://Collectables/Apple.tscn<>uid://cn5d2moklwtay::::res://Collectables/Cherry.tscn<>uid://tvljssm4sxrl::::res://Collectables/Pineapple.tscn<>uid://bbrfdtxslhue3::::res://Collectables/Watermelon.tscn<>uid://cgmub2ul1laia::::res://Collectables/Orange.tscn<>uid://c60os0xlk02l1::::res://Collectables/Strawberry.tscn<>uid://cgn78n3q8qahp::::res://Collectables/Kiwi.tscn<>uid://bjfdpdya4ljed::::res://Collectables/Bananas.tscn<>uid://1klxoulhh3fn::::res://Obstacles/Spike/Spike.tscn<>uid://buguefg6rqgju::::res://Obstacles/Fire Platform/Fire Platform.tscn<>uid://wvu7cd2dkybc::::res://Obstacles/Swinging Ball/Swinging Ball.tscn<>uid://dvpy0dfqdqgl0::::res://Obstacles/Trampoline/Trampoline.tscn<>uid://bfxn2ysiatqdb::::res://Goal/Start.tscn
-Platforms.tres::TileSet::59996150410539202::1722278285::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain (16x16).png<>uid://cu2ye7s6k81lk::::res://Obstacles/Falling Platform/Falling Platform.tscn
+Platforms.tres::TileSet::59996150410539202::1722279082::0::1::::<><>::uid://db8j8us4spjlv::::res://Free/Terrain/Terrain(16x16).png<>uid://cu2ye7s6k81lk::::res://Obstacles/Falling Platform/Falling Platform.tscn
 Play Level Music.gd::GDScript::-1::1722134770::0::1::::<>Node2D<>::
 ::res://Scenes/Menus/::1722279027
 Game Over.gd::GDScript::-1::1722264973::0::1::::<>Node<>::
