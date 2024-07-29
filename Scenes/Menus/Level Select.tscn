@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://chtdjj03druvg"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/Level Select.gd" id="1_q4517"]
-[ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yello.png" id="1_qmhe0"]
+[ext_resource type="Texture2D" uid="uid://dxjt6pty0dw5r" path="res://Free/Background/Yellow.png" id="1_qmhe0"]
 [ext_resource type="Texture2D" uid="uid://wrgs67crjgj" path="res://Free/Menu/Levels/01.png" id="3_l0hpi"]
 [ext_resource type="Texture2D" uid="uid://c3vgk34s2xdtw" path="res://Free/Menu/Levels/02.png" id="4_fhank"]
 [ext_resource type="Texture2D" uid="uid://b6m2wa22ixrkj" path="res://Free/Menu/Levels/03.png" id="5_73837"]
