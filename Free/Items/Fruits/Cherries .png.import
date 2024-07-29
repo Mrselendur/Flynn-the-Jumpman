@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjqqlaqhubpuf"
-path="res://.godot/imported/Strawberry.png-1f4df307ba6cfe77d63242e4d634c969.ctex"
+uid="uid://cokx4wuf3b4wl"
+path="res://.godot/imported/Cherries .png-2cdc2ffc2a2df1f813bd4bbc7b82db8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free/Items/Fruits/Strawberry.png"
-dest_files=["res://.godot/imported/Strawberry.png-1f4df307ba6cfe77d63242e4d634c969.ctex"]
+source_file="res://Free/Items/Fruits/Cherries .png"
+dest_files=["res://.godot/imported/Cherries .png-2cdc2ffc2a2df1f813bd4bbc7b82db8d.ctex"]
 
 [params]
 

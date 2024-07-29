@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722280084
+::res://::1722280342
 04B_30__.TTF.TTF::FontFile::4449793129738977136::1719419743::1722278291::1::::<><>::
 cursor.png::CompressedTexture2D::8939313748944888459::1720010670::1720380023::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::8761517129908547357::1722257993::0::1::::<><>::
@@ -11,17 +11,17 @@ Config File Handler.gd::GDScript::-1::1722261358::0::1::::<>Node<>::
 Game Manager.gd::GDScript::-1::1722271096::0::1::::<>Node<>::
 Scene Transition.gd::GDScript::-1::1722271096::0::1::::<>CanvasLayer<>::
 Scene Transition.tscn::PackedScene::7584193763398859354::1722279231::0::1::::<><>::res://Autoload/Scene Transition.gd<>uid://bn3ii55rtyh7j::::res://Free/Other/Transition .png
-::res://Collectables/::1722278300
-Apple.tscn::PackedScene::5441707504479520552::1722278299::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://ra26gc2fg3sf::::res://Free/Items/Fruits/Apple.png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png
-Bananas.tscn::PackedScene::3028651297777117271::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://8sh062klhg44::::res://Free/Items/Fruits/Bananas.png
-Cherry.tscn::PackedScene::5747458687093552132::1722278299::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://cokx4wuf3b4wl::::res://Free/Items/Fruits/Cherries.png
+::res://Collectables/::1722280342
+Apple.tscn::PackedScene::5441707504479520552::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://ra26gc2fg3sf::::res://Free/Items/Fruits/Apple .png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png
+Bananas.tscn::PackedScene::3028651297777117271::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://8sh062klhg44::::res://Free/Items/Fruits/Bananas .png
+Cherry.tscn::PackedScene::5747458687093552132::1722280322::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://cokx4wuf3b4wl::::res://Free/Items/Fruits/Cherries .png
 Collectable.gd::GDScript::-1::1722270642::0::1::::<>Node2D<>::
 Collectable.tscn::PackedScene::9194469557108209618::1722278299::0::1::::<><>::res://Collectables/Collectable.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres
-Kiwi.tscn::PackedScene::5222813941814332429::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://c24cnkjleo3yb::::res://Free/Items/Fruits/Kiwi.png
-Orange.tscn::PackedScene::5219964537473857128::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://2qtxm6rjhc88::::res://Free/Items/Fruits/Orange.png
-Pineapple.tscn::PackedScene::1377624894834941321::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://8todog1bxnmp::::res://Free/Items/Fruits/Pineapple.png
-Strawberry.tscn::PackedScene::7001188495334141444::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cjqqlaqhubpuf::::res://Free/Items/Fruits/Strawberry.png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png
-Watermelon.tscn::PackedScene::2492013925802686684::1722278300::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected.png<>uid://d0i81yno5v6j6::::res://Free/Items/Fruits/Melon.png
+Kiwi.tscn::PackedScene::5222813941814332429::1722280330::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://c24cnkjleo3yb::::res://Free/Items/Fruits/Kiwi .png
+Orange.tscn::PackedScene::5219964537473857128::1722280336::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://2qtxm6rjhc88::::res://Free/Items/Fruits/Orange .png
+Pineapple.tscn::PackedScene::1377624894834941321::1722280339::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://8todog1bxnmp::::res://Free/Items/Fruits/Pineapple .png
+Strawberry.tscn::PackedScene::7001188495334141444::1722280342::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cjqqlaqhubpuf::::res://Free/Items/Fruits/Strawberry .png<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png
+Watermelon.tscn::PackedScene::2492013925802686684::1722280333::0::1::::<><>::uid://d384tnifmklo1::::res://Collectables/Collectable.tscn<>uid://cn8pvaq1g8gcn::::res://Free/Items/Fruits/Collected .png<>uid://d0i81yno5v6j6::::res://Free/Items/Fruits/Melon .png
 ::res://Free/::1722206504
 ::res://Free/Audio/::1722042484
 ::res://Free/Audio/Music/::1722041997
@@ -57,16 +57,16 @@ End (Pressed) (64x64).png::CompressedTexture2D::4913709839691659492::1719419743:
 ::res://Free/Items/Checkpoints/Start/::1719485282
 Start (Idle).png::CompressedTexture2D::2789082876250527931::1719419743::1719419743::1::::<><>::
 Start (Moving) (64x64).png::CompressedTexture2D::5896768133001435997::1719419743::1719419743::1::::<><>::
-::res://Free/Items/Fruits/::1719485282
-Apple.png::CompressedTexture2D::1194905379725713465::1719419743::1719419743::1::::<><>::
-Bananas.png::CompressedTexture2D::2353861973828042999::1719419743::1719419743::1::::<><>::
-Cherries.png::CompressedTexture2D::5777578421390583507::1719419743::1719419743::1::::<><>::
-Collected.png::CompressedTexture2D::5754369083035609233::1719419743::1719419743::1::::<><>::
-Kiwi.png::CompressedTexture2D::6727952289429566193::1719419743::1719419743::1::::<><>::
-Melon.png::CompressedTexture2D::8932549536785320021::1719419743::1719419743::1::::<><>::
-Orange.png::CompressedTexture2D::1929324197368052659::1719419743::1719419743::1::::<><>::
-Pineapple.png::CompressedTexture2D::2356311158441954915::1719419743::1719419743::1::::<><>::
-Strawberry.png::CompressedTexture2D::5438562144872369937::1719419743::1719419743::1::::<><>::
+::res://Free/Items/Fruits/::1722280342
+Apple .png::CompressedTexture2D::1194905379725713465::1719419743::1722280313::1::::<><>::
+Bananas .png::CompressedTexture2D::2353861973828042999::1719419743::1722280316::1::::<><>::
+Cherries .png::CompressedTexture2D::5777578421390583507::1719419743::1722280319::1::::<><>::
+Collected .png::CompressedTexture2D::5754369083035609233::1719419743::1722280323::1::::<><>::
+Kiwi .png::CompressedTexture2D::6727952289429566193::1719419743::1722280330::1::::<><>::
+Melon .png::CompressedTexture2D::8932549536785320021::1719419743::1722280333::1::::<><>::
+Orange .png::CompressedTexture2D::1929324197368052659::1719419743::1722280336::1::::<><>::
+Pineapple .png::CompressedTexture2D::2356311158441954915::1719419743::1722280339::1::::<><>::
+Strawberry .png::CompressedTexture2D::5438562144872369937::1719419743::1722280342::1::::<><>::
 ::res://Free/Main Character/::1722206505
 Appearing (96x96).png::CompressedTexture2D::8719764433629447085::1719419743::1722206505::1::::<><>::
 Desappearing (96x96).png::CompressedTexture2D::3136129189605116651::1719419743::1722206505::1::::<><>::
@@ -87,7 +87,7 @@ Restart .png::CompressedTexture2D::8413847488372809420::1719419743::1722280024::
 Settings .png::CompressedTexture2D::4262100902427338764::1719419743::1722280021::1::::<><>::
 Volume .png::CompressedTexture2D::2307485221327049966::1719419743::1722280018::1::::<><>::
 Volume Mute.png::CompressedTexture2D::2273915010351703113::1722127537::1722280012::1::::<><>::
-::res://Free/Menu/Levels/::1722280083
+::res://Free/Menu/Levels/::1722280084
 01 .png::CompressedTexture2D::46460208996298849::1719419743::1722280065::1::::<><>::
 01 hover.png::CompressedTexture2D::560996116469959021::1719419743::1722280070::1::::<><>::
 02 .png::CompressedTexture2D::6781864598289970832::1719419743::1722280073::1::::<><>::

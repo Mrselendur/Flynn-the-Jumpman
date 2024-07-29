@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cokx4wuf3b4wl"
-path="res://.godot/imported/Cherries.png-0d7461667050c85b9d06c8e0ebbdd382.ctex"
+uid="uid://8todog1bxnmp"
+path="res://.godot/imported/Pineapple .png-95824bb594bbe295d15f4f828427f619.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free/Items/Fruits/Cherries.png"
-dest_files=["res://.godot/imported/Cherries.png-0d7461667050c85b9d06c8e0ebbdd382.ctex"]
+source_file="res://Free/Items/Fruits/Pineapple .png"
+dest_files=["res://.godot/imported/Pineapple .png-95824bb594bbe295d15f4f828427f619.ctex"]
 
 [params]
 
