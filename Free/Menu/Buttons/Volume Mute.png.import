@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7407d2l35fh3"
-path="res://.godot/imported/Volume.png-e1872a57f35ea89fd55afffcd1abd579.ctex"
+uid="uid://7nrbvqqua7w4"
+path="res://.godot/imported/Volume Mute.png-d5588013c93324132c5b050b4cab3268.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free/Menu/Buttons/Volume.png"
-dest_files=["res://.godot/imported/Volume.png-e1872a57f35ea89fd55afffcd1abd579.ctex"]
+source_file="res://Free/Menu/Buttons/Volume Mute.png"
+dest_files=["res://.godot/imported/Volume Mute.png-d5588013c93324132c5b050b4cab3268.ctex"]
 
 [params]
 
