@@ -31,6 +31,7 @@ func _on_settings_pressed() -> void:
 func _on_quit_pressed() -> void:
 	GameManager.quitGame()
 
+#functions for highlighting buttons
 func _on_start_mouse_entered() -> void:
 	$Control/Start.grab_focus()
 
@@ -42,3 +43,7 @@ func _on_settings_mouse_entered() -> void:
 
 func _on_quit_mouse_entered() -> void:
 	$Control/Quit.grab_focus()
+
+#character animation control for the menu
+func _on_player_sprite_animation_finished() -> void:
+	$PlayerSprite.play("idle")

@@ -6,6 +6,7 @@ const MAX_JUMPS = 2
 const COYOTE_TIME: float = 0.2         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
 const FALL_GRAVITY = 2000              #gravity for when player is falling 
+const TERMINAL_FALL_VELOCITY = 5600
 
 #state machine for character control, entering scene and exiting scene 
 enum state{
@@ -71,7 +72,9 @@ func _physics_process(delta) -> void:
 			# Add the gravity (player is not jumping and is not on ground).
 			else:  
 				velocity.y += _gravity() * delta      #adds gravity player
-				#if velocity.y > 0:                 #check if player is falling before starting coyote counter
+				#implements terminal velocity
+				if velocity.y >= TERMINAL_FALL_VELOCITY:
+					velocity.y = TERMINAL_FALL_VELOCITY
 				coyoteCounter -= delta        #start counting down coyote counter
 
 			if(Input.is_action_just_pressed("up")):

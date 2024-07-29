@@ -5,14 +5,14 @@ extends "Moving Object.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#play animataion for an open path with speed scale determening the speed of the object
 	spritePath = "res://Free/Traps/Saw/Chain.png"
 	super()
 	if isLooped:
 		return
+	#play animataion for an open path with speed scale determening the speed of the object
 	animationPlayer.speed_scale = openSpeed
 	animationPlayer.play("on")
-	set_process(false)         #turn off _process function	
+	set_process(false)         #turn off _process function
 	
 
 

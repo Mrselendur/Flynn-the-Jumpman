@@ -77,7 +77,7 @@ script = ExtResource("1_xftwf")
 [node name="BackGround" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.5, 0.2)
 repeat_size = Vector2(64, 64)
-repeat_times = 37
+repeat_times = 40
 
 [node name="Sprite2D" type="Sprite2D" parent="BackGround"]
 texture = ExtResource("4_sf7un")

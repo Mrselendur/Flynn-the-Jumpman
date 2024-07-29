@@ -8,11 +8,11 @@ func _ready() -> void:
 	if !FileAccess.file_exists(FILEPATH):
 		config.set_value("Audio", "Mute", false)
 		config.set_value("Audio", "Master", 6)
-		config.set_value("Audio", "Music", 6)
+		config.set_value("Audio", "Music", -10)
 		config.set_value("Audio", "SFX", 6)
 		
 		config.set_value("Resolution", "WindowWidth", 1280)
-		config.set_value("Resolution", "WindowHeight", 1024)
+		config.set_value("Resolution", "WindowHeight", 720)
 		
 		config.set_value("Video Settings", "Fullscreen", false)
 

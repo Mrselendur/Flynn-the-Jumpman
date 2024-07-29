@@ -72,7 +72,7 @@ script = ExtResource("1_q4517")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
-repeat_times = 19
+repeat_times = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 position = Vector2(558, 342)

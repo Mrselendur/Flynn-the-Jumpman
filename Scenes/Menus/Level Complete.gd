@@ -26,12 +26,12 @@ func _on_next_level_pressed() -> void:
 	var nextLevel: int = previousLevel + 1
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
 	GameManager.setChange("res://Scenes/Levels/Level"+ str(nextLevel) +".tscn")
-	
 
 func _on_return_to_menu_pressed() -> void:
 	GameManager.resetAllPoints()
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
 
+#functions for highlighting buttons
 func _on_next_level_mouse_entered() -> void:
 	nextLevelButton.grab_focus()
 

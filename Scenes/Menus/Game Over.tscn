@@ -30,7 +30,7 @@ script = ExtResource("1_b2cca")
 [node name="BackGround" type="Parallax2D" parent="."]
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
-repeat_times = 19
+repeat_times = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="BackGround"]
 texture_filter = 1

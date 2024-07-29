@@ -21,6 +21,7 @@ func _on_restart_pressed() -> void:
 func _on_menu_pressed() -> void:
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
 
+#functions for highlighting buttons
 func _on_restart_mouse_entered() -> void:
 	$Control/Restart.grab_focus()
 

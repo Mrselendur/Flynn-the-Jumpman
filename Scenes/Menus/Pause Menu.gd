@@ -47,6 +47,7 @@ func esc_pressed() -> void:
 	else:
 		pause()
 
+#functions for highlighting buttons
 func _on_resume_mouse_entered() -> void:
 	resumeButton.grab_focus()
 

@@ -24,7 +24,7 @@ script = ExtResource("1_gdj0r")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
-repeat_times = 19
+repeat_times = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("3_qx2ra")
