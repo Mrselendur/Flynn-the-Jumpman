@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://dbkpk1x5mmddo"]
 
 [ext_resource type="Script" path="res://Obstacles/Moving Objects/Moving Platform.gd" id="1_5p2br"]
-[ext_resource type="Texture2D" uid="uid://dywkufrha3ykv" path="res://Free/Traps/Platforms/Brown On (32x8).png" id="1_lj7bg"]
-[ext_resource type="Texture2D" uid="uid://dci2uvwvxxlw" path="res://Free/Traps/Platforms/Brown Off.png" id="2_6d4gn"]
-[ext_resource type="Texture2D" uid="uid://c877vumiusr0g" path="res://Free/Traps/Platforms/Grey On (32x8).png" id="4_t86yu"]
+[ext_resource type="Texture2D" uid="uid://dywkufrha3ykv" path="res://Free/Traps/Platforms/Brown On(32x8).png" id="1_lj7bg"]
+[ext_resource type="Texture2D" uid="uid://dci2uvwvxxlw" path="res://Free/Traps/Platforms/Brown Off .png" id="2_6d4gn"]
+[ext_resource type="Texture2D" uid="uid://c877vumiusr0g" path="res://Free/Traps/Platforms/Grey On(32x8).png" id="4_t86yu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj122"]
 atlas = ExtResource("2_6d4gn")

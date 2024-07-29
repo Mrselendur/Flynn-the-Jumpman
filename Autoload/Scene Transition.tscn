@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgb3tfc0kbaic"]
 
 [ext_resource type="Script" path="res://Autoload/Scene Transition.gd" id="1_2qoc5"]
-[ext_resource type="Texture2D" uid="uid://bn3ii55rtyh7j" path="res://Free/Other/Transition.png" id="1_ufmbh"]
+[ext_resource type="Texture2D" uid="uid://bn3ii55rtyh7j" path="res://Free/Other/Transition .png" id="1_ufmbh"]
 
 [sub_resource type="Animation" id="Animation_5ojyd"]
 resource_name = "Fade_in"
