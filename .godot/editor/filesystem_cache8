@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722295802
+::res://::1722295838
 04B_30__.TTF::FontFile::4449793129738977136::1719419743::1722291849::1::::<><>::
 cursor.png::CompressedTexture2D::8939313748944888459::1720010670::1720380023::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::8761517129908547357::1722257993::0::1::::<><>::
@@ -51,12 +51,12 @@ Purple.png::CompressedTexture2D::8325444654392871176::1719419743::1722279024::1:
 Yellow.png::CompressedTexture2D::8793394655339739597::1719419743::1722279028::1::::<><>::
 ::res://Free/Items/::1722018040
 ::res://Free/Items/Checkpoints/::1722257691
-::res://Free/Items/Checkpoints/End/::1722295794
-End(Idle).png::CompressedTexture2D::697780771243738070::1719419743::1722295789::1::::<><>::
-End(Pressed) (64x64).png::CompressedTexture2D::4913709839691659492::1719419743::1722295794::1::::<><>::
-::res://Free/Items/Checkpoints/Start/::1722295802
-Start(Idle).png::CompressedTexture2D::2789082876250527931::1719419743::1722295798::1::::<><>::
-Start(Moving) (64x64).png::CompressedTexture2D::5896768133001435997::1719419743::1722295802::1::::<><>::
+::res://Free/Items/Checkpoints/End/::1722295838
+End (Idle).png::CompressedTexture2D::697780771243738070::1719419743::1722295836::1::::<><>::
+End (Pressed) (64x64).png::CompressedTexture2D::4913709839691659492::1719419743::1722295839::1::::<><>::
+::res://Free/Items/Checkpoints/Start/::1722295832
+Start (Idle).png::CompressedTexture2D::2789082876250527931::1719419743::1722295828::1::::<><>::
+Start (Moving) (64x64).png::CompressedTexture2D::5896768133001435997::1719419743::1722295832::1::::<><>::
 ::res://Free/Items/Fruits/::1722291666
 Apple.png::CompressedTexture2D::1194905379725713465::1719419743::1722291635::1::::<><>::
 Bananas.png::CompressedTexture2D::2353861973828042999::1719419743::1722291639::1::::<><>::
@@ -132,10 +132,10 @@ Idle.png::CompressedTexture2D::7494817094299149435::1719419743::1722291833::1:::
 ::res://Free/Traps/Trampoline/::1722291841
 Idle.png::CompressedTexture2D::4412953432854689394::1719419743::1722291838::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::4324545306481086967::1719419743::1722291841::1::::<><>::
-::res://Goal/::1722295802
+::res://Goal/::1722295835
 Goal.gd::GDScript::-1::1722134804::0::1::::<>Area2D<>::
-Goal.tscn::PackedScene::4446258582292443280::1722295788::0::1::::<><>::uid://j7al2sppb1xi::::res://Free/Items/Checkpoints/End/End(Idle).png<>res://Goal/Goal.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres
-Start.tscn::PackedScene::2785684416299165759::1722295802::0::1::::<><>::uid://cqao56r1r7kxx::::res://Free/Items/Checkpoints/Start/Start(Moving) (64x64).png
+Goal.tscn::PackedScene::4446258582292443280::1722295835::0::1::::<><>::uid://j7al2sppb1xi::::res://Free/Items/Checkpoints/End/End (Idle).png<>res://Goal/Goal.gd<>uid://doqtdb66xr3lh::::res://Scenes/normal.tres<>uid://d24ptlfcplpor::::res://Scenes/labelsettings.tres
+Start.tscn::PackedScene::2785684416299165759::1722295831::0::1::::<><>::uid://cqao56r1r7kxx::::res://Free/Items/Checkpoints/Start/Start (Moving) (64x64).png
 ::res://Obstacles/::1722278748
 Border.tscn::PackedScene::3576673911432954121::1721674699::0::1::::<><>::
 ::res://Obstacles/Falling Platform/::1722295195
