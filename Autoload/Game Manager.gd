@@ -7,6 +7,7 @@ var currentLevel: String
 
 #quit the game
 func quitGame()->void:
+	AudioHandler.playMusic(null)
 	get_tree().quit()
 
 #set up the change of a scene
