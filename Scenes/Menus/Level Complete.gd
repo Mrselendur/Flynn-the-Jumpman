@@ -8,15 +8,16 @@ var musicStream = preload("res://Free/Audio/Music/LevelComplete.mp3")
 var previousLevel = GameManager.currentLevel
 
 func _ready() -> void:
+	AudioHandler.stop_music()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	var arr = AudioHandler.get_children()
 	for i in arr:
 		i.queue_free()
-	AudioHandler.playMusic(musicStream)
+	AudioHandler.play_music(musicStream)
+	
 	previousLevel = previousLevel.get_slice("Level", 2).trim_suffix(".tscn")
 	previousLevel = previousLevel.to_int()
-	score.text = "Score: " + str(GameManager.getAllPoints())
-	AudioHandler.playMusic(musicStream)
+	score.text = "Score: " + str(GameManager.get_all_points())
 	if previousLevel < 3:
 		nextLevelButton.grab_focus()
 		return 
@@ -30,11 +31,11 @@ func _ready() -> void:
 func _on_next_level_pressed() -> void:
 	var nextLevel: int = previousLevel + 1
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	GameManager.setChange("res://Scenes/Levels/Level"+ str(nextLevel) +".tscn")
+	GameManager.set_change("res://Scenes/Levels/Level"+ str(nextLevel) +".tscn")
 
 func _on_return_to_menu_pressed() -> void:
-	GameManager.resetAllPoints()
-	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+	GameManager.reset_all_points()
+	GameManager.set_change("res://Scenes/Menus/Main Menu.tscn")
 
 #functions for highlighting buttons
 func _on_next_level_mouse_entered() -> void:

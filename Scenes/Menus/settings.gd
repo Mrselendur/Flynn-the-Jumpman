@@ -124,7 +124,7 @@ func _on_accept_changes_pressed() -> void:
 	ConfigFileHandler.save_audio_settings("SFX", sfxVolume.value)
 
 func _on_back_pressed() -> void:
-	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+	GameManager.set_change("res://Scenes/Menus/Main Menu.tscn")
 
 #functions for highlighting buttons
 func _on_mute_mouse_entered() -> void:

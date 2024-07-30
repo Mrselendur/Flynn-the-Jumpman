@@ -12,7 +12,7 @@ func _ready() -> void:
 
 #check every frame for a shown goal and if player has collected required points
 func _process(_delta) -> void:
-	var points: int = GameManager.getLevelPoints()
+	var points: int = GameManager.get_level_points()
 	if isShown || points < requiredPoints: 
 		if label:
 			label.text = "Need " + str(requiredPoints - points) + " more points!"

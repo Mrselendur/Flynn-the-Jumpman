@@ -104,7 +104,7 @@ func _physics_process(delta) -> void:
 			velocity.y = 0                                    #move when exit animation is playing
 			await animatedSprite.animation_finished           #wait for end of animation 
 			currentState = state.DISABLED                     #before changing scene
-			GameManager.setChange(changeScene, "res://Scenes/Levels/" + get_parent().get_parent().name + ".tscn")
+			GameManager.set_change(changeScene, "res://Scenes/Levels/" + get_parent().get_parent().name + ".tscn")
  
 #function has a parameter with default value:
 # - when it's called with 0 arguments it takes the default value as jump power
@@ -114,7 +114,7 @@ func jump(jumpPower: float = JUMP_VELOCITY) -> void:
 		return                       
 	#if player hasn't used up regular and double jump
 	fx = preload("res://Free/Audio/Sound Effects/jump.wav")
-	AudioHandler.playFX(fx, -20)
+	AudioHandler.play_fx(fx, -20)
 	velocity.y = jumpPower     #jump
 	jumpCount += 1             #increase the jump count
 	jumpBufferCounter = 0      #reset jump buffer	
@@ -129,7 +129,7 @@ func _on_area_2d_area_entered(area) -> void:
 	else:             #area is in group "Death"
 		fx = preload("res://Free/Audio/Sound Effects/death.wav")
 		changeScene = "res://Scenes/Menus/Game Over.tscn"       #ready scene to change to game over
-	AudioHandler.playFX(fx, -10)
+	AudioHandler.play_fx(fx, -10)
 	currentState = state.EXIT                            #change state to exit
 
 #when player is jumping - returns the default gravity from the project settings

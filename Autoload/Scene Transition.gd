@@ -5,7 +5,7 @@ extends CanvasLayer
 signal transition_finished
 
 func _ready() -> void:
-	transition_finished.connect(GameManager._changeScene)
+	transition_finished.connect(GameManager._change_scene)
 
 func play_transition(speedScale:float) -> void:
 	animationPlayer.speed_scale = speedScale

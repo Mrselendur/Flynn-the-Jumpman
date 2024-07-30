@@ -6,35 +6,35 @@ var _targetScene: String          #path to the target scene
 var currentLevel: String
 
 #quit the game
-func quitGame()->void:
-	AudioHandler.playMusic(null)
+func quit_game()->void:
+	AudioHandler.stop_music()
 	get_tree().quit()
 
 #set up the change of a scene
-func setChange(target: String, current: String = "", transition_speed: float = 1) -> void:
+func set_change(target: String, current: String = "", transition_speed: float = 1) -> void:
 	if SceneTransition.animationPlayer.is_playing():
 		return
 	currentLevel = current
 	_targetScene = target
 	SceneTransition.play_transition(transition_speed)
 
-func _changeScene() -> void:
-	resetLevelPoints()
+func _change_scene() -> void:
+	reset_level_points()
 	get_tree().change_scene_to_file(_targetScene)
 
 #adds points to score
-func addPoints(points: int) -> void:
+func add_points(points: int) -> void:
 	_levelPoints += points
 	_allPoints += points
 
-func resetLevelPoints() -> void:
+func reset_level_points() -> void:
 	_levelPoints = 0
 
-func resetAllPoints() -> void:
+func reset_all_points() -> void:
 	_allPoints = 0
 
-func getLevelPoints() -> int:
+func get_level_points() -> int:
 	return _levelPoints
 
-func getAllPoints() -> int:
+func get_all_points() -> int:
 	return _allPoints

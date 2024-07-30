@@ -30,21 +30,21 @@ func _ready() -> void:
 	DisplayServer.window_set_size(res)
 	if videoSettings.get("Fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	AudioHandler.playMusic(musicStream)
+	AudioHandler.play_music(musicStream)
 	$Control/Start.grab_focus()
 
 func _on_start_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
+	GameManager.set_change("res://Scenes/Levels/Level1.tscn")
 
 func _on_level_select_pressed() -> void:
-	GameManager.setChange("res://Scenes/Menus/Level Select.tscn")
+	GameManager.set_change("res://Scenes/Menus/Level Select.tscn")
 
 func _on_settings_pressed() -> void:
-	GameManager.setChange("res://Scenes/Menus/Settings.tscn")
+	GameManager.set_change("res://Scenes/Menus/Settings.tscn")
 
 func _on_quit_pressed() -> void:
-	GameManager.quitGame()
+	GameManager.quit_game()
 
 #functions for highlighting buttons
 func _on_start_mouse_entered() -> void:

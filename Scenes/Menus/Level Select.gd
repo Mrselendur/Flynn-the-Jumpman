@@ -12,18 +12,18 @@ func _ready() -> void:
 #functioins for button control 
 func _on_level_one_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	GameManager.setChange("res://Scenes/Levels/Level1.tscn")
+	GameManager.set_change("res://Scenes/Levels/Level1.tscn")
 
 func _on_level_two_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	GameManager.setChange("res://Scenes/Levels/Level2.tscn")
+	GameManager.set_change("res://Scenes/Levels/Level2.tscn")
 
 func _on_level_three_pressed() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CONFINED_HIDDEN)
-	GameManager.setChange("res://Scenes/Levels/Level3.tscn")
+	GameManager.set_change("res://Scenes/Levels/Level3.tscn")
 
 func _on_back_pressed() -> void:
-	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
+	GameManager.set_change("res://Scenes/Menus/Main Menu.tscn")
 
 #functions for texture button visual changes
 func _on_level_one_button_up() -> void:

@@ -35,6 +35,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://cursor.png"
 
+[editor]
+
+run/main_run_args="--verbose"
+
 [filesystem]
 
 import/blender/enabled=false

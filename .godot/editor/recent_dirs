@@ -1,5 +1,7 @@
-D:/Godot Games/Html/Flynn the Jumpman
-D:/Godot Games/Flynn the Jumpman
+D:/Godot Games/Linux/Flynn the Jumpman
+D:/Godot Games/win/Flynn the Jumpman
+D:/Godot Games
+res://Autoload
 D:/Godot Games/Linux
 res://Free/Main Character
 C:/Program Files/RcEdit
@@ -14,7 +16,6 @@ res://Free/Items/Fruits
 res://Scenes/Levels
 res://Obstacles
 res://Free/Terrain
-res://Autoload
 res://Player
 res://Free/Audio
 res://Free/Items/Checkpoints/Start

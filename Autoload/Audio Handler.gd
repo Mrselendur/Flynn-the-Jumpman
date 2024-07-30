@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-func playMusic(music: AudioStream, volume = 0.0) -> void:
+func play_music(music: AudioStream, volume = 0.0) -> void:
 	if stream == music:
 		return
 	stream = music
@@ -8,8 +8,13 @@ func playMusic(music: AudioStream, volume = 0.0) -> void:
 	volume_db = volume
 	bus = "Music"
 	play()
+	
+func stop_music() -> void:
+	if !self.playing:
+		return
+	self.stop()
 
-func playFX(sfx: AudioStream, volume = 0.0) -> void:
+func play_fx(sfx: AudioStream, volume = 0.0) -> void:
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = sfx
 	fx_player.name = "FX_PLAYER"
