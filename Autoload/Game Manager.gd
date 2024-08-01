@@ -28,8 +28,8 @@ func _change_scene() -> void:
 func add_level_points(points: int) -> void:
 	_levelPoints += points
 
-func add_all_points(points: int) -> void:
-	_allPoints += points
+func add_all_points() -> void:
+	_allPoints += _levelPoints
 
 func reset_level_points() -> void:
 	_levelPoints = 0
