@@ -39,6 +39,7 @@ func _on_restart_pressed() -> void:
 
 func _on_back_to_menu_pressed() -> void:
 	resume()
+	GameManager.reset_all_points()
 	GameManager.setChange("res://Scenes/Menus/Main Menu.tscn")
 
 func esc_pressed() -> void:

@@ -2,7 +2,8 @@ extends Node
 
 var _levelPoints: int = 0        #points in a single level
 var _allPoints: int = 0          #points accross all levels in a signle session
-var _targetScene: String          #path to the target scene
+var bufferPoints: int = 0        #buffer for level points
+var _targetScene: String         #path to the target scene
 var currentLevel: String
 
 #quit the game
@@ -19,12 +20,15 @@ func set_change(target: String, current: String = "", transition_speed: float = 
 	SceneTransition.play_transition(transition_speed)
 
 func _change_scene() -> void:
+	bufferPoints = _levelPoints
 	reset_level_points()
 	get_tree().change_scene_to_file(_targetScene)
 
 #adds points to score
-func add_points(points: int) -> void:
+func add_level_points(points: int) -> void:
 	_levelPoints += points
+
+func add_all_points(points: int) -> void:
 	_allPoints += points
 
 func reset_level_points() -> void:

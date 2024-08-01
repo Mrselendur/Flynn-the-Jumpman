@@ -199,3 +199,7 @@ limit_right = 13319
 limit_bottom = 1677
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[connection signal="body_entered" from="World/Tiles/Objects/Trampoline" to="World/Tiles/Objects/Trampoline" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@27017" to="World/Tiles/Objects/@Area2D@27017" method="_on_body_entered"]
+[connection signal="body_entered" from="World/Tiles/Objects/@Area2D@27043" to="World/Tiles/Objects/@Area2D@27043" method="_on_body_entered"]

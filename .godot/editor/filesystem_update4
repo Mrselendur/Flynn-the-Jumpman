@@ -1,0 +1,19 @@
+res://Scenes/Menus/Main Menu.tscn
+res://Scenes/Levels/Ground.tres
+res://Scenes/Levels/Platforms.tres
+res://Scenes/normal.tres
+res://Scenes/Levels/Objects.tres
+res://Scenes/exit.tres
+res://Scenes/labelsettings.tres
+res://Scenes/Menus/Game Over.gd
+res://Scenes/Menus/Pause Menu.tscn
+res://Scenes/Menus/Pause Menu.gd
+res://Scenes/Menus/Settings.tscn
+res://Player/Player.gd
+res://Autoload/Game Manager.gd
+res://Collectables/Collectable.gd
+res://Scenes/Levels/Level2.tscn
+res://Autoload/Audio Handler.tscn
+res://Obstacles/Rock Head/Rock Head.tscn
+res://Autoload/Scene Transition.tscn
+res://Scenes/Menus/Level Complete.gd

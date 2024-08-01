@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	previousLevel = previousLevel.get_slice("Level", 2).trim_suffix(".tscn")
 	previousLevel = previousLevel.to_int()
-	score.text = "Score: " + str(GameManager.get_all_points())
+	score.text = "Score: " + str(GameManager.get_all_points() + GameManager.bufferPoints)
 	if previousLevel < 3:
 		nextLevelButton.grab_focus()
 		return 

@@ -15,6 +15,7 @@ warnings/show_image=true
 [application]
 
 config/name="Flynn the Jumpman"
+config/tags=PackedStringArray("2d_patformer")
 run/main_scene="res://Scenes/Menus/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0.588118, 0.316024, 0.426655, 1)

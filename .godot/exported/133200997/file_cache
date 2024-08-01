@@ -1,5 +1,5 @@
-res://Autoload/Audio Handler.tscn::99a5582ba1ddc1776abdde2257ad0924::1722352404::res://.godot/exported/133200997/export-e1aca8f0a4b99373c8459f7629f7e76c-Audio Handler.scn
-res://Autoload/Scene Transition.tscn::e0aced7baa75eb280c8afd48f4ce98ed::1722352404::res://.godot/exported/133200997/export-919badb46eac927577564b5855123434-Scene Transition.scn
+res://Autoload/Audio Handler.tscn::99a5582ba1ddc1776abdde2257ad0924::1722526510::res://.godot/exported/133200997/export-e1aca8f0a4b99373c8459f7629f7e76c-Audio Handler.scn
+res://Autoload/Scene Transition.tscn::e0aced7baa75eb280c8afd48f4ce98ed::1722526510::res://.godot/exported/133200997/export-919badb46eac927577564b5855123434-Scene Transition.scn
 res://Collectables/Apple.tscn::2c8af8f807287b63101a804f825000d0::1722294803::res://.godot/exported/133200997/export-ce79bc3be674fc0b6e0f58f1898dfffb-Apple.scn
 res://Collectables/Bananas.tscn::c8150c6a2400d13a48ad31e6ac2aa744::1722294804::res://.godot/exported/133200997/export-033bfc63e62e166b3e31444fa86d2ad7-Bananas.scn
 res://Collectables/Cherry.tscn::af7628c3477a6221ec00f3e61f45d018::1722294803::res://.godot/exported/133200997/export-482b45534c6c04005fcebbdbb0ddefde-Cherry.scn
@@ -15,27 +15,27 @@ res://Obstacles/Falling Platform/Falling Platform.tscn::cd1f7959aa2c0f42b5a3bd36
 res://Obstacles/Fire Platform/Fire Platform.tscn::3d6f508a9a38a69a8e2251bee53bf2f1::1722294804::res://.godot/exported/133200997/export-dd3ed3040354cbf144b414eac9d0a3c1-Fire Platform.scn
 res://Obstacles/Moving Objects/Moving Platform.tscn::610e90fa6248d899c8f332a86ce9169c::1722291785::res://.godot/exported/133200997/export-2b172fd1923f8f9eaeefe63790d43f15-Moving Platform.scn
 res://Obstacles/Moving Objects/Saw.tscn::30298ddb9d5a4c9b2581f8d7f63989f1::1722294803::res://.godot/exported/133200997/export-76b03d2191ace5c6fa94a3e33c86620a-Saw.scn
-res://Obstacles/Rock Head/Rock Head.tscn::98f4ed6b8083bca90565b8e6a96018f8::1722352404::res://.godot/exported/133200997/export-e9cd81b6f6b12909277fd4f8a276b98a-Rock Head.scn
+res://Obstacles/Rock Head/Rock Head.tscn::98f4ed6b8083bca90565b8e6a96018f8::1722526510::res://.godot/exported/133200997/export-e9cd81b6f6b12909277fd4f8a276b98a-Rock Head.scn
 res://Obstacles/Spike/Spike.tscn::59e7b12d40912e275f8a075f2559ede8::1722291833::res://.godot/exported/133200997/export-8b9853f7f12ba6d8bb9969191deab121-Spike.scn
 res://Obstacles/Swinging Ball/Swinging Ball.tscn::2223c5af2edb9f2d5ddbae9998fbdcaf::1722294804::res://.godot/exported/133200997/export-e49a49c4f030385cdd5f0ef7d6c96f65-Swinging Ball.scn
 res://Obstacles/Trampoline/Trampoline.tscn::2669d6dba8d57aa87e147951168d07d6::1722294803::res://.godot/exported/133200997/export-ef8fb71bff27445e198bd58bcd191ac5-Trampoline.scn
 res://Obstacles/Border.tscn::1e8d40b34b689e86602a0fd5f21b7dff::1721674699::res://.godot/exported/133200997/export-678501902cf5febc9d879ebc8ee7044d-Border.scn
 res://Player/Jump Particles.tscn::db27c1e6e293665da8b3c255bd2a888f::1722294804::res://.godot/exported/133200997/export-66a300ae82dc531f5b670e81e3009c40-Jump Particles.scn
 res://Player/Player.tscn::d2c4c173fba4c23eaf37d3d2a469e34b::1722294803::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
-res://Scenes/Levels/Ground.tres::ed7dd75ecaa2c2ea6c468087d2321c1c::1722336710::res://.godot/exported/133200997/export-76fe49bcfef5cdb5740ca98575fd0004-Ground.res
+res://Scenes/Levels/Ground.tres::ed7dd75ecaa2c2ea6c468087d2321c1c::1722525995::res://.godot/exported/133200997/export-76fe49bcfef5cdb5740ca98575fd0004-Ground.res
 res://Scenes/Levels/Level1.tscn::fe36c942cf3e4c2b78b5b16fd71ec618::1722294803::res://.godot/exported/133200997/export-25e2e42a0b4c24c028143b59a0da7b5f-Level1.scn
-res://Scenes/Levels/Level2.tscn::517faf61ea6e1ffd84ec7a43c63453e2::1722352404::res://.godot/exported/133200997/export-464c93198fde5af327527d5734cf2d43-Level2.scn
+res://Scenes/Levels/Level2.tscn::2e17ea3bcd9b2095382e429ebccaf0e6::1722526548::res://.godot/exported/133200997/export-464c93198fde5af327527d5734cf2d43-Level2.scn
 res://Scenes/Levels/Level3.tscn::c2d6046275996079a11297f57b3a6bbf::1722294803::res://.godot/exported/133200997/export-819818f3d48364df72c3a1cee4b09dae-Level3.scn
-res://Scenes/Levels/Objects.tres::6d33a10ee15e1963c1c155d84da090da::1722336711::res://.godot/exported/133200997/export-ba6fd8b7ad1097b9e45a1b0014cf0b4c-Objects.res
-res://Scenes/Levels/Platforms.tres::af7042e1416f6d45f1670f375096c7e5::1722336711::res://.godot/exported/133200997/export-48f42581565c4daa07fe2317b593eb17-Platforms.res
+res://Scenes/Levels/Objects.tres::6d33a10ee15e1963c1c155d84da090da::1722525995::res://.godot/exported/133200997/export-ba6fd8b7ad1097b9e45a1b0014cf0b4c-Objects.res
+res://Scenes/Levels/Platforms.tres::af7042e1416f6d45f1670f375096c7e5::1722525995::res://.godot/exported/133200997/export-48f42581565c4daa07fe2317b593eb17-Platforms.res
 res://Scenes/Menus/Game Over.tscn::2ec3d2efe0f3a4535ea81189b339f85e::1722295111::res://.godot/exported/133200997/export-51bb3b2742e88d1701b98ea940fe805a-Game Over.scn
 res://Scenes/Menus/Level Complete.tscn::8ca98c07b4ec3336af1c5f9bfb0658e1::1722294803::res://.godot/exported/133200997/export-53214081c8edfda04eb272f5f89cd7f8-Level Complete.scn
 res://Scenes/Menus/Level Select.tscn::115092504933aeb7f522ebcb5df1d40c::1722294803::res://.godot/exported/133200997/export-bca6a9a24f11ab480d69287ee78096f3-Level Select.scn
-res://Scenes/Menus/Main Menu.tscn::06dffb0cd613b63cf39541505735f43f::1722352497::res://.godot/exported/133200997/export-11d3b63ab2cf4af2be3c3fd5a7916d3f-Main Menu.scn
-res://Scenes/Menus/Pause Menu.tscn::e78cd4d6da7928b738a467d66ae2287e::1722352404::res://.godot/exported/133200997/export-4f402544982c8056f4cc51cd42c22f3c-Pause Menu.scn
-res://Scenes/Menus/Settings.tscn::9a49c951062deb8edd62c9e3b845143a::1722352404::res://.godot/exported/133200997/export-35cac81169e2bd0e642576957dab3644-Settings.scn
+res://Scenes/Menus/Main Menu.tscn::06dffb0cd613b63cf39541505735f43f::1722526509::res://.godot/exported/133200997/export-11d3b63ab2cf4af2be3c3fd5a7916d3f-Main Menu.scn
+res://Scenes/Menus/Pause Menu.tscn::e78cd4d6da7928b738a467d66ae2287e::1722526509::res://.godot/exported/133200997/export-4f402544982c8056f4cc51cd42c22f3c-Pause Menu.scn
+res://Scenes/Menus/Settings.tscn::9a49c951062deb8edd62c9e3b845143a::1722526509::res://.godot/exported/133200997/export-35cac81169e2bd0e642576957dab3644-Settings.scn
 res://Scenes/Points/Points.tscn::7ea17361f10e210cf81d3e41a7b3409f::1722291849::res://.godot/exported/133200997/export-024cd38038d67744366ea5c3e1e9cb7f-Points.scn
-res://Scenes/exit.tres::196f5b4f3bfaebb168b2eab1ba8f0938::1722336711::res://.godot/exported/133200997/export-043cf24f145a72fded6170f3dfb4e235-exit.res
-res://Scenes/labelsettings.tres::1f1198280c8eea4864b8e74d91a580f3::1722336711::res://.godot/exported/133200997/export-17289f29693405ffce13a7f1b50a4d44-labelsettings.res
-res://Scenes/normal.tres::3eee64ca098085b52b98d7b7fb4ee1fc::1722336711::res://.godot/exported/133200997/export-74110fc013bbde751a7ec25ce1486596-normal.res
+res://Scenes/exit.tres::196f5b4f3bfaebb168b2eab1ba8f0938::1722525995::res://.godot/exported/133200997/export-043cf24f145a72fded6170f3dfb4e235-exit.res
+res://Scenes/labelsettings.tres::1f1198280c8eea4864b8e74d91a580f3::1722525995::res://.godot/exported/133200997/export-17289f29693405ffce13a7f1b50a4d44-labelsettings.res
+res://Scenes/normal.tres::3eee64ca098085b52b98d7b7fb4ee1fc::1722525995::res://.godot/exported/133200997/export-74110fc013bbde751a7ec25ce1486596-normal.res
 res://default_bus_layout.tres::0fbe628835132338b0fd5e08302860cb::1722257993::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res

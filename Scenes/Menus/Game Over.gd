@@ -14,7 +14,7 @@ func _ready() -> void:
 	
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	
-	score.text = "Score: " + str(GameManager.get_all_points())
+	score.text = "Score: " + str(GameManager.get_all_points() + GameManager.bufferPoints)
 	GameManager.reset_level_points()
 	$Control/Restart.grab_focus()
 
@@ -23,6 +23,7 @@ func _on_restart_pressed() -> void:
 	GameManager.set_change(currentLevel)
 
 func _on_menu_pressed() -> void:
+	GameManager.reset_all_points()
 	GameManager.set_change("res://Scenes/Menus/Main Menu.tscn")
 
 #functions for highlighting buttons

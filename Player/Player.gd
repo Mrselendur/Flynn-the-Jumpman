@@ -124,6 +124,7 @@ func _on_area_2d_area_entered(area) -> void:
 	if(!area.is_in_group("Finish") && !area.is_in_group("Death")):
 		return
 	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
+		GameManager.add_all_points(GameManager.get_level_points())
 		fx = preload("res://Free/Audio/Sound Effects/win.wav")
 		changeScene = "res://Scenes/Menus/Level Complete.tscn"  #ready scene to change to level complete
 	else:             #area is in group "Death"
