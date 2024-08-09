@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
 const MAX_JUMPS = 2
-const COYOTE_TIME: float = 0.2         #coyote time max seconds
+const COYOTE_TIME: float = 0.1         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
 const FALL_GRAVITY = 2000              #gravity for when player is falling 
 const TERMINAL_FALL_VELOCITY = 5600
@@ -51,10 +51,10 @@ func _physics_process(delta) -> void:
 		state.ACTIVE:
 			#Get the input direction and handle the movement/deceleration.
 			#get_axis() returns a -1 value from the first argument and a 1 value from the second
-			var direction = Input.get_axis("left", "right")   #returns 0 if neither
+			var direction: float = Input.get_axis("left", "right")   #returns 0 if neither
 			if (0 != direction):                      #player is moving
 				velocity.x = direction * SPEED        #move towards inputed direction with speed const
-				var isLeft = direction < 0            #if direction is negative set isLeft to true
+				var isLeft: bool = direction < 0      #if direction is negative set isLeft to true
 				animatedSprite.flip_h = isLeft       #flip sprite so character looks where he's going
 			else:                                     #player is not moving
 				velocity.x = move_toward(velocity.x, 0, SPEED)    #decrease velocity.x to 0 by SPEED amount
