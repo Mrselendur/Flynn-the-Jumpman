@@ -117,7 +117,7 @@ func jump(jumpPower: float = JUMP_VELOCITY) -> void:
 	AudioHandler.play_fx(fx, -20)
 	velocity.y = jumpPower     #jump
 	jumpCount += 1             #increase the jump count
-	jumpBufferCounter = 0      #reset jump buffer	
+	jumpBufferCounter = 0      #reset jump buffer
 
 func _on_area_2d_area_entered(area) -> void:
 	#return from function if area is not finish or death
