@@ -21,12 +21,12 @@ grow_vertical = 2
 theme = ExtResource("3_3t3jb")
 script = ExtResource("1_gdj0r")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="BackGround" type="Parallax2D" parent="."]
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(30, 30)
 repeat_times = 25
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="BackGround"]
 texture = ExtResource("3_qx2ra")
 flip_h = true
 
@@ -67,7 +67,7 @@ horizontal_alignment = 1
 [node name="MasterVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.01
 value = 1.0
 
 [node name="Music" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -79,9 +79,8 @@ horizontal_alignment = 1
 
 [node name="MusicVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-max_value = 0.5
-step = 0.001
-value = 0.5
+max_value = 1.0
+step = 0.01
 
 [node name="SFX" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -93,7 +92,7 @@ horizontal_alignment = 1
 [node name="SFXVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.01
 value = 1.0
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]

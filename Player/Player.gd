@@ -2,26 +2,26 @@ extends CharacterBody2D
 
 const SPEED: float = 400.0             #constant for movement
 const JUMP_VELOCITY: float = -400.0    #constant for jumping power
-const MAX_JUMPS = 2
+const MAX_JUMPS: int = 2
 const COYOTE_TIME: float = 0.1         #coyote time max seconds
 const JUMP_BUFFER_TIME: float = 0.1    #jump buffer max seconds
-const FALL_GRAVITY = 2000              #gravity for when player is falling 
-const TERMINAL_FALL_VELOCITY = 5600
+const FALL_GRAVITY: float = 2000              #gravity for when player is falling 
+const TERMINAL_FALL_VELOCITY: float = 5600
 
 #state machine for character control, entering scene and exiting scene 
 enum state{
 	ENTER,
 	ACTIVE,
-	EXIT,
-	DISABLED}
+	EXIT}
 
-var currentState          #state to reiterate through the state machine
+@onready var currentState: int = state.ENTER         #state to reiterate through the state machine
 
-#variables conecting to nodes
-@onready var animatedSprite = $AnimatedSprite2D
-@onready var animationPlayer = $AnimationPlayer
-@onready var collisionShape = $CollisionShape2D
-@onready var hitboxCollision = $Hitbox/hitbox_collision
+#variables connecting to nodes
+
+@onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var collisionShape: CollisionShape2D = $CollisionShape2D
+@onready var hitboxCollision: CollisionShape2D = $Hitbox/HitboxCollision
 
 @onready var fx: AudioStream
 
@@ -31,22 +31,19 @@ var coyoteCounter: float
 var jumpBufferCounter: float
 
 #for particles when double jumping
-var emmiting = false
+var emitting: bool = false
 
 var changeScene: String
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-func _ready():
-	currentState = state.ENTER #start in enter state
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta) -> void:
 	match currentState:
 		state.ENTER:
 			animatedSprite.play("appear")
 			await animatedSprite.animation_finished
-			currentState = state.ACTIVE              #change state to active
+			currentState = state.ACTIVE              
 
 		state.ACTIVE:
 			#Get the input direction and handle the movement/deceleration.
@@ -58,7 +55,7 @@ func _physics_process(delta) -> void:
 				animatedSprite.flip_h = isLeft       #flip sprite so character looks where he's going
 			else:                                     #player is not moving
 				velocity.x = move_toward(velocity.x, 0, SPEED)    #decrease velocity.x to 0 by SPEED amount
-			# Handle jump.
+			
 			if is_on_floor():
 				coyoteCounter = COYOTE_TIME #reset coyote_counter 
 				jumpCount = 0
@@ -76,7 +73,7 @@ func _physics_process(delta) -> void:
 				if velocity.y >= TERMINAL_FALL_VELOCITY:
 					velocity.y = TERMINAL_FALL_VELOCITY
 				coyoteCounter -= delta        #start counting down coyote counter
-
+			# Handle jump.
 			if(Input.is_action_just_pressed("up")):
 				jumpBufferCounter = JUMP_BUFFER_TIME     #start jump buffer
 				#if coyote timer has run out and hasn't jumped yet OR has jumped twice
@@ -90,28 +87,29 @@ func _physics_process(delta) -> void:
 				jumpBufferCounter -= delta    #decrease jump buffer when not pressing jump button
 
 			#variable jump hight by releasing jump button early
-			if((true == Input.is_action_just_released("up")) && jumpCount == 1):
+			if(Input.is_action_just_released("up") && jumpCount == 1):
 				velocity.y *= 0.5
 			active_animations()
 			move_and_slide()
-
-		state.EXIT:                 #play exit animation and end game
+			
+		#play exit animation and end game
+		state.EXIT:  
+			set_physics_process(false)              
 			animationPlayer.play("RESET")
-			collisionShape.disabled = true                    #disable collision and hitbox 
-			hitboxCollision.disabled = true                   #to prevent unnecessary collisions
+			collisionShape.disabled = true      
+			hitboxCollision.disabled = true  
 			animatedSprite.play("disappear")
-			velocity.x = 0                                    #disable movement so player doesn't 
-			velocity.y = 0                                    #move when exit animation is playing
-			await animatedSprite.animation_finished           #wait for end of animation 
-			currentState = state.DISABLED                     #before changing scene
-			GameManager.set_change(changeScene, "res://Scenes/Levels/" + get_parent().get_parent().name + ".tscn")
- 
+			velocity = Vector2i(0,0)
+			await animatedSprite.animation_finished      
+			GameManager.set_change(changeScene)
+
 #function has a parameter with default value:
 # - when it's called with 0 arguments it takes the default value as jump power
 # - when there is an argument it takes that as its value
 func jump(jumpPower: float = JUMP_VELOCITY) -> void:
 	if jumpCount >= MAX_JUMPS:
-		return                       
+		return
+   
 	#if player hasn't used up regular and double jump
 	fx = preload("res://Free/Audio/Sound Effects/jump.wav")
 	AudioHandler.play_fx(fx, -20)
@@ -123,15 +121,16 @@ func _on_area_2d_area_entered(area) -> void:
 	#return from function if area is not finish or death
 	if(!area.is_in_group("Finish") && !area.is_in_group("Death")):
 		return
-	elif(area.is_in_group("Finish")):                     #area is in group "Finish"
-		GameManager.add_all_points()
+	elif(area.is_in_group("Finish")):             
+		#ready scene to change to level complete
 		fx = preload("res://Free/Audio/Sound Effects/win.wav")
-		changeScene = "res://Scenes/Menus/Level Complete.tscn"  #ready scene to change to level complete
-	else:             #area is in group "Death"
+		changeScene = "res://Scenes/Menus/Level Complete.tscn"  
+	else:
+		#ready scene to change to game over
 		fx = preload("res://Free/Audio/Sound Effects/death.wav")
-		changeScene = "res://Scenes/Menus/Game Over.tscn"       #ready scene to change to game over
+		changeScene = "res://Scenes/Menus/Game Over.tscn"       
 	AudioHandler.play_fx(fx, -10)
-	currentState = state.EXIT                            #change state to exit
+	currentState = state.EXIT     #change state to exit
 
 #when player is jumping - returns the default gravity from the project settings
 #when player is falling - returns the fall gravity to exaggerate the fall 
@@ -140,9 +139,9 @@ func _gravity() -> float:
 		return FALL_GRAVITY
 	return gravity
 
-func active_animations():
+func active_animations() -> void:
 	if is_on_floor():
-		emmiting = false           #allows for another particle emission
+		emitting = false           #allows for another particle emission
 		if velocity.x != 0:                       #if moving in any direction
 			animatedSprite.play("running")       #change animation to running 
 		else:                                     #if standing still
@@ -156,11 +155,11 @@ func active_animations():
 				make_particles()
 
 			animationPlayer.play("jumping")
-			
+
 #instantiates a particle scene and adds it as a child to Player
 func make_particles() -> void:
-	if emmiting:       #check if already emmiting
+	if emitting:       #check if already emmiting
 		return
-	emmiting = true    #makes sure particles dont emmit again before landing
-	var inst : CPUParticles2D = preload("res://Player/Jump Particles.tscn").instantiate()
+	emitting = true    #makes sure particles dont emmit again before landing
+	var inst: CPUParticles2D = preload("res://Player/Jump Particles.tscn").instantiate()
 	add_child(inst)

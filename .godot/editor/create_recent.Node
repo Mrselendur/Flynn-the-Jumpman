@@ -1,6 +1,10 @@
+SubViewport
+Node2D
+CheckButton
+CheckBox
+Button
 CPUParticles2D
 AnimationPlayer
-Node2D
 AnimatedSprite2D
 TileMapLayer
 Label
@@ -9,6 +13,3 @@ PathFollow2D
 Path2D
 CollisionShape2D
 Area2D
-StaticBody2D
-Marker2D
-Button

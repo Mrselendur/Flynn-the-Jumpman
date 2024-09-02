@@ -14,9 +14,10 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	var points: int = GameManager.get_level_points()
 	if isShown || points < requiredPoints: 
-		if label:
-			label.text = "Need " + str(requiredPoints - points) + " more points!"
-		return
+		if label == null:
+			return
+		label.text = "Need " + str(requiredPoints - points) + " more points!"
+	
 	label.queue_free()
 	self.monitorable = true         #make the goal monitorable
 	sprite.visible = true           #make the goal visible

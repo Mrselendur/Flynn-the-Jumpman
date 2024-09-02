@@ -1,8 +1,8 @@
 extends Node
 
-@onready var musicStream: AudioStream = preload("res://Free/Audio/Music/IntroTheme.mp3")
-
 func _ready() -> void:
+	var musicStream: AudioStream = preload("res://Free/Audio/Music/IntroTheme.mp3")
+	GameManager.set_current_level("res://Scenes/Menus/Level Complete.tscn")
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	var audioSettings: Dictionary = ConfigFileHandler.load_audio_settings()
 	AudioServer.set_bus_mute(0, audioSettings.get("Mute"))
@@ -61,4 +61,4 @@ func _on_quit_mouse_entered() -> void:
 
 #character animation control for the menu
 func _on_player_sprite_animation_finished() -> void:
-	$PlayerSprite.play("idle")
+	$Visuals/PlayerSprite.play("idle")

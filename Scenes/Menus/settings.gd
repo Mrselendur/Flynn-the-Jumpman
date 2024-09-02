@@ -14,10 +14,7 @@ extends Control
 
 var resolutionSettings = ConfigFileHandler.load_resolution()
 
-var resolution: Vector2i
-var windowMode
-
-var resArray: Array[Vector2i] = [
+const resArray: Array[Vector2i] = [
 	Vector2i(3840, 2160),
 	Vector2i(2560, 1440), 
 	Vector2i(1920, 1080),
@@ -25,19 +22,21 @@ var resArray: Array[Vector2i] = [
 	Vector2i(1366, 768),
 	Vector2i(1280, 720), 
 	Vector2i(1152, 648),
-	Vector2i(1024, 576)
-]
+	Vector2i(1024, 576)]
+
+var resolution: Vector2i
+var windowMode: int
 
 func _ready() -> void:
 	#set up music settings
-	var audio_settings = ConfigFileHandler.load_audio_settings()
+	var audio_settings: Dictionary = ConfigFileHandler.load_audio_settings()
 	masterVolume.value = audio_settings.get("Master")
 	musicVolume.value = audio_settings.get("Music")
 	sfxVolume.value = audio_settings.get("SFX")
 	muteButton.button_pressed = audio_settings.get("Mute")
 
 	#set up video settings
-	var video_settings = ConfigFileHandler.load_video_settings()
+	var video_settings : Dictionary= ConfigFileHandler.load_video_settings()
 	fullscreenButton.button_pressed = video_settings.get("Fullscreen")
 	resolution = Vector2i(resolutionSettings.get("WindowWidth"),resolutionSettings.get("WindowHeight"))
 	draw()
@@ -45,11 +44,13 @@ func _ready() -> void:
 	muteButton.grab_focus()
 
 func _on_mute_toggled(toggled_on: bool) -> void:
+	var texturePath: String
 	AudioServer.set_bus_mute(0, toggled_on)
 	if toggled_on:
-		muteButton.icon = load("res://Free/Menu/Buttons/VolumeMute.png")
+		texturePath = "res://Free/Menu/Buttons/Volume Mute.png"
 	else:
-		muteButton.icon = load("res://Free/Menu/Buttons/Volume.png")
+		texturePath = "res://Free/Menu/Buttons/Volume.png"
+	muteButton.icon = load(texturePath)
 	enable_accept()
 
 func _on_master_volume_value_changed(value: float) -> void:
@@ -83,6 +84,7 @@ func _on_resolution_options_item_selected(_index: int) -> void:
 
 #works with custom resolution
 func find_resolution_text() -> void:
+	
 	var res = resArray.find(resolution) 
 	if res == -1:
 		return
@@ -92,20 +94,18 @@ func enable_accept() -> void:
 	acceptButton.disabled = false
 
 func draw() -> void:
-	if fullscreenButton.button_pressed:
-		windowMode = DisplayServer.WINDOW_MODE_FULLSCREEN
-		resolutionOptions.disabled = true
-		#disconnect signal for grabbing focus
-		if resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
-			resolutionOptions.disconnect("mouse_entered",_on_resolution_options_mouse_entered)
-		resolution = DisplayServer.screen_get_size()
-
-	else:
-		windowMode = DisplayServer.WINDOW_MODE_WINDOWED
-		#connect signal to grab focus 
-		if !resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
-			resolutionOptions.connect("mouse_entered",_on_resolution_options_mouse_entered)
-		resolutionOptions.disabled = false
+	match windowMode:
+		DisplayServer.WINDOW_MODE_FULLSCREEN:
+			resolutionOptions.disabled = true
+			#disconnect signal for grabbing focus
+			if resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
+				resolutionOptions.disconnect("mouse_entered",_on_resolution_options_mouse_entered)
+			resolution = DisplayServer.screen_get_size()
+		DisplayServer.WINDOW_MODE_WINDOWED:
+			#connect signal to grab focus 
+			if !resolutionOptions.is_connected("mouse_entered",_on_resolution_options_mouse_entered):
+				resolutionOptions.connect("mouse_entered",_on_resolution_options_mouse_entered)
+			resolutionOptions.disabled = false
 	find_resolution_text()
 
 func _on_accept_changes_pressed() -> void:

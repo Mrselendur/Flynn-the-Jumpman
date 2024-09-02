@@ -11,6 +11,7 @@ texture_filter = 1
 script = ExtResource("1_e2jwl")
 
 [node name="Area2D" type="Area2D" parent="."]
+monitorable = false
 
 [node name="PointsText" type="SubViewport" parent="."]
 transparent_bg = true

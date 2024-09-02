@@ -1,4 +1,4 @@
-extends "Moving Object.gd"
+extends MovingObject
 
 @export var isLooped: bool = false          #path is closed or not
 @export var loopSpeed: float = 250         #for closed paths
@@ -13,8 +13,6 @@ func _ready() -> void:
 	animationPlayer.speed_scale = openSpeed
 	animationPlayer.play("on")
 	set_process(false)         #turn off _process function
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

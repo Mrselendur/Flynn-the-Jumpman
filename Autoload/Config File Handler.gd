@@ -2,7 +2,7 @@ extends Node
 
 var config  = ConfigFile.new()
 
-const FILEPATH = "user://settings.ini"
+const FILEPATH : String= "user://settings.ini"
 
 func _ready() -> void:
 	if !FileAccess.file_exists(FILEPATH):
@@ -45,7 +45,7 @@ func save_resolution(key: String, value) -> void:
 	config.set_value("Resolution", key, value)
 	config.save(FILEPATH)
 	
-func load_resolution() ->Dictionary:
+func load_resolution() -> Dictionary:
 	var resolution = {}
 	for key in config.get_section_keys("Resolution"):
 		resolution[key] = config.get_value("Resolution", key)

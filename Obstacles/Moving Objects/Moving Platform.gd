@@ -1,8 +1,8 @@
-extends "Moving Object.gd"
-
-@export var playerWait: bool = false
+extends MovingObject
 
 @onready var trigger: Area2D = $AnimatableBody2D/Trigger
+
+@export var playerWait: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +18,6 @@ func _ready() -> void:
 	else:
 		$AnimatableBody2D/AnimatedSprite2D.set_animation("brown_idle")
 		trigger.connect("body_entered",_on_trigger_body_entered)
-	
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("Player"):

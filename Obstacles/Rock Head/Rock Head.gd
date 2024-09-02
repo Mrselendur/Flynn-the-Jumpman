@@ -1,7 +1,6 @@
 extends Node2D
 @onready var animatedSprite: AnimatedSprite2D = $AnimatableBody2D/AnimatedSprite2D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
-@onready var rockHead: Path2D = $"."
 @onready var playerDetect: Area2D = $AreaDetectPosition/PlayerDetect
 @onready var detectionCollision: CollisionShape2D = $AreaDetectPosition/PlayerDetect/DetectionShape
 @onready var bodyCollision: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
@@ -21,9 +20,9 @@ var animation: String    #string to handle the different names of the different 
 func _ready() -> void:
 	var shape: RectangleShape2D = RectangleShape2D.new()      #creating a new shape
 	#check if theres a curve
-	if (!rockHead.curve):
+	if (!self.curve):
 		return
-	var pointPos = rockHead.curve.get_point_position(1)   #getting the last point of the path (only using straight lines)
+	var pointPos: Vector2 = self.curve.get_point_position(1)   #getting the last point of the path (only using straight lines)
 	var sizeVector: Vector2        #size of the detection collision
 	
 	#position of the detection area

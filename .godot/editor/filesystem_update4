@@ -1,7 +1,39 @@
-res://Scenes/Menus/Main Menu.tscn
+res://default_bus_layout.tres
+res://Scenes/Levels/Level2.tscn
 res://Scenes/Levels/Ground.tres
 res://Scenes/Levels/Platforms.tres
 res://Scenes/normal.tres
 res://Scenes/Levels/Objects.tres
 res://Scenes/exit.tres
+res://Obstacles/Rock Head/Rock Head.gd
 res://Scenes/labelsettings.tres
+res://Scenes/Menus/Settings.tscn
+res://Scenes/Menus/Main Menu.tscn
+res://Scenes/Menus/Pause Menu.tscn
+res://Autoload/Audio Handler.tscn
+res://Obstacles/Rock Head/Rock Head.tscn
+res://Autoload/Scene Transition.tscn
+res://Scenes/Points/Points.tscn
+res://Scenes/Menus/Level Select.tscn
+res://Scenes/Levels/Level1.tscn
+res://Goal/Goal.tscn
+res://Collectables/Collectable.tscn
+res://Collectables/Cherry.tscn
+res://Scenes/Menus/Level Complete.tscn
+res://Scenes/Menus/Game Over.tscn
+res://Obstacles/Fire Platform/Fire Platform.tscn
+res://Obstacles/Swinging Ball/Swinging Ball.tscn
+res://Player/Player.tscn
+res://Player/Jump Particles.tscn
+res://Obstacles/Trampoline/Trampoline.tscn
+res://Obstacles/Falling Platform/Falling Platform.tscn
+res://Obstacles/Moving Objects/Moving Platform.tscn
+res://Obstacles/Moving Objects/Saw.tscn
+res://Obstacles/Spike/Spike.tscn
+res://Obstacles/Border.tscn
+res://Scenes/Menus/Settings.gd
+res://Collectables/Collectable.gd
+res://Obstacles/Moving Objects/Moving Object.gd
+res://Obstacles/Moving Objects/Moving Platform.gd
+res://Obstacles/Moving Objects/Saw.gd
+res://Scenes/Menus/Pause Menu.gd

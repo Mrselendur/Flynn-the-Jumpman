@@ -53,7 +53,7 @@ _data = {
 "default": SubResource("Animation_hhso1")
 }
 
-[node name="CPUParticles2D" type="CPUParticles2D"]
+[node name="JumpParticles" type="CPUParticles2D"]
 texture_filter = 1
 emitting = false
 amount = 5
