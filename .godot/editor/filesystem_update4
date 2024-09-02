@@ -1,5 +1,4 @@
-res://default_bus_layout.tres
-res://Scenes/Levels/Level2.tscn
+res://Scenes/Menus/Main Menu.tscn
 res://Scenes/Levels/Ground.tres
 res://Scenes/Levels/Platforms.tres
 res://Scenes/normal.tres
@@ -7,9 +6,9 @@ res://Scenes/Levels/Objects.tres
 res://Scenes/exit.tres
 res://Obstacles/Rock Head/Rock Head.gd
 res://Scenes/labelsettings.tres
-res://Scenes/Menus/Settings.tscn
-res://Scenes/Menus/Main Menu.tscn
 res://Scenes/Menus/Pause Menu.tscn
+res://Scenes/Menus/Settings.tscn
+res://Scenes/Levels/Level2.tscn
 res://Autoload/Audio Handler.tscn
 res://Obstacles/Rock Head/Rock Head.tscn
 res://Autoload/Scene Transition.tscn
@@ -31,9 +30,4 @@ res://Obstacles/Moving Objects/Moving Platform.tscn
 res://Obstacles/Moving Objects/Saw.tscn
 res://Obstacles/Spike/Spike.tscn
 res://Obstacles/Border.tscn
-res://Scenes/Menus/Settings.gd
-res://Collectables/Collectable.gd
-res://Obstacles/Moving Objects/Moving Object.gd
-res://Obstacles/Moving Objects/Moving Platform.gd
-res://Obstacles/Moving Objects/Saw.gd
-res://Scenes/Menus/Pause Menu.gd
+res://Scenes/Levels/Play Level Music.gd

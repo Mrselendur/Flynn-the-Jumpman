@@ -411,7 +411,7 @@ script = ExtResource("1_oodwx")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wd3ol")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
