@@ -7,8 +7,10 @@ func _ready() -> void:
 	GameManager.set_current_level("res://Scenes/Menus/Game Over.tscn")
 	AudioHandler.stop_music()
 	var arr = AudioHandler.get_children()
-	for i in arr:
-		i.queue_free()
+	if !arr.is_empty():
+		for i in arr:
+			i.queue_free()
+
 	AudioHandler.play_music(musicStream)
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	$Score.text = "Score: " + str(GameManager.get_all_points() + GameManager.get_level_points())

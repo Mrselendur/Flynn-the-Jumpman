@@ -6,6 +6,7 @@ res://Scenes/Levels/Objects.tres
 res://Scenes/exit.tres
 res://Obstacles/Rock Head/Rock Head.gd
 res://Scenes/labelsettings.tres
+res://Scenes/Menus/Main Menu.gd
 res://Scenes/Menus/Pause Menu.tscn
 res://Scenes/Menus/Settings.tscn
 res://Scenes/Levels/Level2.tscn
@@ -30,4 +31,5 @@ res://Obstacles/Moving Objects/Moving Platform.tscn
 res://Obstacles/Moving Objects/Saw.tscn
 res://Obstacles/Spike/Spike.tscn
 res://Obstacles/Border.tscn
-res://Scenes/Levels/Play Level Music.gd
+res://Scenes/Menus/Game Over.gd
+res://Scenes/Menus/Level Complete.gd

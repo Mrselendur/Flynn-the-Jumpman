@@ -12,8 +12,9 @@ func _ready() -> void:
 	AudioHandler.stop_music()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	var arr: Array[Node] = AudioHandler.get_children()
-	for i in arr:
-		i.queue_free()
+	if !arr.is_empty():
+		for i in arr:
+			i.queue_free()
 	AudioHandler.play_music(musicStream)
 	strPreviousLevel = strPreviousLevel.get_slice("Level", 2).trim_suffix(".tscn")
 	intPreviousLevel = strPreviousLevel.to_int()

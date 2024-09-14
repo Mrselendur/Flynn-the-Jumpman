@@ -2,7 +2,7 @@ extends Node
 
 func _ready() -> void:
 	var musicStream: AudioStream = preload("res://Free/Audio/Music/IntroTheme.mp3")
-	GameManager.set_current_level("res://Scenes/Menus/Level Complete.tscn")
+	GameManager.set_current_level("res://Scenes/Menus/Main Menu.tscn")
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	var audioSettings: Dictionary = ConfigFileHandler.load_audio_settings()
 	AudioServer.set_bus_mute(0, audioSettings.get("Mute"))
